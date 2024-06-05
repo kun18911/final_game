@@ -310,8 +310,8 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
         name, numberName) {
         // xây nền
         var đế = document.createElement('div')
-        đế.style.position = "absolute"; đế.style.border = "1px solid #000"
-        var khung = document.createElement('div'); khung.style.position = "absolute";khung.style.border = "1px solid #000"
+        đế.style.position = "absolute"; //đế.style.border = "1px solid #000"
+        var khung = document.createElement('div'); khung.style.position = "absolute";//khung.style.border = "1px solid #000"
         var ảnh = document.createElement('div'); ảnh.style.position = "absolute"; //ảnh.style.border = "1px solid #000"
         document.querySelector(".map").append(đế); đế.append(khung); khung.append(ảnh);
         ảnh.classList.add("lật_Phải")
@@ -648,13 +648,13 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
             me_HêHê.lật(quái_Me, 2)
             hihu = setInterval(()=>{me_HêHê.leftt(2,0.1); screenMe();
                 if (me_HêHê.leftt(3,0) <= 0) {me_HêHê.leftt(0, 0); clearInterval(hihu); canGo = true}
-                else {
-                    for (let i = 0; i < cảnArrayyy.length; i++) {
-                        if (cảnArrayyy[i].leftt(3, 0) - me_HêHê.leftt(3, 0) - me_HêHê.widthh(3, 0) <= 0 && me_HêHê.leftt(3, 0) - cảnArrayyy[i].leftt(3, 0) - cảnArrayyy[i].widthh(3, 0) <= 0 && me_HêHê.topp(3, 0) - cảnArrayyy[i].topp(3,0) - cảnArrayyy[i].heightt(3,0) <= 0 && cảnArrayyy[i].topp(3,0) - me_HêHê.topp(3, 0) - me_HêHê.heightt(3, 0) <= 0) {
-                            me_HêHê.leftt(0, 0.1 + cảnArrayyy[i].leftt(3, 0) + cảnArrayyy[i].widthh(3, 0)); clearInterval(hihu); canGo = true; break; // Dừng lại khi gặp giá trị 3
-                        } 
-                    }
-                }
+                // else {
+                //     for (let i = 0; i < cảnArrayyy.length; i++) {
+                //         if (cảnArrayyy[i].leftt(3, 0) - me_HêHê.leftt(3, 0) - me_HêHê.widthh(3, 0) <= 0 && me_HêHê.leftt(3, 0) - cảnArrayyy[i].leftt(3, 0) - cảnArrayyy[i].widthh(3, 0) <= 0 && me_HêHê.topp(3, 0) - cảnArrayyy[i].topp(3,0) - cảnArrayyy[i].heightt(3,0) <= 0 && cảnArrayyy[i].topp(3,0) - me_HêHê.topp(3, 0) - me_HêHê.heightt(3, 0) <= 0) {
+                //             me_HêHê.leftt(0, 0.1 + cảnArrayyy[i].leftt(3, 0) + cảnArrayyy[i].widthh(3, 0)); clearInterval(hihu); canGo = true; break; // Dừng lại khi gặp giá trị 3
+                //         } 
+                //     }
+                // }
             }, 35)
         } else {clearInterval(hihu);canGo = true}
     }
@@ -664,13 +664,13 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
             me_HêHê.lật(quái_Me, 1)
             hihu = setInterval(() => { me_HêHê.leftt(1, 0.1); screenMe();
                 if (me_HêHê.leftt(3, 0) + me_HêHê.widthh(3, 0) >= map_HêHê.widthh(3, 0)) { me_HêHê.leftt(0, map_HêHê.widthh(3, 0) - me_HêHê.widthh(3, 0)); clearInterval(hihu) } 
-                else {
-                    for (let i = 0; i < cảnArrayyy.length; i++) {
-                        if (cảnArrayyy[i].leftt(3, 0) - me_HêHê.leftt(3, 0) - me_HêHê.widthh(3, 0) <= 0 && me_HêHê.leftt(3, 0) - cảnArrayyy[i].leftt(3, 0) - cảnArrayyy[i].widthh(3, 0) <= 0 && me_HêHê.topp(3, 0) - cảnArrayyy[i].topp(3,0) - cảnArrayyy[i].heightt(3,0) <= 0 && cảnArrayyy[i].topp(3,0) - me_HêHê.topp(3, 0) - me_HêHê.heightt(3, 0) <= 0) {
-                            me_HêHê.leftt(0, -0.1 + cảnArrayyy[i].leftt(3, 0) - me_HêHê.widthh(3, 0)); clearInterval(hihu); canGo = true; break; // Dừng lại khi gặp giá trị 3
-                        } 
-                    }
-                }
+                // else {
+                //     for (let i = 0; i < cảnArrayyy.length; i++) {
+                //         if (cảnArrayyy[i].leftt(3, 0) - me_HêHê.leftt(3, 0) - me_HêHê.widthh(3, 0) <= 0 && me_HêHê.leftt(3, 0) - cảnArrayyy[i].leftt(3, 0) - cảnArrayyy[i].widthh(3, 0) <= 0 && me_HêHê.topp(3, 0) - cảnArrayyy[i].topp(3,0) - cảnArrayyy[i].heightt(3,0) <= 0 && cảnArrayyy[i].topp(3,0) - me_HêHê.topp(3, 0) - me_HêHê.heightt(3, 0) <= 0) {
+                //             me_HêHê.leftt(0, -0.1 + cảnArrayyy[i].leftt(3, 0) - me_HêHê.widthh(3, 0)); clearInterval(hihu); canGo = true; break; // Dừng lại khi gặp giá trị 3
+                //         } 
+                //     }
+                // }
             }, 35)
         } else {clearInterval(hihu);canGo = true}
     }
@@ -682,13 +682,13 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
                 if (me_HêHê.topp(3, 0) - làm_Tròn(me_HêHê.heighttKhung(3, 0) - me_HêHê.heightt(3, 0) / 2, 2) <= 0) {
                     me_HêHê.topp(0, làm_Tròn(me_HêHê.heighttKhung(3, 0) - me_HêHê.heightt(3, 0) / 2, 2)); clearInterval(hihu)
                 }
-                else {
-                    for (let i = 0; i < cảnArrayyy.length; i++) {
-                        if (cảnArrayyy[i].leftt(3, 0) - me_HêHê.leftt(3, 0) - me_HêHê.widthh(3, 0) <= 0 && me_HêHê.leftt(3, 0) - cảnArrayyy[i].leftt(3, 0) - cảnArrayyy[i].widthh(3, 0) <= 0 && me_HêHê.topp(3, 0) - cảnArrayyy[i].topp(3, 0) - cảnArrayyy[i].heightt(3, 0) <= 0 && cảnArrayyy[i].topp(3, 0) - me_HêHê.topp(3, 0) - me_HêHê.heightt(3, 0) <= 0) {
-                            me_HêHê.topp(0, 0.1 + cảnArrayyy[i].topp(3, 0) + cảnArrayyy[i].heightt(3, 0)); clearInterval(hihu); canGo = true; break;
-                        }
-                    }
-                }
+                // else {
+                //     for (let i = 0; i < cảnArrayyy.length; i++) {
+                //         if (cảnArrayyy[i].leftt(3, 0) - me_HêHê.leftt(3, 0) - me_HêHê.widthh(3, 0) <= 0 && me_HêHê.leftt(3, 0) - cảnArrayyy[i].leftt(3, 0) - cảnArrayyy[i].widthh(3, 0) <= 0 && me_HêHê.topp(3, 0) - cảnArrayyy[i].topp(3, 0) - cảnArrayyy[i].heightt(3, 0) <= 0 && cảnArrayyy[i].topp(3, 0) - me_HêHê.topp(3, 0) - me_HêHê.heightt(3, 0) <= 0) {
+                //             me_HêHê.topp(0, 0.1 + cảnArrayyy[i].topp(3, 0) + cảnArrayyy[i].heightt(3, 0)); clearInterval(hihu); canGo = true; break;
+                //         }
+                //     }
+                // }
             }, 35)
         } else {clearInterval(hihu);canGo = true}
     }
@@ -700,13 +700,13 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
                 if (me_HêHê.topp(3, 0) + me_HêHê.heightt(3, 0) >= map_HêHê.heightt(3, 0)) {
                     me_HêHê.topp(0, map_HêHê.heightt(3, 0) - me_HêHê.heightt(3, 0)); clearInterval(hihu)
                 }
-                else {
-                    for (let i = 0; i < cảnArrayyy.length; i++) {
-                        if (cảnArrayyy[i].leftt(3, 0) - me_HêHê.leftt(3, 0) - me_HêHê.widthh(3, 0) <= 0 && me_HêHê.leftt(3, 0) - cảnArrayyy[i].leftt(3, 0) - cảnArrayyy[i].widthh(3, 0) <= 0 && me_HêHê.topp(3, 0) - cảnArrayyy[i].topp(3, 0) - cảnArrayyy[i].heightt(3, 0) <= 0 && cảnArrayyy[i].topp(3, 0) - me_HêHê.topp(3, 0) - me_HêHê.heightt(3, 0) <= 0) {
-                            me_HêHê.topp(0, - 0.1 + cảnArrayyy[i].topp(3, 0) - me_HêHê.heightt(3, 0)); clearInterval(hihu); canGo = true; break;
-                        }
-                    }
-                }
+                // else {
+                //     for (let i = 0; i < cảnArrayyy.length; i++) {
+                //         if (cảnArrayyy[i].leftt(3, 0) - me_HêHê.leftt(3, 0) - me_HêHê.widthh(3, 0) <= 0 && me_HêHê.leftt(3, 0) - cảnArrayyy[i].leftt(3, 0) - cảnArrayyy[i].widthh(3, 0) <= 0 && me_HêHê.topp(3, 0) - cảnArrayyy[i].topp(3, 0) - cảnArrayyy[i].heightt(3, 0) <= 0 && cảnArrayyy[i].topp(3, 0) - me_HêHê.topp(3, 0) - me_HêHê.heightt(3, 0) <= 0) {
+                //             me_HêHê.topp(0, - 0.1 + cảnArrayyy[i].topp(3, 0) - me_HêHê.heightt(3, 0)); clearInterval(hihu); canGo = true; break;
+                //         }
+                //     }
+                // }
             }, 35)
         } else {clearInterval(hihu);canGo = true}
     }
