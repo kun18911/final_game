@@ -3,7 +3,7 @@
 {
     // thêm sao sai nhỉ?
     const windowWidth = window.innerWidth; const windowHeight = window.innerHeight;  //gốc fontsie là slice 0, -2
-    document.querySelector(".wrap").style.width = '320px'; document.querySelector(".wrap").style.height = '650px'
+    document.querySelector(".wrap").style.width = windowWidth+'px'; document.querySelector(".wrap").style.height = windowHeight+'px'
   
     // document.querySelector(".wrap").style.width = window.innerWidth + 'px'
     // document.querySelector(".wrap").style.height = window.innerHeight + 'px'
