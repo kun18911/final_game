@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="body">  <!-- <style>.body, .miniMap {overflow: hidden}</style> -->
+            <!-- <div class="haha"></div> -->
+            <div class="screen">
+                <div class="keyBoard">
+                     <div class="tancongDaDich nonee">Tấn công (<span class="tancongDaDich_Number"></span>)</div>
+                    <div class="doiDich focusKey nonee">Đổi</div>
+                    <div class="focusKey vaoMap nonee">Vào</div> 
+                    <div class="tancong1Dich nonee">Tấn công (<span class="tancong1Dich_Number"></span>)</div> 
+                    
+                    <div class="upKey focusKey">LÊN</div>
+                    <div class="downKey  focusKey">XUỐNG</div>
+                    <div class="leftKey focusKey">TRÁI</div>
+                    <div class="rightKey focusKey">PHẢI</div>
+                    <div class="okKey focusKey">OK</div>
+                </div>
+                <div class="blackLayout nonee"></div>
+                
+
+              
+                <div class="keyBoard2">
+                    <div class="upKey2 focusKey2">LÊN</div>
+                    <div class="downKey2  focusKey2">XUỐNG</div>
+                    <div class="leftKey2 focusKey2">TRÁI</div>
+                    <div class="rightKey2 focusKey2">PHẢI</div>
+                </div>
+            </div>
+            <!-- mini map --> 
+            <div class="miniMap">
+                <div class="miniMap2"></div>
+            </div>
+            <div class="inFor_Nhanvat">
+                <div class="inFor_Nhanvat_label ten_Nv">Tên: <span class="ten_Nv_0 io"></span></div>
+                <div class="inFor_Nhanvat_label cap_Nv">Cấp: <div class="cap_Nv_0 io">0</div>.<div class="perCent_Nv_0 io">0</div>%</div>
+                <div class="inFor_Nhanvat_label xu_Nv">Xu: <div class="xu_Nv_0 io">0</div></div>
+                <div class="inFor_Nhanvat_label kCuong_Nv">K.Cương: <div class="kCuong_Nv_0 io">0</div></div>
+            </div>
+
+            <div class="inFor_Tùy_Chọn">Tùy Chọn
+                <div class="board_Infor_Tùy_Chọn nonee" onclick="ngưng_Click_Cho_Con(event)">
+                    <div>
+                    <!-- <div></div> style="height: 2000px;"> -->
+                        <div class="board_ZzDevil">ZzDevil</div>
+                        <div class="board_Nhiệm_Vụ">Nhiệm Vụ</div>
+                        <div class="board_Hành_Trang">Hành Trang</div>
+                        <div class="board_Cài_Đặt">Cài Đặt</div>
+                        <div class="board_Nguồn">Nguồn</div>
+                        <div class="board_Nguồn2"></div>
+                    </div>
+                </div>
+
+                <div class="boardd_Nhiệm_Vụ nonee" onclick="ngưng_Click_Cho_Con(event)">
+                    <div class="label_Nhiệm_Vụ">Nhiệm Vụ</div>
+                    <div class="board_name_Nv_2 label_Nhiệm_Vụ_1">Hàng Ngày</div>
+                    <div class="board_name_Nv_2 label_Nhiệm_Vụ_2">Chính</div>
+                    <div class="board_name_Nv_2 label_Nhiệm_Vụ_3">Phụ</div>
+                </div>
+
+                <div class="board_Infor_ZzDevil nonee" onclick="ngưng_Click_Cho_Con(event)">
+                    <div class="board_ZzDevil_Noti">ZzDevil</div>
+                    <!-- <div class="board_name_Nv board_Name_1">Huy Dũng
+                        <div class="board_Name_11">✰ ✰ ✰ ✰ ✰ |</div> -->
+                        <!-- <div class="board_Name_11">✰ ✰ ✰ ✰ ✰ |</div> -->
+                        <!-- <div class="hồn-bar">
+                            <div class="hồn-fill"></div>
+                            <div class="hồn-text">60/100</div>
+                        </div> -->
+                        
+                        <!-- <div class="board_Name_111">LV:&nbsp;<div class="board_Name_1111"></div></div> 
+                    </div> -->
+                    <!-- <div class="board_name_Nv board_Name_2">Tuyết Ngân</div> -->
+                </div>
+                <div class="boardd_Nguồn nonee" onclick="ngưng_Click_Cho_Con(event)">
+                    <div class="board_Nguồn_2">Nguồn Sử dụng</div>
+                    <div class="board_Nguồn_3">Mình có sử dụng những hình ảnh và âm thanh này, mình xin phép để link nguồn ở đây. <br> Nếu mình có sai sót gì, anh chị khiếu nại qua zalo này để mình gỡ xuống nhé &lt;3<br>
+                    -------------------------------
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="inFor_Tùy_Chọn inFor_Tùy_Chọn2 nonee">Quay Lại</div>
+            <div class="blackLayoutt nonee"></div>
+            <div class="background nonee"></div>
+            <div class="infor_battle nonee">
+                <div class="option boxOut nonee">
+                    <div class="askOut">Bạn Có Muốn Thoát Trận?</div>
+                    <div class="yesOut">Có</div>
+                    <div class="noOut">Không</div>
+                </div>
+                <div class="option Skull boxOut ">
+                    <div class="askSkill askOut">Tuyệt Chiêu</div>
+                    <div class="Skill1 yesOut"></div>
+                    <div class="Skill2 yesOut"></div>
+                    <div class="Skill3 yesOut"></div>
+                    <div class="Skill4 yesOut"></div>
+                    <div class="SkillClose">X</div>
+                    <style>
+                        .Skull {
+                            min-width: 11.5rem;
+                            min-height: 2.2rem;
+                            top: 0rem;
+                            z-index: 3;
+                            left: 7rem;
+                            transform: translateX(-50%);
+                            border: 0.4rem solid #f64e4ea8;
+                        }
+                    
+                        .SkillClose {
+                            position: absolute;
+                            min-width: 1.2rem;
+                            min-height: 1.2rem;
+                            top: -0.4rem;
+                            z-index: 3;
+                            left: 11.1rem;
+                            transform: translateX(-50%);
+                            border: 0.2rem solid #f64e4ea8;
+                            background: blue;
+                            font-size: 0.9rem;
+                            color: black !important;
+                            line-height: 1.2rem;
+                        }
+                    
+                        .askSkill {
+                            position: absolute;
+                            top: 0.5rem;
+                            font-size: 0.6rem;
+                            text-align: center;
+                            line-height: 1.3rem;
+                            min-width: 4.6rem;
+                            min-height: 1.3rem;
+                            left: 6rem;
+                            text-align: center;
+                            transform: translateX(-50%);
+                            background: yellow;
+                            padding: 0 0.4rem 0 0.4rem;
+                            color: blue;
+                        }
+                    
+                        .Skill1 {
+                            position: absolute;
+                            top: 2.3rem;
+                            font-size: 0.6rem;
+                            text-align: center;
+                            line-height: 1.3rem;
+                            min-width: 1.4rem;
+                            min-height: 3.4rem;
+                            left: 1.5rem;
+                            text-align: center;
+                            transform: translateX(-50%);
+                            background: #1a2588;
+                            padding: 0 0.4rem 0 0.4rem;
+                            color: #4fc3be;
+                            background-image: url(https://github.com/kun18911/gameBenhVienQuyDu/blob/main/nh%C3%A2n%20v%E1%BA%ADt%20%E1%BA%A3nh/bua_Green.png?raw=true);
+                            background-size: 5rem;
+                            background-position: 4.1rem -0.8rem;
+                        }
+                    
+                        .Skill2 {
+                            position: absolute;
+                            top: 2.3rem;
+                            font-size: 0.6rem;
+                            text-align: center;
+                            line-height: 1.3rem;
+                            min-width: 1.4rem;
+                            min-height: 3.4rem;
+                            left: 4.3rem;
+                            text-align: center;
+                            transform: translateX(-50%);
+                            background: #1a2588;
+                            padding: 0 0.4rem 0 0.4rem;
+                            color: #4fc3be;
+                            background-image: url(https://github.com/kun18911/gameBenhVienQuyDu/blob/main/nh%C3%A2n%20v%E1%BA%ADt%20%E1%BA%A3nh/bua_Blue.png?raw=true);
+                            background-size: 5rem;
+                            background-position: 4.1rem -0.8rem;
+                        }
+                    
+                        .Skill3 {
+                            position: absolute;
+                            top: 2.3rem;
+                            font-size: 0.6rem;
+                            text-align: center;
+                            line-height: 1.3rem;
+                            min-width: 1.4rem;
+                            min-height: 3.4rem;
+                            left: 7.1rem;
+                            text-align: center;
+                            transform: translateX(-50%);
+                            background: #1a2588;
+                            padding: 0 0.4rem rem 0 0.4rem;
+                            color: #4fc3be;
+                            background-image: url(https://github.com/kun18911/gameBenhVienQuyDu/blob/main/nh%C3%A2n%20v%E1%BA%ADt%20%E1%BA%A3nh/bua_Red.png?raw=true);
+                            background-size: 5rem;
+                            background-position: 4.1rem -0.8rem;
+                        }
+                    
+                        .Skill4 {
+                            position: absolute;
+                            top: 2.3rem;
+                            font-size: 0.6rem;
+                            text-align: center;
+                            line-height: 1.3rem;
+                            min-width: 1.4rem;
+                            min-height: 3.4rem;
+                            left: 10rem;
+                            text-align: center;
+                            transform: translateX(-50%);
+                            background: #1a2588;
+                            padding: 0 0.4rem 0 0.4rem;
+                            color: #4fc3be;
+                            background-image: url(https://github.com/kun18911/gameBenhVienQuyDu/blob/main/nh%C3%A2n%20v%E1%BA%ADt%20%E1%BA%A3nh/bua_Vio.png?raw=true);
+                            background-size: 5rem;
+                            background-position: 4.1rem -0.8rem;
+                        }
+                        .mũi_tên {
+                            width: 0;
+    position: absolute;
+    z-index: 6;
+    height: 0;
+    width: 0;
+    top: -5.6rem;
+    height: 0;
+    border-left: 0.7rem solid transparent;
+    border-right: 0.7rem solid transparent;
+    border-top: 1.2rem solid red;
+    left: 0.5rem;
+                }
+                .mũi_tên_Mini {
+                    width: 0;
+    position: absolute;
+    z-index: 6;
+    height: 0;
+    width: 0;
+    top: -0.5rem;
+    height: 0;
+    border-left: 0.4rem solid transparent;
+    border-right: 0.4rem solid transparent;
+    border-top: 0.7rem solid green;
+    left: -0.01rem;
+                }
+                    </style>
+                </div>
+                
+                
+                <div class="option timeMe nonee"><span class="timeMe1"></span>s</div>
+                <div class="option timeEnemy nonee"><span class="timeEnemy1"></span>s</div>
+                <div class="option petMe ">PetMe</div>
+                <div class="option petEnemy  ">PetDemon</div>
+               
+                <div class="boardPoint nonee">
+                    <div class="informMe mana">Mana + <div class="manaBoard1 io">0</div></div>
+                    <div class="informMe hp">Máu + <div class="hpBoard1 io">0</div></div>
+                    <div class="informMe vang">Vàng: + <div class="vangBoard1 io">0</div></div>
+                    <div class="informMe HongNgoc">Hồng Ngọc + <div class="HNBoard1 io">0</div></div>
+                    <div class="informMe giap">Giáp + <div class="giapBoard1 io">0</div></div>
+                
+                    <div class="informMe dame">Dame - <div class="dameBoard1 io">0</div> Máu</div>
+                </div> 
+                
+                <div class="timee turn nonee">Còn <span class="turnNumber">0</span> lượt</div>
+                
+                <div class="option hpMe  ">❤️: <div class="io hpMe1">0</div>/<div class="io hpMe2">0</div></div>
+                <div class="option hpEnemy ">❤️: <div class="io hpEnemy1">0</div>/<div class="io hpEnemy2">0</div></div>
+        
+                <div class="option manaMe ">💙: <div class="io manaMe1">0</div>/<div class="io manaMe2">0</div></div>
+                <div class="option manaEnemy ">💙: <div class="io manaEnemy1">0</div>/<div class="io manaEnemy2">0</div></div>
+                
+                <div class="option starMe HongNgoc">🍬: <div class="io HNMe1">0</div></div>
+                <div class="option starEnemy HongNgoc">🍬: <div class="io HNEnemy1">0</div></div>
+
+                <div class="option vangMe vang">🥇: <div class="io vangMe1">0</div></div>
+                <div class="option vangEnemy vang">🥇: <div class="io vangEnemy1">0</div></div>
+
+
+
+                <div class="option GiapMe ">🛡️: <div class="io giapMe1">0</div></div>
+                <div class="option GiapEnemy">🛡️: <div class="io giapEnemy1" style="float: right;">0</div></div>
+        
+        
+                <div class="option Button  outGame">Đầu Hàng</div>
+                <div class="option Button  Skill">Tùy Chọn</div>
+        
+                <!-- cho cờ -->
+                
+                <div class="board " id="board"></div>
+              
+                <div class="mePosition">
+                    <div class="meMe_Anh meMe_Me"></div>
+                </div>
+                <div class="enemyPosition">
+                    <div class="meMe_Anh meMe_Enemy"></div>
+                </div>
+        
+        
+        
+            </div>
+            <!-- <div class="mũi_tên"></div> -->
+        </div>
+       
+    </div>
+</body>
+
+<script src="js/Chesss/1_khai_báo.js"></script>
+<script src="js/Chesss/2_bổ_trợ_chess.js"></script>
+<script src="js/Chesss/3_chess.js"></script>
+<script src="js/Map/khai_báo_Map.js"></script>
+<script src="js/Map/khaiBáoMap.js"></script>
+</html>

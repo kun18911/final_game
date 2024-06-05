@@ -1,0 +1,27 @@
+  .khungMap {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                   
+                    /* background: #0093ffa3; */
+                    z-index: 5;
+                    border: 1px solid #000;
+                    pointer-events: none;
+                }
+
+lưu ý: 
+ dayTh = 0
+
+ dùng mimi di chuyển
+
+
+ z index 1 cho thẻ dưới ncos đè đc thẻ trên?
+
+5 viên tạo fight gặp viên xóa ngang sẽ ntn
+
+
+
+
+testvalid trễ 300ms, dùng board [i e]
+
+ăn viên ngang, rồi có tạo ra đc ko. ăn hangf5, nổ có mất viên kia ko

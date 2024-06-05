@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Object</title>
+    <style>
+        .parent {
+            width: 500px;
+            height: 500px;
+            background-color: lightblue;
+            position: relative;
+        }
+
+        .child {
+            width: 50px;
+            height: 50px;
+            background-color: lightcoral;
+            position: absolute;
+        }
+        .child2 {
+            width: 50px;
+            top: 75px;
+            height: 50px;
+            background-color: lightcoral;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent" id="parentDiv">
+        <div class="child" id="childDiv"></div>
+        <div class="child2" id="childDiv2"></div>
+    </div>
+    <button onclick="removeChild()">Remove Child</button>
+
+    <script>
+        // Hàm tạo đối tượng với phương thức di chuyển
+     
+function MovingObject(element, xx) {
+    this.element = element;
+    this.position = { x: 0, y: 0 };
+
+    this.move = function(x, y) {
+        this.position.x += x;
+        this.position.y += y;
+        this.element.style.left = this.position.x + 'px';
+        this.element.style.top = this.position.y + 'px';
+    }
+    this.run = function() {
+        const intervalId = setInterval(() => {console.log(xx, i++)
+            if (mimi == true) {clearInterval(intervalId)};  mimi = false
+            this.move(10, 10);
+        }, 1200);
+    }
+}
+var  i = 0, mimi = false
+
+
+// Tạo đối tượng di chuyển
+const childDiv = document.getElementById('childDiv');
+const movingObject = new MovingObject(childDiv, "số 1");
+
+const childDiv2 = document.getElementById('childDiv2');
+const movingObject2 = new MovingObject(childDiv2, "số 2");
+// var a = []
+// a.push(movingObject, movingObject2);
+
+
+// Hàm xóa đối tượng con
+function removeChild() {mimi = true
+    //clearInterval(intervalId); // Dừng di chuyển đối tượng
+    const parentDiv = document.getElementById('parentDiv');
+    parentDiv.removeChild(childDiv);
+    parentDiv.removeChild(childDiv2);
+}
+    </script>
+</body>
+</html>
