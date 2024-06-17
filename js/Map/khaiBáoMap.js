@@ -93,8 +93,8 @@
             var ii = checkUnderscores(value_Mã)
             if (ii) { //= 4 
                 //mapI
+                me_InIn = 5
                 quái_Me = quái_S[1]
-                me_Ingame = new inforMee("NoName", 0/**cấp */, 0, 0 /**xu */, 0/*kim_cương*/, 0/*hồng_ngọc*/)
 
                 changeMap()
             } else {
@@ -790,7 +790,8 @@ var nameCity = 0, capVaGiap = 0
             document.querySelector(".infor_Map").classList.remove("nonee");
             document.querySelector(".infor_Map_Name").innerHTML = nameCity
 
-            if (me_InIn ==0) { me_InIn++;console.log(11); me_Ingame = new inforMee(me_InInGame[0], Number(me_InInGame[1]), Number(me_InInGame[2]), Number(me_InInGame[3]), Number(me_InInGame[4]), 0);}
+            if (me_InIn ==0) { me_InIn++; me_Ingame = new inforMee(me_InInGame[0], Number(me_InInGame[1]), Number(me_InInGame[2]), Number(me_InInGame[3]), Number(me_InInGame[4]), 0);}
+            else if (me_InIn == 5) { me_InIn++;me_Ingame = new inforMee(document.querySelector(".username").value, 0/**cấp */, 0, 0 /**xu */, 0/*kim_cương*/, 0/*hồng_ngọc*/)}
             document.querySelector(".ten_Nv").innerHTML = me_Ingame.namee(1)
             console.log(me_Ingame);
             setTimeout(()=>{document.querySelector(".infor_Map").classList.add("nonee")}, 5000)
