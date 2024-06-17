@@ -32,24 +32,31 @@ function cccc() {
 
 // hàm này cho tất cả điểm số theo trật tự (Khởi đầu):
 function Điểm_Trật_Tự_Start() {
-    // hp
-    {
-        document.querySelector(".hpMe1").innerHTML = mee.hpMaxInfor()
-        // mee.hpMaxInfor()
-        document.querySelector(".hpMe2").innerHTML = mee.hpMaxInfor()
+    // // hp
+    // {
+    //     document.querySelector(".hpMe1").innerHTML = mee.hpMaxInfor()
+    //     document.querySelector(".hpMe2").innerHTML = mee.hpMaxInfor()
 
-        document.querySelector(".hpEnemy1").innerHTML = quai.hpMaxInfor()
-        document.querySelector(".hpEnemy2").innerHTML = quai.hpMaxInfor()
-    }
+    //     document.querySelector(".hpEnemy1").innerHTML = quai.hpMaxInfor()
+    //     document.querySelector(".hpEnemy2").innerHTML = quai.hpMaxInfor()
+    // }
+
+    // // mana
+    // {
+    //     document.querySelector(".manaMe1").innerHTML = mee.manaInfor()
+    //     document.querySelector(".manaMe2").innerHTML = quai.manaMaxInfor()
+
+    //     document.querySelector(".manaEnemy1").innerHTML = mee.manaInfor()
+    //     document.querySelector(".manaEnemy2").innerHTML = quai.manaMaxInfor()
+    // }
+
+    // hp
+    document.querySelector(".hpMe1").style.width = '4rem'
+    document.querySelector(".hpEnemy1").style.width = '4rem'
 
     // mana
-    {
-        document.querySelector(".manaMe1").innerHTML = mee.manaInfor()
-        document.querySelector(".manaMe2").innerHTML = quai.manaMaxInfor()
-
-        document.querySelector(".manaEnemy1").innerHTML = mee.manaInfor()
-        document.querySelector(".manaEnemy2").innerHTML = quai.manaMaxInfor()
-    }
+    document.querySelector(".manaMe1").style.width = '0rem'
+    document.querySelector(".manaEnemy1").style.width = '0rem'
 
     //giáp
     {
@@ -57,7 +64,7 @@ function Điểm_Trật_Tự_Start() {
         document.querySelector(".giapEnemy1").innerHTML = quai.giápInfor()
     }
 
-}
+} 
 
 
 //                         hp                                             mana          0 vàng, lv5.00     giáp
@@ -385,7 +392,8 @@ function xóa_Bảng() {
 
 function end_Game(){meTurn = false; theyTurn =false; timePlay = 0; yyy = 0; cotArray = [];
     setTimeout(()=>{while (boardd.firstChild) {boardd.removeChild(boardd.firstChild)}; board  = []
-        setTimeout(()=>{nonee("background","add","nonee"); nonee("infor_battle","add","nonee")},700)    },700)
+        setTimeout(()=>{nonee("background","add","nonee"); nonee("infor_battle","add","nonee"); 
+        },700)    },700)
 };function nonee(namee,add, none){document.querySelector(`.${namee}`).classList[add](none)}
 
 // xx là lv 0 or 100;
@@ -416,35 +424,95 @@ function cộngĐiểmSauCrush(aa) {
         }
     }
     if (aa > 0) {
-        // for (va)
         if  (meTurn == true) { // mee.mana(2, +mảng_bảng_Điểm[0].innerHTML); mảng_bảng_ĐMe[0].innerHTML = mee.manaInfor()
-            mee.mana(2,  mảng_bảng_Điểm_End[0]); mảng_bảng_ĐMe[0].innerHTML = mee.manaInfor()
-            mee.hp(2,  mảng_bảng_Điểm_End[1]); mảng_bảng_ĐMe[1].innerHTML = mee.hpInfor()
+            mee.mana(2,  mảng_bảng_Điểm_End[0]);
+            document.querySelector(".manaMe1").style.width = làm_Tròn( mee.manaInfor()*4/300, 2) +'rem'
+
             mee.xu(2,  mảng_bảng_Điểm_End[2]); mảng_bảng_ĐMe[2].innerHTML = mee.xuInfor()
             mee.hồng_ngọc(2,  mảng_bảng_Điểm_End[3]); mảng_bảng_ĐMe[3].innerHTML = mee.hồng_ngọcInfor()
-            if ( mảng_bảng_Điểm_End[4] > 0) {
+            mee.hp(2,  mảng_bảng_Điểm_End[1]); 
+            document.querySelector(".hpMe1").style.width = làm_Tròn( mee.hpInfor()*4/mee.hpMaxInfor(), 2) +'rem'
+
+            if ( mảng_bảng_Điểm_End[4] > 0) { // giáp. 4 mình là giáp
                 mee.giáp(1,  mảng_bảng_Điểm_End[4]); mảng_bảng_ĐMe[4].innerHTML = mee.giápInfor()
-                mảng_bảng_ĐEnemy[1].innerHTML = quai.hpInfor();  mảng_bảng_ĐEnemy[4].innerHTML = quai.giápInfor(); 
+                mảng_bảng_ĐEnemy[4].innerHTML = quai.giápInfor(); 
+                document.querySelector(".hpEnemy1").style.width = làm_Tròn( quai.hpInfor()*4/quai.hpMaxInfor(), 2) +'rem'
             }
-            if ( mảng_bảng_Điểm_End[5] > 0) {
+            if ( mảng_bảng_Điểm_End[5] > 0) { //dame
                 quai.hp(1,  mảng_bảng_Điểm_End[5]); mảng_bảng_ĐEnemy[4].innerHTML = quai.giápInfor()
-                mảng_bảng_ĐEnemy[1].innerHTML = quai.hpInfor()
+                document.querySelector(".hpEnemy1").style.width = làm_Tròn( quai.hpInfor()*4/quai.hpMaxInfor(), 2) +'rem'
             }
         } else {
-            quai.mana(2,  mảng_bảng_Điểm_End[0]); mảng_bảng_ĐEnemy[0].innerHTML = quai.manaInfor()
-            quai.hp(2,  mảng_bảng_Điểm_End[1]); mảng_bảng_ĐEnemy[1].innerHTML = quai.hpInfor()
+            quai.mana(2,  mảng_bảng_Điểm_End[0]);
+            document.querySelector(".manaEnemy1").style.width = làm_Tròn(quai.manaInfor()*4/300, 2)+'rem'
+
             quai.xu(2,  mảng_bảng_Điểm_End[2]); mảng_bảng_ĐEnemy[2].innerHTML = quai.xuInfor()
             quai.hồng_ngọc(2,  mảng_bảng_Điểm_End[3]); mảng_bảng_ĐEnemy[3].innerHTML = quai.hồng_ngọcInfor()
-            if ( mảng_bảng_Điểm_End[4] > 0) {
+            quai.hp(2,  mảng_bảng_Điểm_End[1]); 
+            document.querySelector(".hpEnemy1").style.width = làm_Tròn( quai.hpInfor()*4/quai.hpMaxInfor(), 2) +'rem'
+
+            if ( mảng_bảng_Điểm_End[4] > 0) { // giáp. 4 mình là giáp
                 quai.giáp(2,  mảng_bảng_Điểm_End[4]); mảng_bảng_ĐEnemy[4].innerHTML = quai.giápInfor()
-                mảng_bảng_ĐMe[1].innerHTML = mee.hpInfor(); mảng_bảng_ĐMe[4].innerHTML = mee.giápInfor()
+                mảng_bảng_ĐMe[4].innerHTML = mee.giápInfor()
+                document.querySelector(".hpMe1").style.width = làm_Tròn( mee.hpInfor()*4/mee.hpMaxInfor(), 2) +'rem'
             }
-            if ( mảng_bảng_Điểm_End[5] > 0) {
+            if ( mảng_bảng_Điểm_End[5] > 0) { // dame
                 mee.hp(1,  mảng_bảng_Điểm_End[5]); mảng_bảng_ĐMe[4].innerHTML = mee.giápInfor()
-                mảng_bảng_ĐMe[1].innerHTML = mee.hpInfor()
+                document.querySelector(".hpMe1").style.width = làm_Tròn( mee.hpInfor()*4/mee.hpMaxInfor(), 2) +'rem'
             }
         }
         for(let i =0; i < allChessPoint4.length; i++) {allChessPoint4[i] = 0; mảng_bảng_Điểm_End[i] = 0}
         setTimeout(()=>{document.querySelector(".boardPoint").classList.add("nonee");},1700)
     }
-}
+} // 0 là cộng điểm, 1 là kết thúc cộng?
+// function cộngĐiểmSauCrush(aa) {
+//     if (aa == 0) {
+//         var x = document.querySelectorAll(".ch-Chess")
+//         for (var y of x) {
+//             if (y.src == blank) { // tìm viên  nào trống
+//                 if (_6_Class_3x2.includes(y.classList[2])) { allChessPoint4[_6_Class_3x2.indexOf(y.classList[2])] += 1.5 }
+//                 else if (_6_Class_Dọc.includes(y.classList[2])) { allChessPoint4[_6_Class_Dọc.indexOf(y.classList[2])] += 1.5 }
+//                 else if (_6_Class_Ngang.includes(y.classList[2])) { allChessPoint4[_6_Class_Ngang.indexOf(y.classList[2])] += 1.5 }
+//                 else if (sáu_Class_Thường.includes(y.classList[0])) { allChessPoint4[sáu_Class_Thường.indexOf(y.classList[0])] += 1 }
+//             }
+//         } function mi(i) {setTimeout(()=>{mảng_bảng_Điểm[i].innerHTML = 0}, 1500)}
+//         for (var i = 0; i < mảng_bảng_Điểm.length; i++) {
+//             if (meTurn == true) {var xx = allChessPoint4[i] * lvPoint(mee.lvInfor())[i + 1]} 
+//             else { var xx = allChessPoint4[i] * lvPoint(quai.lvInfor())[i+1]}
+//             mảng_bảng_Điểm[i].innerHTML = làm_Tròn(xx, 2); mi(i)       
+//             mảng_bảng_Điểm_End[i] = làm_Tròn(xx, 2);
+//         }
+//     }
+//     if (aa > 0) {
+//         // for (va)
+//         if  (meTurn == true) { // mee.mana(2, +mảng_bảng_Điểm[0].innerHTML); mảng_bảng_ĐMe[0].innerHTML = mee.manaInfor()
+//             mee.mana(2,  mảng_bảng_Điểm_End[0]); mảng_bảng_ĐMe[0].innerHTML = mee.manaInfor()
+//             mee.hp(2,  mảng_bảng_Điểm_End[1]); mảng_bảng_ĐMe[1].innerHTML = mee.hpInfor()
+//             mee.xu(2,  mảng_bảng_Điểm_End[2]); mảng_bảng_ĐMe[2].innerHTML = mee.xuInfor()
+//             mee.hồng_ngọc(2,  mảng_bảng_Điểm_End[3]); mảng_bảng_ĐMe[3].innerHTML = mee.hồng_ngọcInfor()
+//             if ( mảng_bảng_Điểm_End[4] > 0) {
+//                 mee.giáp(1,  mảng_bảng_Điểm_End[4]); mảng_bảng_ĐMe[4].innerHTML = mee.giápInfor()
+//                 mảng_bảng_ĐEnemy[1].innerHTML = quai.hpInfor();  mảng_bảng_ĐEnemy[4].innerHTML = quai.giápInfor(); 
+//             }
+//             if ( mảng_bảng_Điểm_End[5] > 0) {
+//                 quai.hp(1,  mảng_bảng_Điểm_End[5]); mảng_bảng_ĐEnemy[4].innerHTML = quai.giápInfor()
+//                 mảng_bảng_ĐEnemy[1].innerHTML = quai.hpInfor()
+//             }
+//         } else {
+//             quai.mana(2,  mảng_bảng_Điểm_End[0]); mảng_bảng_ĐEnemy[0].innerHTML = quai.manaInfor()
+//             quai.hp(2,  mảng_bảng_Điểm_End[1]); mảng_bảng_ĐEnemy[1].innerHTML = quai.hpInfor()
+//             quai.xu(2,  mảng_bảng_Điểm_End[2]); mảng_bảng_ĐEnemy[2].innerHTML = quai.xuInfor()
+//             quai.hồng_ngọc(2,  mảng_bảng_Điểm_End[3]); mảng_bảng_ĐEnemy[3].innerHTML = quai.hồng_ngọcInfor()
+//             if ( mảng_bảng_Điểm_End[4] > 0) {
+//                 quai.giáp(2,  mảng_bảng_Điểm_End[4]); mảng_bảng_ĐEnemy[4].innerHTML = quai.giápInfor()
+//                 mảng_bảng_ĐMe[1].innerHTML = mee.hpInfor(); mảng_bảng_ĐMe[4].innerHTML = mee.giápInfor()
+//             }
+//             if ( mảng_bảng_Điểm_End[5] > 0) {
+//                 mee.hp(1,  mảng_bảng_Điểm_End[5]); mảng_bảng_ĐMe[4].innerHTML = mee.giápInfor()
+//                 mảng_bảng_ĐMe[1].innerHTML = mee.hpInfor()
+//             }
+//         }
+//         for(let i =0; i < allChessPoint4.length; i++) {allChessPoint4[i] = 0; mảng_bảng_Điểm_End[i] = 0}
+//         setTimeout(()=>{document.querySelector(".boardPoint").classList.add("nonee");},1700)
+//     }
+// }

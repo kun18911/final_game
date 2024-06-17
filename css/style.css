@@ -52,10 +52,10 @@
 
 
 .keyBoard {
-    width: 41.33%;
-    /* height: 15.09%; */
+    /* width: 41.33%; */
+    width: 5.85rem;
     height: 4.6rem;
-    background-color: #10a17691;
+    /* background-color: #10a17691; */
     position: absolute;
     bottom: 1.5rem;
     left: 50%;
@@ -102,7 +102,8 @@
     line-height: 1.9rem;
     text-align: center;
     box-sizing: border-box;
-    background-color: #00d49b;
+    background-color: #00d49b4f;
+    /* background-color: #00d49b; */
     border-radius: 0.4rem;
     border: 2px solid #000000b5;
 }
@@ -155,8 +156,8 @@
     top: 51%;
     right: -66%;
     margin-right: 125px;
-    background: #ed030d;
-    /* border-radius: 20px; */
+    /* background: #ed030d; */
+    background: #ed030da6;
     cursor: pointer;
 }
 
@@ -204,9 +205,10 @@ top: 51%;
 z-index: 2;
 right: -66%;
 margin-right: 125px;
-background: #000cff;
-/* border-radius: 20px; */
+/* background: #000cff; */
+background: #000cff63;
 cursor: pointer;
+color:white
 }
 .tancongDaDich {
     /* white-space: nowrap; 
@@ -225,6 +227,8 @@ border-radius: 20px;
 border: 0.1rem solid #000000b5;
 border-radius: 0.6rem; */
 
+color: white;
+padding: 0rem 0.5rem 0rem 0.5rem;
 white-space: nowrap; 
 left: 50%;
 background: #01008b;
@@ -239,7 +243,8 @@ box-sizing: border-box;
 border-radius: 20px;
 transform: translateX(-50%);
 border: 0.1rem solid #000000b5;
-border-radius: 0.6rem
+border-radius: 0.6rem;
+box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
 }
 .vaoMap {
 background: #4a008b !important;
@@ -255,15 +260,13 @@ box-sizing: border-box;
 transform: translateX(-50%);
 border: 0.1rem solid #000000b5;
 border-radius: 0.5rem;
-}
-.vaoMap2 {
-left: 126px;
-background: #4a008b !important;
-top: -223px;
-font-size: 37px;
+color: white;
 }
 
+
 .tancong1Dich {
+    color: white;
+    padding: 0rem 0.5rem 0rem 0.5rem;
     white-space: nowrap; 
 left: 50%;
 background: #4a008b;
@@ -279,6 +282,7 @@ border-radius: 20px;
 transform: translateX(-50%);
 border: 0.1rem solid #000000b5;
 border-radius: 0.6rem;
+box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
 
 }
 .blackLayout {
@@ -322,6 +326,7 @@ border-radius: 0.6rem;
     left: 7rem;
     padding: 0.5rem 0.5rem 0 1.2rem;
     z-index: 3;
+    color: white;
     pointer-events: none;
 }
 
@@ -567,7 +572,7 @@ border-radius: 0.6rem;
     /* left: 1rem; */
     z-index: 2;
     transform: translateX(-50%);
-    left: 1.8rem;
+    left: 2.6rem;
     /* padding: 0 30px 0 30px; */
     z-index: 4;
 
@@ -587,45 +592,12 @@ border-radius: 0.6rem;
     /* left: 1rem; */
     z-index: 2;
     transform: translateX(-50%);
-    left: 12.6rem;
+    left: 11.8rem;
     /* padding: 0 30px 0 30px; */
     z-index: 4;
 
 }
 
-.GiapMe {
-    /* line-height: 2rem;
-    height: 2rem;
-    min-width: 2rem;
-    left: 0rem;
-    bottom: 8rem; */
-    white-space: nowrap;
-    line-height: 1rem;
-    height: 1rem;
-    min-width: 2rem;
-    left: 0rem;
-    bottom: -11.8rem;
-    font-size: 0.8rem;
-
-}
-
-.GiapEnemy {
-    display: flex;
-    justify-content: flex-end;
-    white-space: nowrap;
-   
-    /* line-height: 2rem;
-    height: 2rem;
-    min-width: 2rem;
-    right: 0rem;
-    bottom: 8rem; */
-    line-height: 1rem;
-    height: 1rem;
-    min-width: 2rem;
-    left: 10rem;
-    bottom: -11.8rem;
-    font-size: 0.8rem;
-}
 
 .hpEnemy {
     white-space: nowrap;
@@ -668,7 +640,7 @@ border-radius: 0.6rem;
 }
 .boxOut {
     min-width: 8.5rem;
-    min-height: 4.2rem;
+    min-height: 5.35rem;
     top: 0rem;
     z-index: 3;
     left: 7rem;
@@ -694,7 +666,7 @@ border-radius: 0.6rem;
 
 .yesOut {
     position: absolute;
-    top: 2.3rem;
+    top: 3.6rem;
     font-size: 0.6rem;
     text-align: center;
     line-height: 1.3rem;
@@ -710,7 +682,7 @@ border-radius: 0.6rem;
 
 .noOut {
     position: absolute;
-    top: 2.3rem;
+    top: 3.6rem;
     font-size: 0.6rem;
     text-align: center;
     line-height: 1.3rem;
@@ -928,6 +900,7 @@ border-radius: 0.6rem;
     border-radius: 0.5rem;
     transform: translateX(-50%);
     border: 2px solid #000;
+    display: none;
 }
 
 
@@ -995,25 +968,58 @@ border-radius: 0.6rem;
 /* ----------------- */
 .infor_battle {
     position: absolute;
-    z-index: 7;
+    top: 4.8rem;
+    z-index: 9;
 }
+/* .inFor_Nhanvat {
+    z-index: 3;
+    width: 6.6rem;
+    height: 3.6rem;
+    background-color: #0068ffb5;
+    position: relative;
+    padding: 0.4rem 0rem 0rem 0.4rem;
+    border: 1px solid #000;
+    border: 0.2rem solid #002194;
+    box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+    color: white;
+} */
 .inFor_Nhanvat {
     z-index: 3;
-    width: 7.7rem;
-    height: 4.2rem;
+    width: 6.6rem;
+    height: 2rem;
     /* background: yellow; */
-    background-color: #0068ffb5; /*#0068ff; */
+    background-color: #0068ffb5;
     position: relative;
-    padding: 0.6rem 0rem 0rem 0.5rem;
+    padding: 0.4rem 0rem 0rem 0.4rem;
     border: 1px solid #000;
+    border: 0.2rem solid #002194;
+    box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+    color: white;
+    top: 17.7rem;
+    left: 5.5rem;
 }
 
 .inFor_Nhanvat_label {
-    font-size: 0.8rem;
-    color: black;
+    font-size: 0.65rem;
+    /* color: black; */
 }
 .ten_Nv {
-
+    min-width: 1.4rem;
+    height: 0.8rem;
+    background-color: #00000082;
+    position: absolute;
+    padding: 0rem 0.4rem 0rem 0.4rem;
+    /* border: 1px solid #000; */
+    top: -4.3rem;
+    left: 50%;
+    font-size: 0.6rem;
+    /* font-size: 0.7rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    color: yellow;
+    transform: translateX(-50%);
 }
 .cap_Nv {
 
@@ -1047,12 +1053,12 @@ border-radius: 0.6rem;
 
 .board_Infor_Tùy_Chọn {
     width: 8.1rem;
-    height: 11.5rem;
+    height: 13.5rem;
     background-color: #0068ff;
     position: absolute;
     padding: 0rem 0.7rem 0rem 0.4rem;
     border: 1px solid #000;
-    top: -15.6rem;
+    top: -14.6rem;
     left: 2rem;
     font-size: 0.8rem;
     display: flex;
@@ -1293,7 +1299,7 @@ border-radius: 0.6rem;
     /* width: 14.2rem; */
     /* height: 22.8rem; */
     background-color: black;
-    z-index: 6;
+    z-index: 8;
 }
 
 .đổi_Màu_Nút_Tùy_Chọn {
@@ -1462,4 +1468,162 @@ border-radius: 0.6rem;
     -moz-user-select: none;    /* Firefox */
     -ms-user-select: none;     /* Internet Explorer/Edge */
     user-select: none;         /* Standard */
+}
+
+.infor_Map {
+    white-space: nowrap;
+    left: 50%;
+    background: #2ba35e;
+    top: 2rem;
+    font-size: 0.7rem;
+    min-width: 6rem;
+    height: 1.5rem;
+    line-height: 1.3rem;
+    position: absolute;
+    text-align: center;
+    box-sizing: border-box;
+    /* border-radius: 20px; */
+    transform: translateX(-50%);
+    border: 0.1rem solid #7b1313;
+    /* border-radius: 0.6rem; */
+    z-index: 6;
+    padding: 0rem 0.6rem 0 0.6rem;
+}
+
+.infor_Quai {
+    white-space: nowrap;
+    left: 50%;
+    background: #2ba35e;
+    top: 2rem;
+    font-size: 0.7rem;
+    min-width: 6rem;
+    height: 1.5rem;
+    line-height: 1.3rem;
+    position: absolute;
+    text-align: center;
+    box-sizing: border-box;
+    /* border-radius: 20px; */
+    transform: translateX(-50%);
+    border: 0.1rem solid #7b1313;
+    /* border-radius: 0.6rem; */
+    z-index: 6;
+    padding: 0rem 0.6rem 0 0.6rem;
+}
+
+.thanh_mana_máu {
+    color: white;
+    white-space: nowrap;
+    line-height: 1rem;
+    height: 0.5rem;
+    min-width: 4rem;
+    /* left: 0.5rem;
+    bottom: -12.8rem; */
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+
+    background: red;
+    position: absolute;
+    text-align: center;
+    border: 0.1rem solid #000;
+}
+.hpMe {
+    background: #ff0000b5;
+    bottom: -13rem;
+    left: 0.5rem;
+    border: none;
+}
+.hpEnemy {
+    left: 9.7rem;
+    background: #ff0000b5;
+    bottom: -13rem;
+    border: none;
+}
+.manaMe {
+    bottom: -13.7rem;
+    left: 0.5rem;
+    background: #0d78d66b;
+    border: none;
+    overflow: hidden;
+}
+.manaEnemy {
+    border: none;
+    bottom: -13.7rem;
+    left: 9.7rem;
+    background: #0d78d66b;
+    overflow: hidden;
+}
+
+/* ---------- */
+.hpMe1 {
+    background: red;
+    border: 0.05rem solid #000;
+    bottom: -0.03rem;
+    left: 0rem;
+    position: absolute;
+
+    height: 0.5rem;
+    /* background: yellow; */
+    border-radius: 0.5rem;
+}
+.hpEnemy1 {
+    background: red;
+    border: 0.05rem solid #000;
+    bottom: -0.03rem;
+    left: 0rem;
+    position: absolute;
+    height: 0.5rem;
+    /* background: yellow; */
+    border-radius: 0.5rem;
+}
+.manaMe1 {
+    width: 3rem;
+    background: #083ea4;
+    border: 0.05rem solid #000;
+    bottom: -0.03rem;
+    left: 0rem;
+    position: absolute;
+    height: 0.5rem;
+    border-radius: 0.5rem;
+}
+.manaEnemy1 {
+    background: #083ea4;
+    border: 0.05rem solid #000;
+    bottom: -0.03rem;
+    left: 0rem;
+    position: absolute;
+    height: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.GiapMe {
+    white-space: nowrap;
+    line-height: 0.6rem;
+    height: 0.6rem;
+    min-width: 2rem;
+    left: 50%;
+    bottom: 0.6rem;
+    font-size: 0.6rem;
+    transform: translateX(-50%);
+    background: #a52a2a75;
+}
+
+.countdown-box2 {
+    animation: moveUpDown_Mini 1.8s infinite;
+    position: absolute;
+    /* top: 50%; */
+    left: 38% !important;
+    transform: translate(-50%, -50%);
+    background-color: red;
+    color: white;
+    padding: 0.2rem;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    z-index: 10;
+    cursor: pointer;
+    top: 20.8rem;
+    font-size: 0.8rem;
+}
+.infor_Map_Name {
+    display: inline-block;
 }

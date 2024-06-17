@@ -1,9 +1,11 @@
 
 // mở đầu
 {
+    var me_InIn = 0, me_InInGame
     // thêm sao sai nhỉ?
     const windowWidth = window.innerWidth; const windowHeight = window.innerHeight;  //gốc fontsie là slice 0, -2
-    document.querySelector(".wrap").style.width = windowWidth+'px'; document.querySelector(".wrap").style.height = windowHeight+'px'
+    document.querySelector(".wrap").style.width = '320px'; document.querySelector(".wrap").style.height = '620px'
+    // document.querySelector(".wrap").style.width = windowWidth+'px'; document.querySelector(".wrap").style.height = windowHeight+'px'
   
     // document.querySelector(".wrap").style.width = window.innerWidth + 'px'
     // document.querySelector(".wrap").style.height = window.innerHeight + 'px'
@@ -17,93 +19,247 @@
     var element = document.querySelector(".keyBoard"); element.style.pointerEvents = "auto";
     var element = document.querySelector(".keyBoard2"); element.style.pointerEvents = "auto";
     var element = document.querySelector(".infor_battle"); element.style.pointerEvents = "auto";
-    if (quái_Me==0) {quái_Me = quái_S[1]} else {quái_Me = quái_Me}
-    if (me_Ingame == 0) {me_Ingame = new inforMee("khoa", 1, 2, 0 /**xu */, 0/*kim_cương*/, 0/*hồng_ngọc*/)} else {me_Ingame = me_Ingame}
-}
 
-var Kai_Manz = [150, 150, 0, 300, 0/*xu*/, 0/*cấp*/, 0/* % */, 0 /*giáp*/, 0/*hồng_ngọc*/, 'Kai_Manz']
-var Junn_KeJ = [150, 150, 0, 300, 0/*xu*/, 0/*cấp*/, 0/* % */, 0 /*giáp*/, 0/*hồng_ngọc*/, 'Junn_KeJ']
-new inforBattlee(150, 150, 0, 300, 0/*xu*/, 5/*cấp*/, 88/* % */, 10 /*giáp*/, 0/*hồng_ngọc*/)
-mee = new inforBattlee(150, 150, 0, 300, 0/*xu*/, 5/*cấp*/, 88/* % */, 10 /*giáp*/, 0/*hồng_ngọc*/)
-quai = new inforBattlee(170, 150, 0, 300, 0/*xu*/, 0/*cấp*/, 0/* % */, 20 /*giáp*/, 0/*hồng_ngọc*/)
+
+
+
+    // tạo bảng Đăng Nhập
+    document.querySelector(".background").classList.remove("nonee") 
+
+    // ấn đăng kí nhỏ
+    document.querySelector(".login_Label2").addEventListener("click", function() {  // ấn đăng kí
+        document.querySelector(".login_Label").classList.add("nonee")
+        document.querySelector(".login_Label2").classList.add("nonee")
+
+        document.querySelector(".re_Label").classList.remove("nonee")
+        document.querySelector(".re_Label2").classList.remove("nonee")
+
+        document.querySelector(".re_Button").classList.remove("nonee")
+        document.querySelector(".login_Button").classList.add("nonee")
+
+        document.querySelector(".mã_Lưu").classList.add("nonee")
+        document.querySelector(".username").classList.remove("nonee")
+        document.querySelector(".password").classList.remove("nonee")
+
+        // var inputElement = document.querySelector(".username"); 
+        // // Thay đổi placeholder
+        // inputElement.placeholder = "Tên Đăng Kí    *Chỉ 15 kí tự";  
+    })
+    // ấn đăng nhập nhỏ
+    document.querySelector(".re_Label2").addEventListener("click", function() {  // ấn đăng kí
+        document.querySelector(".login_Label").classList.remove("nonee")
+        document.querySelector(".login_Label2").classList.remove("nonee")
+
+        document.querySelector(".re_Label").classList.add("nonee")
+        document.querySelector(".re_Label2").classList.add("nonee")
+
+
+        document.querySelector(".re_Button").classList.add("nonee")
+        document.querySelector(".login_Button").classList.remove("nonee")
+
+        document.querySelector(".mã_Lưu").classList.remove("nonee")
+        document.querySelector(".username").classList.add("nonee")
+        document.querySelector(".password").classList.add("nonee")
+
+        // var inputElement = document.querySelector(".username"); 
+        // // Thay đổi placeholder
+        // inputElement.placeholder = "Tên Đăng Nhập";  
+    })
+    // ấn đăng nhập
+    var value_Mã
+    document.querySelector(".login_Button").addEventListener("click", function() {  // ấn đăng kí
+        value_Mã = document.querySelector(".mã_Lưu").value
+
+        function kiemTraChuoi(chuoi) {
+            const parts = chuoi.split('_');
+            if (parts.length >= 3 && parts[1] === 'cgvm') {
+              return true;
+            } else {
+              return false;
+            }
+        }
+        const ketQua = kiemTraChuoi(value_Mã);
+        if (ketQua) {
+            document.querySelector(".login_Board").classList.add("nonee")
+            document.querySelector(".background").classList.add("nonee")
+            function checkUnderscores(str) {
+                // Đếm số lượng dấu _
+                const underscoreCount = str.split('_').length - 1;
+                
+                // Kiểm tra số lượng dấu _ và trả về kết quả
+                return underscoreCount === 4;
+            }
+
+            var ii = checkUnderscores(value_Mã)
+            if (ii) { //= 4 
+                //mapI
+                quái_Me = quái_S[1]
+                me_Ingame = new inforMee("NoName", 0/**cấp */, 0, 0 /**xu */, 0/*kim_cương*/, 0/*hồng_ngọc*/)
+
+                changeMap()
+            } else {
+                // quái_Me = quái_Me
+                // me_Ingame = me_Ingame
+                var parts = value_Mã.split('_');
+                // ---------------------------    quái_Me
+                // console.log(giải_Ẩn_Ý(parts[7]))
+                var aString = StringToArray(giải_Ẩn_Ý(parts[7])); 
+                // console.log(aString)
+                quái_Me = aString
+
+                // ----------------------- gán cho từng nhân vật
+                {
+
+                    var parts = value_Mã.split('_');
+var  aString = StringToArray(giải_Ẩn_Ý(parts[6]))
+                    // Chuyển đổi danh sách các chuỗi thành danh sách các mảng con
+                    var subArrays = aString.map(item => {
+                        return item.replace('[', '').replace(']', '').split(',').map(Number);
+                    });
+    
+                    // Gộp cứ 4 mảng con thành một mảng con duy nhất
+                    var result = [];
+                    for (var i = 0; i < subArrays.length; i += 4) {
+                        var mergedArray = [];
+                        for (var j = 0; j < 4 && i + j < subArrays.length; j++) {
+                            mergedArray = mergedArray.concat(subArrays[i + j]);
+                        }
+                        result.push(mergedArray);
+                    }; var extractedArray = result
+    
+                    // Lặp qua từng mảng con trong extractedArray
+                    for (var i = 0; i < extractedArray.length; i++) {
+                        // Lấy từng phần tử 0, 1, 2, 3 từ mảng con extractedArray
+                        var [name, url, size1, size2] = extractedArray[i];
+    
+                        // Gán các phần tử vào mảng quái_S tương ứng (với index i)
+                        quái_S[i][5] = name;
+                        quái_S[i][6] = url;
+                        quái_S[i][12] = size1;
+                        quái_S[i][13] = size2;
+                    }
+                }
+                // -------------------- map        
+                    var aString = StringToArray(giải_Ẩn_Ý(parts[5])); 
+                    
+                    var a = aString.map(Number);
+                    
+                    // Gán giá trị cho mapI và gọi hàm changeMap
+                    mapI = a[0];
+                    changeMap(a[1], a[2], 1);
+                // -------------------------------  me_Ingame
+                var aString = StringToArray(giải_Ẩn_Ý(parts[4]))
+                // Gán giá trị mảng 'a' cho các biến tương ứng
+                me_InInGame= aString;
+                // Tạo đối tượng me_Ingame
+              
+            }
+        } else {
+            document.querySelector(".success-Re").classList.add("nonee")
+            document.querySelector(".fail-Re").classList.add("nonee")
+            document.querySelector(".fail-Lo").classList.remove("nonee")
+            setTimeout(()=> {
+                document.querySelector('.fail-Lo').classList.add("nonee")
+            },3000)
+        }
+    })
+    // ấn đăng kí
+    document.querySelector('.re_Button').addEventListener("click", function() {
+        function kiemTraRong() {
+            var Dki = document.querySelector(".username")
+            var Mkhau = document.querySelector(".password")
+            if (Dki.value === "" || Mkhau.value === "") {
+                document.querySelector('.fail-Re').classList.remove("nonee")
+                document.querySelector('.success-Re').classList.add("nonee")
+                setTimeout(()=> {
+                    document.querySelector('.fail-Re').classList.add("nonee")
+                },3000)
+            } else {
+                document.querySelector('.fail-Re').classList.add("nonee")
+                document.querySelector('.success-Re').classList.remove("nonee")
+
+                document.getElementById("textToCopy").innerText += `${chuyển_Đổi_Số_Sang_Chữ(document.querySelector(".password").value)}_`
+                setTimeout(()=> {
+                    document.querySelector('.success-Re').classList.add("nonee")
+                },4000)
+            }
+        }
+        kiemTraRong()
+    })
+    // ấn lưu
+    document.querySelector(".mã_Coppy_Game").addEventListener("click", function() {
+        value_Mã += "[" + [document.querySelector(".ten_Nv").innerText, document.querySelector(".cap_Nv_0").innerText, document.querySelector(".perCent_Nv_0").innerText, document.querySelector(".xu_Nv_0").innerText, document.querySelector(".kCuong_Nv_0").innerText] +']_'
+        var index = quái_S.findIndex(element => element[0] === quái_Me[0]);
+
+        value_Mã += "[" + [mapI, me_HêHê.topp(3,0), me_HêHê.leftt(3,0)] +']_'
+
+
+        var resultArray = [];
+        for (var i = 0; i < quái_S.length; i++) {
+            var subArray = [];
+            subArray.push(quái_S[i][5], quái_S[i][6], quái_S[i][12], quái_S[i][13]);
+            resultArray.push(subArray);
+        }
+        value_Mã += JSON.stringify(resultArray)
+        value_Mã += "_[" + quái_S[index] + ']_' // quái Me
+
+        {
+            var map = {
+                "0": "kkki",
+                "1": "mmmi",
+                "2": "hhhi",
+                "3": "eeei",
+                "4": "bbbi",
+                "5": "nnni",
+                "6": "sssi",
+                "7": "llli",
+                "8": "ttti",
+                "9": "ccci",
+                "_": "-i"
+            };
+
+           
+            
+            function transformInBrackets(input, map) {
+                return input.replace(/\[([^\]]+)\]/g, (match, content) => {
+                    return '[' + content.split('').map(char => map[char] || char).join('') + ']';
+                });
+            }
+            
+            value_Mã= transformInBrackets(value_Mã, map);
+        } // chuyển đổi sang mã mới
+
+
+        textbox.value = value_Mã
+                                // console.log(pElement.innerText)
+                                textbox.select(); // Chọn toàn bộ text trong textbox
+                                document.execCommand('copy'); // Copy vào clipboard
+                                document.querySelector(".mã_Coppy_Lưu_Game").classList.remove("nonee")
+                                setTimeout(()=>{
+                                document.querySelector(".mã_Coppy_Lưu_Game").classList.add("nonee")
+                                },1000)
+    
+    }) 
+}
 
 
 {
 function ngưng_Click_Cho_Con(event) {event.stopPropagation()}
-// var blackLayout = "ZzDevil"
-// /*💫*/ blackLayoutt.addEventListener("click", function() { 
-//     if (blackLayout=="ZzDevil") {board_Infor_ZzDevil.classList.add("nonee")
-//     inFor_Tùy_Chọn_Back.classList.add("nonee")}
-//     else if (blackLayout =='board_Infor_Tùy_Chọn') {board_Infor_Tùy_Chọn.classList.add("nonee"); clickTùyChọn = true}
-//     blackLayoutt.classList.add("nonee")
-// })
-// board_ZzDevil.addEventListener("click", function() { /*💫*/
-//     board_ZzDevil.classList.add("đổi_Màu_Bảng_Tùy_Chọn"); mờ_Nút(board_ZzDevil, 2, 0)
-
-//     setTimeout(() => {
-//         board_Infor_Tùy_Chọn.classList.add("nonee"); board_ZzDevil.classList.remove("đổi_Màu_Bảng_Tùy_Chọn")
-//         inFor_Tùy_Chọn_Back.classList.remove("nonee"); board_Infor_ZzDevil.classList.remove("nonee")
-//         board_Infor_ZzDevil.style.opacity = 0.2;  blackLayout = "haha"
-//         rõ_Nút(board_Infor_ZzDevil); setTimeout(()=> {blackLayout = "ZzDevil";})
-//     },200)
-// }) // clickTùyChọn = wrong;
-
-// var clickTùyChọn = 'true' /*💫*/
-// inFor_Tùy_Chọn.addEventListener("click", function () { /*Gốc 💫*/
-//     if (clickTùyChọn == 'false') {
-//         clickTùyChọn = 1; mờ_Nút(board_Infor_Tùy_Chọn, 0, 1); mờ_Nút(blackLayoutt, 0, 1); 
-//         inFor_Tùy_Chọn.classList.add("đổi_Màu_Nút_Tùy_Chọn"); mờ_Nút(inFor_Tùy_Chọn, 2, 0)
-//         setTimeout(() => {clickTùyChọn = 'true'
-//             blackLayoutt.classList.add("nonee"); board_Infor_Tùy_Chọn.classList.add("nonee")
-//         }, 450);
-//     }
-//     if (clickTùyChọn == 'true') {
-//         clickTùyChọn = 1; inFor_Tùy_Chọn.classList.add("đổi_Màu_Nút_Tùy_Chọn"); mờ_Nút(inFor_Tùy_Chọn, 2, 0)
-//         board_Infor_Tùy_Chọn.classList.remove("nonee"); blackLayoutt.classList.remove("nonee")
-//         board_Infor_Tùy_Chọn.style.opacity = 0.2; blackLayoutt.style.opacity = 0.2
-//         rõ_Nút(board_Infor_Tùy_Chọn); rõ_Nút(blackLayoutt)
-//         setTimeout(() => {
-//             inFor_Tùy_Chọn.classList.remove("đổi_Màu_Nút_Tùy_Chọn")
-//             clickTùyChọn = 'false'; blackLayout = "board_Infor_Tùy_Chọn"
-//         },400)
-//     }
-// })
-
-// function mờ_Nút(xx, num, yy) {
-//     var opacity = 1;
-//     var mimi = setInterval(function () {opacity -= 0.1; xx.style.opacity = opacity;
-//         if (opacity <= num) {clearInterval(mimi); yy == 0 ? xx.style.opacity = 1 : 2+1}
-//     }, 40);
-// }
-// function rõ_Nút(xx) {
-//     var opacity = 0.2;
-//     var mimi = setInterval(function () {opacity += 0.1; xx.style.opacity = opacity;
-//         if (opacity >= 1) {clearInterval(mimi); xx.style.opacity = 1}
-//     }, 40);
-// }
-// /*💫*/ inFor_Tùy_Chọn_Back.addEventListener("click", function () {
-//     if (blackLayout=="ZzDevil") {
-//         blackLayout =='board_Infor_Tùy_Chọn'
-//         board_Infor_Tùy_Chọn.classList.remove("nonee")
-//         board_Infor_ZzDevil.classList.add("nonee")
-//     inFor_Tùy_Chọn_Back.classList.add("nonee")}
-//     // else if (blackLayout == 'board_Infor_Tùy_Chọn') {board_Infor_Tùy_Chọn.classList.add("nonee"); clickTùyChọn = true}
-//     blackLayoutt.classList.add("nonee")
-// })
-function clickTùyChọng() {
-
-}
-
 var tùyChọnNè = true
 document.querySelector(".inFor_Tùy_Chọn").addEventListener("click", function(){
     document.querySelector(".board_Infor_Tùy_Chọn").classList.remove("nonee")
     document.querySelector(".inFor_Tùy_Chọn2").classList.remove("nonee")
+    document.querySelector(".keyBoard").classList.add("nonee")
+    document.querySelector(".inFor_Nhanvat").classList.remove("nonee")
+    
     tùyChọnNè = "board"
 })
 document.querySelector(".inFor_Tùy_Chọn2").addEventListener("click", function(){
     if (tùyChọnNè == "board") {
         document.querySelector(".board_Infor_Tùy_Chọn").classList.add("nonee")
         document.querySelector(".inFor_Tùy_Chọn2").classList.add("nonee")
+        document.querySelector(".keyBoard").classList.remove("nonee")
+        document.querySelector(".inFor_Nhanvat").classList.add("nonee")
         tùyChọnNè = true
     } else if (tùyChọnNè == "board_Devil") {
         document.querySelector(".board_Infor_ZzDevil").classList.add("nonee")
@@ -128,7 +284,6 @@ document.querySelector(".board_ZzDevil").addEventListener("click", function(){
     document.querySelector(".board_Infor_ZzDevil").classList.remove("nonee")
     document.querySelector(".board_Infor_Tùy_Chọn").classList.add("nonee")
     tùyChọnNè = "board_Devil"
-    console.log("hio")
 })
 
 document.querySelector(".board_Nhiệm_Vụ").addEventListener("click", function(){
@@ -224,87 +379,6 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
         }
     } 
 // --------------------------
-    // nhân vật
-    // function nhanvat(widthDe, heightDe, topDe, leftDe,
-    //     widthKhung, heightKhung, bottomKhung,      widthAnh, heightAnh, topAnh, leftAnh,
-    //     name, numberName) {
-    //     // xây nền
-    //         if (name == 'me') {đế.classList.add(name); đế.style.zIndex = 2} else {
-    //             var nameBox = document.createElement('div')
-    //         nameBox.classList.add('nameBoxDe')
-    //         nameBox.innerHTML = `${name} V.${numberName}`
-    //         đế.append(nameBox);
-    //             đế.classList.add("X" + numberName)}
-
-    //             var mũi_tên = document.createElement('div')
-    //             mũi_tên.classList.add('mũi_tên', 'nonee')
-    //             đế.append(mũi_tên);
-    //         this.mũi_tênn = function(xx) {
-    //             xx == 1? mũi_tên.classList.remove("nonee"):1
-    //             xx == 2? mũi_tên.classList.add("nonee"):1
-    //         }
-            
-    //         // document.querySelector(".map").append(đế); đế.append(khung); khung.append(ảnh); 
-    //         khung.style.pointerEvents = 'nonee'; ảnh.style.pointerEvents = 'nonee';
-
-    //         var miniĐế = document.createElement('div')
-    //         miniĐế.style.position = "absolute"; miniĐế.style.backgroundColor = "black"
-    //         if (name == 'me') { miniĐế.style.backgroundColor = "red"; miniĐế.style.zIndex = 2 }
-    //         miniĐế.style.width = '0.8rem'; miniĐế.style.height = '0.8rem'
-    //         miniĐế.style.top = topDe / fiveN + 'rem'; miniĐế.style.left = leftDe / fiveN + 'rem'
-    //         document.querySelector(".miniM").append(miniĐế)
-
-
-    //         function mi(xx, width, height, top, left, zz, bottom, yy) {
-    //             xx.style.width = width + 'rem'; xx.style.height = height + 'rem'
-    //             if (zz == 0) {xx.style.top = top + 'rem'; xx.style.left = left + 'rem'}
-    //             else if (zz == 1) {xx.style.bottom = bottom + 'rem'; xx.style.background = 'nonee'}
-    //         }; mi(đế, widthDe, heightDe, topDe, leftDe, 0); mi(ảnh, widthAnh, heightAnh, topAnh, leftAnh, 0);  mi(khung, widthKhung, heightKhung, 0, 0, 1, bottomKhung)
-     
-    //         // background
-    //         this.backgroundImage = function (src, po, size) {  //hàm đổi màu nền
-    //             ảnh.style.backgroundImage = src
-    //             ảnh.style.backgroundPosition = po
-    //             ảnh.style.backgroundRepeat =  'no-repeat'
-    //             ảnh.style.backgroundSize = size
-    //         }
-            
-    //     this.numberName = numberName
-    //     this.name = name
-    //     // this.topp = function (xx, yy) {return topDe = mimi(xx, yy, 'top', topDe)}; this.leftt = function (xx, yy) {return leftDe = mimi(xx, yy, 'left', leftDe)}
-
-    //     this.topp = function (xx, yy) {var a =  mimi(xx, yy, 'top', topDe); topDe = a; miniĐế.style.top = a / fiveN + 'rem'; return a}
-    //     this.leftt = function (xx, yy) {var a = mimi(xx, yy, 'left', leftDe); leftDe = a; miniĐế.style.left = a / fiveN + 'rem';  return a}
-    //     this.heightt = function (xx, yy) {return heightDe = mimi(xx, yy, 'height', heightDe)}
-    //     this.widthh = function (xx, yy) {return widthDe = mimi(xx, yy, 'width', widthDe)}
-
-    //     this.heighttKhung = function (xx, yy) {return heightKhung = mimi(xx, yy, 'height', heightKhung)}
-    //     this.lật = function(xx, yy) {
-    //         var i = quái_S.findIndex(subArray => subArray.includes(this.srcc()));
-    //         if (yy == 1) {
-    //             ảnh.classList.remove("lật_Ngang")
-    //             var x = quái_S[i][0].replace('quái_', '').replace('S', '');
-    //             ảnh.style.backgroundPosition = quái_S[x - 1][2]
-    //         } else {
-    //             ảnh.classList.add("lật_Ngang")
-    //             var x = quái_S[i][0].replace('quái_', '').replace('S', '');
-    //             ảnh.style.backgroundPosition = quái_S[x - 1][3]
-    //         }
-    //     }
-    //     this.srcc = function () {  //hàm đổi màu nền
-    //         return  ảnh.style.backgroundImage
-    //     }
-
-    //     this.topMini = function (five) {miniĐế.style.top = topDe/five + 'rem'}
-    //     this.leftMini = function (five) {miniĐế.style.left = leftDe/five + 'rem'}
-    //     function mimi(xx, yy, gốc, zz) {
-    //         if (xx == 0) {đế.style[gốc] = yy + 'rem'; return zz = làm_Tròn(yy, 2)} 
-    //         else if (xx == 1) {đế.style[gốc] = (zz + yy) + 'rem'; return zz = làm_Tròn(zz + yy, 2)}
-    //         else if (xx == 2) {đế.style[gốc] = (zz - yy) + 'rem'; return zz = làm_Tròn(zz - yy, 2)}
-    //         else if (xx == 3) {return zz}
-    //     }
-
-    // }
     function nhanvat(widthDe, heightDe, topDe, leftDe,
         widthKhung, heightKhung, bottomKhung,      widthAnh, heightAnh, topAnh, leftAnh,
         name, numberName) {
@@ -325,10 +399,13 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
         mi(khung, widthKhung, heightKhung, 0, 0, 1, bottomKhung)
 
         // xây tên -----------------------------------
-        if (name == 'me') { đế.classList.add(name); đế.style.zIndex = 2 } 
+        if (name == 'me') { đế.classList.add(name); đế.style.zIndex = 2 
+            var nameMee = document.createElement('div'); nameMee.classList.add("ten_Nv"); đế.append(nameMee); 
+            // nameMee.innerHTML = me_Ingame.namee(1)
+        } 
         else {
-            var nameBox = document.createElement('div'); nameBox.classList.add('nameBoxDe')
-            nameBox.innerHTML = name; đế.append(nameBox);
+            // var nameBox = document.createElement('div'); nameBox.classList.add('nameBoxDe')
+            // nameBox.innerHTML = name; đế.append(nameBox);
         }
         // xây mini quái -----------------------------------
         var miniĐế = document.createElement('div')
@@ -391,33 +468,53 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
         this.srcc = function () { return  ảnh.style.backgroundImage}
     }
 // --------------------------
-    function changeMap(tt, ll) {
-        function check() {
-            const parentDiv = document.querySelector('.body');
-            const map = parentDiv.querySelector('.map');
-            if (map) {return true} else {return false}
-        }
-        if (!check()) {tt = 14, ll = 10.9
+var nameCity = 0, capVaGiap = 0
+    function changeMap(tt, ll, cc) {
+        if (cc > 0) {
             document.querySelector(".upKey2").classList.add("colorButton")
         } else {
-            stopQuai == true; quáiArray = []; exitArrayyy = []
-
-            stopQuai = true; document.querySelector(".miniM").remove()
-            document.querySelector(".map").remove(); clearInterval(b); 
-            setTimeout(()=>{map_HêHê = 0; quáiArray = []; exitArrayyy = []
-            document.querySelector(".doiDich").classList.add("nonee")
-            document.querySelector(".tancong1Dich").classList.add("nonee")
-            document.querySelector(".tancongDaDich").classList.add("nonee")
-            vào_Map.classList.add("nonee")
-
-            exitBreak = 0; currentIndex = 0; numDa = false; stopQuai = false
-            document.querySelector(".upKey2").classList.add("colorButton"); transM = 1
-            },200)  
+            function check() {
+                const parentDiv = document.querySelector('.body');
+                const map = parentDiv.querySelector('.map');
+                if (map) {return true} else {return false}
+            }
+            
+            if (!check()) {tt = 14, ll = 10.9
+                document.querySelector(".upKey2").classList.add("colorButton")
+            } else {
+                stopQuai == true; quáiArray = []; exitArrayyy = []
+    
+                stopQuai = true; document.querySelector(".miniM").remove()
+                document.querySelector(".map").remove(); clearInterval(b); 
+                setTimeout(()=>{map_HêHê = 0; quáiArray = []; exitArrayyy = []
+                document.querySelector(".doiDich").classList.add("nonee")
+                document.querySelector(".tancong1Dich").classList.add("nonee")
+                document.querySelector(".tancongDaDich").classList.add("nonee")
+                vào_Map.classList.add("nonee")
+    
+                exitBreak = 0; currentIndex = 0; numDa = false; stopQuai = false
+                document.querySelector(".upKey2").classList.add("colorButton"); transM = 1
+                },200)  
+            }
         }
 
         setTimeout(()=>{
             if (mapI == 0) {
-                shouldRun[mapI] = true; quaiMap = [0/*cấp*/, 20 /*giáp*/]
+                nameCity = 'tỉnh Bình Dương'
+                shouldRun[mapI] = true;
+                capVaGiap = function() {
+                    switch (numDa) {
+                        case 1: case 2: case 3: case 4: case 5:  { quaiMap = [0/*cấp*/, 10 /*giáp*/];break;}
+                        case 6: case 7: case 8:
+                        case 9: case 10: { quaiMap = [3/*cấp*/, 25 /*giáp*/];break;}
+                        // case 11: 
+                        // case 12: 
+                        // case 13: 
+                        // case 14: 
+                        // case 15: 
+                        // case 16: 
+                    }
+                }
                 // tạo map
                 exitLeft = [[14, 1], [26, 8], [26, 20], [14, 27], [1, 13]]
                 exitRight = [[14, 21], [15, 8]]
@@ -438,7 +535,7 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
                 for (let i = 0; i < 10; i++) {
                     let width = tạo_Random_Thập_Phân(0, map_HêHê.widthh(3, 0) - me_HêHê.widthh(3, 0))
                     let height = tạo_Random_Thập_Phân(làm_Tròn(me_HêHê.heighttKhung(3, 0) - me_HêHê.heightt(3, 0) / 2, 2)/*topA*/, map_HêHê.heightt(3, 0) - me_HêHê.heightt(3, 0) /*topB*/)
-                    let person = new nhanvat(2.4, 1.4, +height, +width, 2.4, 4, 0.7, 9, 10, -2.2, -2.5, 'Jun_Keit', i + 1) 
+                    let person = new nhanvat(2.4, 1.4, +height, +width, 2.4, 4, 0.7, 9, 10, -2.2, -2.5, quái_S[0][11], i + 1) 
                     person.backgroundImage(quái_S[0][1], quái_S[0][2], quái_S[0][4])
                     quáiArray.push(person);
                 }
@@ -455,7 +552,21 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
                 }
             }    
             if (mapI == 1) {
-                shouldRun[mapI] = true; quaiMap = [0/*cấp*/, 20 /*giáp*/]
+                nameCity = 'thành phố Hồ Chí Minh'
+                shouldRun[mapI] = true;
+                capVaGiap = function() {
+                    switch (numDa) {
+                        case 1: case 2: case 3: case 4: case 5:  { quaiMap = [6/*cấp*/, 40 /*giáp*/];break;}
+                        case 6: case 7: case 8:
+                        case 9: case 10: { quaiMap = [9/*cấp*/, 55 /*giáp*/];break;}
+                        // case 11: 
+                        // case 12: 
+                        // case 13: 
+                        // case 14: 
+                        // case 15: 
+                        // case 16: 
+                    }
+                }
                 // tạo map
                 exitLeft = [[14, 27], [26, 13], [1, 13]]
                 map_HêHê = new createMap(30, 30, "", 0, 0, 'yellow')// meo
@@ -474,7 +585,7 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
                 for (let i = 0; i < 10; i++) {
                     let width = tạo_Random_Thập_Phân(0, map_HêHê.widthh(3, 0) - me_HêHê.widthh(3, 0))
                     let height = tạo_Random_Thập_Phân(làm_Tròn(me_HêHê.heighttKhung(3, 0) - me_HêHê.heightt(3, 0) / 2, 2)/*topA*/, map_HêHê.heightt(3, 0) - me_HêHê.heightt(3, 0) /*topB*/)
-                    let person = new nhanvat(2.4, 1.4, +height, +width, 2.4, 4, 0.7, 9, 10, -2.2, -2.5, '', i + 1) 
+                    let person = new nhanvat(2.4, 1.4, +height, +width, 2.4, 4, 0.7, 9, 10, -2.2, -2.5, quái_S[1][11], i + 1) 
                     person.backgroundImage(quái_S[1][1], quái_S[1][2], quái_S[1][4])
                     quáiArray.push(person);
                 }
@@ -488,7 +599,21 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
                 }
             }    
             if (mapI ==2) {
-                shouldRun[mapI] = true; quaiMap = [0/*cấp*/, 20 /*giáp*/]
+                nameCity = 'thủ đô Hà Nội'
+                shouldRun[mapI] = true;
+                capVaGiap = function() {
+                    switch (numDa) {
+                        case 1: case 2: case 3: case 4: case 5:  { quaiMap = [12/*cấp*/, 70 /*giáp*/];break;}
+                        case 6: case 7: case 8:
+                        case 9: case 10: { quaiMap = [15/*cấp*/, 85 /*giáp*/];break;}
+                        // case 11: 
+                        // case 12: 
+                        // case 13: 
+                        // case 14: 
+                        // case 15: 
+                        // case 16: 
+                    }
+                }
                 // tạo map
                 exitLeft = [[14, 1], [26, 13], [1, 13]]
                 map_HêHê = new createMap(30, 30, "", 0, 0, '#c84a8e')// meo
@@ -507,7 +632,7 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
                 for (let i = 0; i < 10; i++) {
                     let width = tạo_Random_Thập_Phân(0, map_HêHê.widthh(3, 0) - me_HêHê.widthh(3, 0))
                     let height = tạo_Random_Thập_Phân(làm_Tròn(me_HêHê.heighttKhung(3, 0) - me_HêHê.heightt(3, 0) / 2, 2)/*topA*/, map_HêHê.heightt(3, 0) - me_HêHê.heightt(3, 0) /*topB*/)
-                    let person = new nhanvat(2.4, 1.4, +height, +width, 2.4, 4, 0.7, 9, 10, -2.2, -2.5, '', i + 1) 
+                    let person = new nhanvat(2.4, 1.4, +height, +width, 2.4, 4, 0.7, 9, 10, -2.2, -2.5, quái_S[2][11], i + 1) 
                     person.backgroundImage(quái_S[2][1], quái_S[2][2], quái_S[2][4])
                     quáiArray.push(person);
                 }
@@ -522,7 +647,21 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
                 }
             }
             if (mapI ==3) {
-                shouldRun[mapI] = true; quaiMap = [0/*cấp*/, 20 /*giáp*/]
+                nameCity = 'Bà Rịa - Vũng Tàu'
+                shouldRun[mapI] = true;
+                capVaGiap = function() {
+                    switch (numDa) {
+                        case 1: case 2: case 3: case 4: case 5:  { quaiMap = [18/*cấp*/, 100 /*giáp*/];break;}
+                        case 6: case 7: case 8:
+                        case 9: case 10: { quaiMap = [21/*cấp*/, 115 /*giáp*/];break;}
+                        // case 11: 
+                        // case 12: 
+                        // case 13: 
+                        // case 14: 
+                        // case 15: 
+                        // case 16: 
+                    }
+                }
                 // tạo map
                 exitLeft = [[26, 1], [26, 13], [26, 26]]
                 map_HêHê = new createMap(30, 30, "", 0, 0, 'rgb(36 154 56)')// meo
@@ -541,7 +680,7 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
                 for (let i = 0; i < 10; i++) {
                     let width = tạo_Random_Thập_Phân(0, map_HêHê.widthh(3, 0) - me_HêHê.widthh(3, 0))
                     let height = tạo_Random_Thập_Phân(làm_Tròn(me_HêHê.heighttKhung(3, 0) - me_HêHê.heightt(3, 0) / 2, 2)/*topA*/, map_HêHê.heightt(3, 0) - me_HêHê.heightt(3, 0) /*topB*/)
-                    let person = new nhanvat(2.4, 1.4, +height, +width, 2.4, 4, 0.7, 9, 10, -2.2, -2.5, '', i + 1) 
+                    let person = new nhanvat(2.4, 1.4, +height, +width, 2.4, 4, 0.7, 9, 10, -2.2, -2.5, quái_S[3][11], i + 1) 
                     person.backgroundImage(quái_S[3][1], quái_S[3][2], quái_S[3][4])
                     quáiArray.push(person);
                 }
@@ -556,7 +695,21 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
                 }
             }
             if (mapI ==4) {
-                shouldRun[mapI] = true; quaiMap = [0/*cấp*/, 20 /*giáp*/]
+                nameCity = 'thành phố Hải Phòng'
+                shouldRun[mapI] = true;
+                capVaGiap = function() {
+                    switch (numDa) {
+                        case 1: case 2: case 3: case 4: case 5:  { quaiMap = [24/*cấp*/, 130 /*giáp*/];break;}
+                        case 6: case 7: case 8:
+                        case 9: case 10: { quaiMap = [27/*cấp*/, 145 /*giáp*/];break;}
+                        // case 11: 
+                        // case 12: 
+                        // case 13: 
+                        // case 14: 
+                        // case 15: 
+                        // case 16: 
+                    }
+                }
                 // tạo map
                 exitLeft = [[1, 6], [1,21], [14, 26]]
                 map_HêHê = new createMap(30, 30, "", 0, 0, 'rgb(219 61 47)')// meo
@@ -572,7 +725,7 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
                 for (let i = 0; i < 10; i++) {
                     let width = tạo_Random_Thập_Phân(0, map_HêHê.widthh(3, 0) - me_HêHê.widthh(3, 0))
                     let height = tạo_Random_Thập_Phân(làm_Tròn(me_HêHê.heighttKhung(3, 0) - me_HêHê.heightt(3, 0) / 2, 2)/*topA*/, map_HêHê.heightt(3, 0) - me_HêHê.heightt(3, 0) /*topB*/)
-                    let person = new nhanvat(2.4, 1.4, +height, +width, 2.4, 4, 0.7, 9, 10, -2.2, -2.5, '', i + 1) 
+                    let person = new nhanvat(2.4, 1.4, +height, +width, 2.4, 4, 0.7, 9, 10, -2.2, -2.5, quái_S[4][11], i + 1) 
                     person.backgroundImage(quái_S[4][1], quái_S[4][2], quái_S[4][4])
                     quáiArray.push(person);
                 }
@@ -587,7 +740,21 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
                 }
             }
             if (mapI ==5) {
-                shouldRun[mapI] = true; quaiMap = [0/*cấp*/, 20 /*giáp*/]
+                nameCity = 'tỉnh Bình Thuận'
+                shouldRun[mapI] = true;
+                capVaGiap = function() {
+                    switch (numDa) {
+                        case 1: case 2: case 3: case 4: case 5:  { quaiMap = [30/*cấp*/, 160 /*giáp*/];break;}
+                        case 6: case 7: case 8:
+                        case 9: case 10: { quaiMap = [33/*cấp*/, 175 /*giáp*/];break;}
+                        // case 11: 
+                        // case 12: 
+                        // case 13: 
+                        // case 14: 
+                        // case 15: 
+                        // case 16: 
+                    }
+                }
                 // tạo map
                 exitLeft = [[1, 22], [1,9], [14, 1]]
                 map_HêHê = new createMap(30, 30, "", 0, 0, 'rgb(80 195 142)')// meo
@@ -606,7 +773,7 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
                 for (let i = 0; i < 10; i++) {
                     let width = tạo_Random_Thập_Phân(0, map_HêHê.widthh(3, 0) - me_HêHê.widthh(3, 0))
                     let height = tạo_Random_Thập_Phân(làm_Tròn(me_HêHê.heighttKhung(3, 0) - me_HêHê.heightt(3, 0) / 2, 2)/*topA*/, map_HêHê.heightt(3, 0) - me_HêHê.heightt(3, 0) /*topB*/)
-                    let person = new nhanvat(2.4, 1.4, +height, +width, 2.4, 4, 0.7, 9, 10, -2.2, -2.5, '', i + 1) 
+                    let person = new nhanvat(2.4, 1.4, +height, +width, 2.4, 4, 0.7, 9, 10, -2.2, -2.5, quái_S[5][11], i + 1) 
                     person.backgroundImage(quái_S[5][1], quái_S[5][2], quái_S[5][4])
                     quáiArray.push(person);
                 }
@@ -620,9 +787,15 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
                     exitBreak == 3 ? (mapI = 4, setTimeout(()=>{changeMap(15.1,25)},150)): 1
                 }
             }
+            document.querySelector(".infor_Map").classList.remove("nonee");
+            document.querySelector(".infor_Map_Name").innerHTML = nameCity
+
+            if (me_InIn ==0) { me_InIn++;console.log(11); me_Ingame = new inforMee(me_InInGame[0], Number(me_InInGame[1]), Number(me_InInGame[2]), Number(me_InInGame[3]), Number(me_InInGame[4]), 0);}
+            document.querySelector(".ten_Nv").innerHTML = me_Ingame.namee(1)
+            console.log(me_Ingame);
+            setTimeout(()=>{document.querySelector(".infor_Map").classList.add("nonee")}, 5000)
         }, 230)
     }
-    changeMap()
    
     function quáiDiChuyển(element, /* num,*/ go/*, xx*/) {
         let n = 0, random = 1, num = 15
@@ -814,16 +987,18 @@ function findMotOrNhieu(zz) {
             } 
         }
         if (monsterBreak.length == 1) {
+            capVaGiap()
             mi("tancong1Dich", "remove"); mi("tancongDaDich", "add"); mi("doiDich", "add"); currentIndex = 0
-            số_1_Địch.innerHTML = `${monsterBreak[0].name} ${monsterBreak[0].numberName}`
             numDa = monsterBreak[0].numberName;
+            số_1_Địch.innerHTML = `${monsterBreak[0].name} S${monsterBreak[0].numberName}. LV ${quaiMap[0]}`
             var aa = numDa; quáiArray.forEach(i=> i.mũi_tênn(2)); quáiArray[aa-1].mũi_tênn(1)
         }
             
-        else if (monsterBreak.length>1){mi("tancong1Dich","add");mi("tancongDaDich","remove");mi("doiDich","remove")
-            if(numDa == false) {numDa = monsterBreak[0].numberName;số_Đa_Địch.innerHTML = `${monsterBreak[0].name} ${monsterBreak[0].numberName}`}
-            else if (monsterBreak.some(i=>i.numberName == numDa)){số_Đa_Địch.innerHTML = `${monsterBreak[0].name} ${numDa}`}
-            else {số_Đa_Địch.innerHTML = `${monsterBreak[0].name} ${monsterBreak[0].numberName}`; numDa = monsterBreak[0].numberName;}
+        else if (monsterBreak.length>1){mi("tancong1Dich","add");mi("tancongDaDich","remove");mi("doiDich","remove") // ???? sửa số 0, để 1 trận nhìu quái
+        capVaGiap()
+            if(numDa == false) {numDa = monsterBreak[0].numberName;số_Đa_Địch.innerHTML = `${monsterBreak[0].name} S${monsterBreak[0].numberName}. LV ${quaiMap[0]}`}
+            else if (monsterBreak.some(i=>i.numberName == numDa)){số_Đa_Địch.innerHTML = `${monsterBreak[0].name} S${numDa}. LV ${quaiMap[0]}`}
+            else {numDa = monsterBreak[0].numberName; số_Đa_Địch.innerHTML = `${monsterBreak[0].name} S${monsterBreak[0].numberName}. LV ${quaiMap[0]}`}
             var aa = numDa; quáiArray.forEach(i=> i.mũi_tênn(2)); quáiArray[aa-1].mũi_tênn(1)
         }
         else {mi("tancong1Dich", "add"); mi("tancongDaDich", "add"); mi("doiDich", "add"); currentIndex = 0
@@ -873,6 +1048,8 @@ function battleGame() {
     document.querySelector(".outGame").classList.add("nonee")
     document.querySelector(".Skull").classList.add("nonee")
     document.querySelector(".boxOut").classList.add("nonee")
+
+
     otherTile = undefined; otherTile = undefined 
     // tạo ảnh
     var bb = numDa; click1  = undefined
@@ -885,7 +1062,7 @@ function battleGame() {
     document.querySelector(".meMe_Me").style.backgroundPosition = quái_Me[9]
     document.querySelector(".meMe_Me").style.backgroundSize = quái_Me[10]
     // clearInterval(b)
-
+    capVaGiap()
     mee = new inforBattlee(150, 150, 0, 300, 0/*xu*/, quái_Me[5]/*cấp*/, quái_Me[6]/* % */, 0 /*giáp*/, 0/*hồng_ngọc*/)
     quai = new inforBattlee(150, 150, 0, 300, 0/*xu*/, quaiMap[0]/*cấp*/, 0, quaiMap[1] /*giáp*/, 0/*hồng_ngọc*/)
 
@@ -997,7 +1174,7 @@ function tạo_Bảng_Quỷ() {
     }
     var index = quái_SS.findIndex(function (element) {return element[0] == quái_Me[0];});
     document.querySelector(`.board_Run${index}`).classList.remove("nonee")
-    console.log(`board_Run${index}`)
+    // console.log(`board_Run${index}`)
 
 }
 function xóa_Bảng_Quỷ() {
@@ -1013,94 +1190,4 @@ document.querySelector(".board_ZzDevil").addEventListener("click", function () {
 })
 
 
-
-
-
-// function miui() {
-//     var quái_SS = JSON.parse(JSON.stringify(quái_S));
-    
-//     quái_SS.sort((arr1, arr2) => {
-//         // So sánh phần tử thứ 5 (index 4)
-//         if (arr1[13] !== arr2[13]) {
-//             return arr2[13] - arr1[13]; // Sắp xếp theo thứ tự giảm dần của phần tử thứ 5
-//         } else {
-//             // Nếu phần tử thứ 5 bằng nhau, so sánh phần tử thứ 4 (index 3)
-//             return arr2[12] - arr1[12]; // Sắp xếp theo thứ tự giảm dần của phần tử thứ 4
-//         }
-//     });
-//     console.log(quái_SS)
-//     var bảng_Quỷ = document.querySelector(".board_Infor_ZzDevil"); // Lấy thẻ từ HTML và lưu trữ vào biến bảng_Quỷ.
-//     var a = 0
-
-//     for (let i = 0; i < quái_SS.length; i+=2) { //chẵn
-//         var ô_Quỷ = document.createElement('div'); ô_Quỷ.classList.add('board_name_Nv');
-//         ô_Quỷ.style.top = 2.3 + 2.35 * a + 'rem'; ô_Quỷ.style.left = '0.34rem'; bảng_Quỷ.append(ô_Quỷ);
-//         var name = quái_SS[i][11].split(' ').slice(-2).join(' ');
-//         ô_Quỷ.innerHTML = name; a++
-
-//         if (quái_SS[i][13] == 0) {
-//             // tạo thanh
-//             ô_Quỷ.style.background = "#6c34a0"
-//             var thanh = document.createElement('div'); thanh.classList.add('hồn-bar'); ô_Quỷ.append(thanh);
-//             var fill = document.createElement('div'); fill.classList.add('hồn-fill'); 
-//             if (quái_SS[i][12] >= 20) {fill.style.width = '100%'} else {fill.style.width = quái_SS[i][12]*100/20 + '%'}
-//             thanh.append(fill);
-//             var text = document.createElement('div'); text.classList.add('hồn-text'); text.innerText = quái_SS[i][12] + "/20";
-//             thanh.append(text);
-//         } else {
-//             ô_Quỷ.style.background = "#108c08" 
-//             var sao = document.createElement('div'); sao.classList.add('board_Name_11'); 
-//             switch (quái_SS[i][13]) {
-//                 case 1: { sao.innerHTML = '⭐ ✰ ✰ ✰ ✰'; break;}
-//                 case 2: { sao.innerHTML = '⭐⭐ ✰ ✰ ✰';break;}
-//                 case 3: { sao.innerHTML = '⭐⭐⭐ ✰ ✰';break;}
-//                 case 4: { sao.innerHTML = '⭐⭐⭐⭐ ✰';break;}
-//                 case 5: { sao.innerHTML = '⭐⭐⭐⭐⭐';break;}
-//             }; ô_Quỷ.append(sao);
-//             var ô_Lv = document.createElement('div'); ô_Lv.classList.add('board_Name_111'); ô_Lv.innerHTML = '| LV:&nbsp;';
-//             ô_Quỷ.append(ô_Lv);
-//             var text = document.createElement('div'); text.classList.add('board_Name_1111'); ô_Lv.append(text);
-//         }
-
-//     }
-//     a = 0
-//     for (let i = 1; i < quái_SS.length; i += 2) { //lẻ
-//         var ô_Quỷ = document.createElement('div'); ô_Quỷ.classList.add('board_name_Nv');
-//         ô_Quỷ.style.top = 2.3 + 2.35 * a + 'rem'; ô_Quỷ.style.left = '6.95rem'; bảng_Quỷ.append(ô_Quỷ);
-//         var name = quái_SS[i][11].split(' ').slice(-2).join(' ');
-//         ô_Quỷ.innerHTML = name; a++
-
-//         if (quái_SS[i][13] == 0) {
-//             // tạo thanh
-//             ô_Quỷ.style.background = "#6c34a0"
-//             var thanh = document.createElement('div'); thanh.classList.add('hồn-bar'); ô_Quỷ.append(thanh);
-//             var fill = document.createElement('div'); fill.classList.add('hồn-fill'); 
-//             if (quái_SS[i][12] >= 20) {fill.style.width = '100%'} else {fill.style.width = quái_SS[i][12]*100/20 + '%'}
-//             thanh.append(fill);
-//             var text = document.createElement('div'); text.classList.add('hồn-text'); text.innerText = quái_SS[i][12] + "/20";
-//             thanh.append(text);
-//         } else {
-//             ô_Quỷ.style.background = "#108c08" 
-//             var sao = document.createElement('div'); sao.classList.add('board_Name_11'); 
-//             switch (quái_SS[i][13]) {
-//                 case 1: { sao.innerHTML = '⭐ ✰ ✰ ✰ ✰'; break;}
-//                 case 2: { sao.innerHTML = '⭐⭐ ✰ ✰ ✰';break;}
-//                 case 3: { sao.innerHTML = '⭐⭐⭐ ✰ ✰';break;}
-//                 case 4: { sao.innerHTML = '⭐⭐⭐⭐ ✰';break;}
-//                 case 5: { sao.innerHTML = '⭐⭐⭐⭐⭐';break;}
-//             }; ô_Quỷ.append(sao);
-//             var ô_Lv = document.createElement('div'); ô_Lv.classList.add('board_Name_111'); ô_Lv.innerHTML = '| LV:&nbsp;';
-//             ô_Quỷ.append(ô_Lv);
-//             var text = document.createElement('div'); text.classList.add('board_Name_1111'); ô_Lv.append(text);
-//         }
-       
-//     }
-// }
-// var names = ["nguyễn văn a", "phan xuân", "hứa a thị duyên"];
-// var result = names.map(name => {
-//     var parts = name.split(' ');
-//     return parts.slice(-2).join(' ');
-// });
-
-// console.log(result);
-// 20 50 110 230 470
+// ???? sửa số 0, để 1 trận nhìu quái

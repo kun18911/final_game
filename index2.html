@@ -77,3 +77,231 @@ function removeChild() {mimi = true
     </script>
 </body>
 </html>
+
+
+
+
+
+<
+<div> <!-- map -->
+    <div> <!-- cỏ -->
+        <style>
+            #grassField {
+                z-index: 10;
+                width: 50rem;
+                height: 20rem;
+                background-color: #228B22;
+                /* Màu thảm cỏ */
+                position: relative;
+                overflow: hidden;
+                border: 2px solid #000;
+            }
+        
+            .grass-blade {
+                position: absolute;
+                width: 0;
+                /* Chiều rộng gốc cỏ */
+                height: 0;
+                border-left: 0.2rem solid transparent;
+                border-right: 0.2rem solid transparent;
+                border-bottom: 1.4rem solid #32CD32;
+                /* Màu xanh lá cây cho cọng cỏ */
+                transform-origin: bottom center;
+                /* Animation cho đầu cỏ */
+                animation: sway 2.4s infinite alternate ease-in-out;
+            }
+        
+            @keyframes sway {
+                0% {
+                    transform: rotate(-10deg);
+                    /* Góc ban đầu */
+                }
+        
+                100% {
+                    transform: rotate(10deg);
+                    /* Góc cuối cùng */
+                }
+            }
+        </style>
+        <div id="grassField"></div>
+        <script>
+            function createGrassBlade() {
+                var grassBlade = document.createElement("div");
+                grassBlade.classList.add("grass-blade");
+                grassBlade.style.left = `${Math.random() * 50}rem`;
+                grassBlade.style.bottom = `${Math.random() * 20}rem`;
+
+                return grassBlade;
+            }
+
+            var grassField = document.getElementById('grassField');
+            var grassCount = 500; // Số lượng cọng cỏ
+
+            for (let i = 0; i < grassCount; i++) {
+                var grassBlade = createGrassBlade();
+                grassField.appendChild(grassBlade);
+            }
+        </script>
+    </div>
+    <div>
+<style>
+#grassField_hoang_mạc {
+width: 500px;
+height: 200px;
+background-color: #F4A460; /* Màu đất khô */
+position: relative;
+overflow: hidden;
+border: 2px solid #000;
+}
+
+.grass-blade {
+position: absolute;
+width: 0;
+height: 0;
+border-left: 2px solid transparent;
+border-right: 2px solid transparent;
+border-bottom: 30px solid #8B4513; /* Màu cỏ khô */
+transform-origin: bottom center;
+animation: sway 2.4s infinite alternate ease-in-out; /* Animation cho cỏ */
+filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5)); /* Đổ bóng cho cỏ */
+}
+
+.rock {
+position: absolute;
+fill: #808080; /* Màu đá */
+stroke: #666666; /* Viền đá */
+stroke-width: 1;
+filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5)); /* Đổ bóng cho đá */
+}
+
+.rock-light {
+fill: #A9A9A9; /* Ánh sáng cho đá */
+}
+
+@keyframes sway {
+0% {
+    transform: rotate(-10deg); /* Góc ban đầu */
+}
+100% {
+    transform: rotate(10deg); /* Góc cuối cùng */
+}
+}
+</style>
+<div id="grassField_hoang_mạc"></div>
+<script>
+function createGrassBlade() {
+var grassBlade = document.createElement("div");
+grassBlade.classList.add("grass-blade");
+grassBlade.style.left = `${Math.random() * 500}px`;
+grassBlade.style.bottom = `${Math.random() * 200}px`;
+return grassBlade;
+}
+
+function createRock() {
+var rock = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+rock.setAttribute("width", "40");
+rock.setAttribute("height", "30");
+rock.setAttribute("viewBox", "0 0 40 30");
+rock.setAttribute("class", "rock");
+rock.style.left = `${Math.random() * 480}px`; // Vị trí ngang ngẫu nhiên
+rock.style.bottom = `${Math.random() * 180}px`; // Vị trí dọc ngẫu nhiên
+var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+path.setAttribute("d", "M20 1 L30 5 L35 15 L25 28 L10 28 L5 20 L10 10 Z");
+rock.appendChild(path);
+// Thêm phần ánh sáng cho đá
+var lightPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+lightPath.setAttribute("d", "M20 1 L25 4 L28 14 L22 25 L12 25 L7 18 L12 8 Z");
+lightPath.setAttribute("class", "rock-light");
+rock.appendChild(lightPath);
+return rock;
+}
+
+var grassField = document.getElementById('grassField_hoang_mạc');
+var grassCount = 200; // Số lượng cỏ
+var rockCount = 20; // Số lượng đá
+
+for (let i = 0; i < grassCount; i++) {
+var grassBlade = createGrassBlade();
+grassField.appendChild(grassBlade);
+}
+
+for (let i = 0; i < rockCount; i++) {
+var rock = createRock();
+grassField.appendChild(rock);
+}
+</script>
+    </div>
+</div>>
+
+
+cá
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Con cá</title>
+<style>
+    canvas {
+        border: 1px solid #000;
+    }
+</style>
+</head>
+<body>
+    <canvas id="myCanvas" width="200" height="150"></canvas>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Vẽ thân cá
+        ctx.beginPath();
+        ctx.moveTo(100, 75);  // Điểm bắt đầu vẽ (x, y)
+        ctx.quadraticCurveTo(120, 40, 160, 75);  // Đường cong
+        ctx.quadraticCurveTo(120, 110, 100, 75);  // Đường cong
+
+        // Tạo gradient cho thân cá
+        const gradient = ctx.createLinearGradient(100, 40, 160, 110);
+        gradient.addColorStop(0, '#3498db'); // Màu xanh dương
+        gradient.addColorStop(1, '#2980b9'); // Màu xanh dương đậm
+        ctx.fillStyle = gradient;
+        ctx.fill();  // Đổ màu
+
+        // Vẽ vây cá (hình tam giác)
+        ctx.beginPath();
+        ctx.moveTo(160, 75);  // Điểm bắt đầu vẽ (x, y)
+        ctx.lineTo(180, 60);
+        ctx.lineTo(180, 90);
+        ctx.closePath();
+
+        // Tạo gradient cho vây cá
+        const finGradient = ctx.createLinearGradient(160, 60, 180, 90);
+        finGradient.addColorStop(0, '#e74c3c'); // Màu đỏ
+        finGradient.addColorStop(1, '#c0392b'); // Màu đỏ đậm
+        ctx.fillStyle = finGradient;
+        ctx.fill();  // Đổ màu
+
+        // Vẽ vây tay (vây ngực)
+        ctx.beginPath();
+        ctx.moveTo(110, 75);  // Điểm bắt đầu vẽ (x, y)
+        ctx.lineTo(125, 65);
+        ctx.lineTo(125, 85);
+        ctx.closePath();
+
+        // Tạo gradient cho vây tay
+        const fin2Gradient = ctx.createLinearGradient(110, 65, 125, 85);
+        fin2Gradient.addColorStop(0, '#e74c3c'); // Màu đỏ
+        fin2Gradient.addColorStop(1, '#c0392b'); // Màu đỏ đậm
+        ctx.fillStyle = fin2Gradient;
+        ctx.fill();  // Đổ màu
+
+
+       
+        // Vẽ mắt cá
+        ctx.beginPath();
+        ctx.arc(110, 75, 5, 0, 2 * Math.PI);
+        ctx.fillStyle = '#2c3e50'; // Màu xanh đen
+        ctx.fill();  // Đổ màu
+    </script>
+</body>
+</html>
