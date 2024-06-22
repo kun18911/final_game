@@ -40,17 +40,17 @@ if ('khai báo') {
     var timeTogether
 }
 if ('biến cờ') {
-    var waterNgang = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/waterNgang.png?raw=true'
-    var waterDoc = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/waterDoc.png?raw=true'
+    var waterNgang = 'https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/water_ngang.png'
+    var waterDoc = 'https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/water_doc.png'
 
     var yingyangNgang = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/yinyangNgang.png?raw=true'
     var yingyangDoc = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/yinyangDoc.png?raw=true'
 
-    var swordNgang = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/swordNgang.png?raw=true'
-    var swordDoc = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/swordDoc.png?raw=true'
+    var swordNgang = 'https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/sword_ngang.png'
+    var swordDoc = 'https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/sword_doc.png'
 
-    var starNgang = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/starNgang.png?raw=true'
-    var starDoc = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/starDoc.png?raw=true'
+    var starNgang = 'https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/soul_rock_ngang.png'
+    var starDoc = 'https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/soul_rock_doc.png'
 
     var fiveBlock = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/bomb5.png?raw=true'
     var melon3x3 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/melon33.png?raw=true'
@@ -69,27 +69,20 @@ if ('biến cờ') {
 
 
     // các biến cho các viên bình thường 
-    var star = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/star.png?raw=true'
-    // var star = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/star.png?raw=true'
+    var star = 'https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/soul_rock.png'
     var yingyang = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/yingyang.png?raw=true'
-    var sword = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/sword.png?raw=true'
-    var water = 'https://i.pinimg.com/564x/3b/64/1e/3b641e5c576ffb56d58782e85a9e65d3.jpg'
-    // var water = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/water.png?raw=true'
+    var sword = 'https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/sword.png'
+    var water = 'https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/water.png'
     
-    var heart = 'https://i.pinimg.com/564x/ba/a3/2b/baa32b04173a590a0f8733d62c298be5.jpg'
-    // var heart = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/heart.png?raw=true'
-    var melon = 'https://i.pinimg.com/236x/4e/69/dc/4e69dc3dab379939ad239491e59de4c3.jpg'
-    // var melon = 'ảnh/heart_doc.png'
-    // var melon = 'ảnh/gold.png'
-
+    var heart = 'https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/heart.png'
+    var melon = "https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/gold.png"
     // var melon = 'ảnh/gold.png', heart = 'ảnh/heart.png'
-    // var melon = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/melon.png?raw=true'
     var blank = 'https://github.com/ImKennyYip/candy-crush/blob/master/images/blank.png?raw=true'
     
 }
 if ('biến cờ') {
-    var melonNgang = 'ảnh/gold_ngang.png', melonDoc = 'ảnh/gold_doc.png'
-    var heartNgang = 'ảnh/heart_ngang.png', heartDoc = 'ảnh/heart_doc.png'
+    var heartNgang = 'https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/heart_ngang.png', heartDoc = 'https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/heart_doc.png'
+    var melonNgang = 'https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/gold_ngang.png', melonDoc = 'https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/gold_doc.png'
     // var waterNgang = 'ảnh/water_ngang.png', waterDoc = 'ảnh/water_doc.png'
 
     // var yingyangNgang = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/yinyangNgang.png?raw=true'

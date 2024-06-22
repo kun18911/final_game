@@ -1106,7 +1106,7 @@ function battleGame() {
     startGame(); Điểm_Trật_Tự_Start(); tạo_Cột_Slide()
     //cccc()
     yyyCòn = 1; 
-    // setTimeout(() => {readycrush()}, 2000)
+    setTimeout(() => {readycrush()}, 2000)
 }
 
 document.querySelector(".outGame").addEventListener("click", function() {
