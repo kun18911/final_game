@@ -354,8 +354,14 @@ function turnFight() {
              
             document.querySelector(".vangMe1").innerHTML = 0
             document.querySelector(".vangEnemy1").innerHTML = 0
-            document.querySelector(".HNMe1").innerHTML = 0
+            
             document.querySelector(".HNEnemy1").innerHTML = 0
+
+            var indec = tìmIndexMảngCha(quái_S, quaiMap[2])
+            quái_S[indec][12] = quái_S[indec][12] + (+document.querySelector(".HNMe1").innerHTML) 
+            document.querySelector(".HNMe1").innerHTML = 0
+
+            
         }; if (mee.hp(2, 0) <= 0) {me_Ingame.lvPercent(2); mee.lv(2); 
             quái_Me[6] = mee.lvPercentInfor(); quái_Me[5] = mee.lvInfor()
             document.querySelector(".vangMe1").innerHTML = 0

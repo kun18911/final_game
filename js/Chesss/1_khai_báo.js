@@ -40,12 +40,6 @@ if ('khai báo') {
     var timeTogether
 }
 if ('biến cờ') {
-    var melonNgang = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/melonNgang.png?raw=true'
-    var melonDoc = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/melonDoc.png?raw=true'
-
-    var heartNgang = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/heartNgang.png?raw=true'
-    var heartDoc = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/heartDoc.png?raw=true'
-
     var waterNgang = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/waterNgang.png?raw=true'
     var waterDoc = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/waterDoc.png?raw=true'
 
@@ -76,13 +70,56 @@ if ('biến cờ') {
 
     // các biến cho các viên bình thường 
     var star = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/star.png?raw=true'
+    // var star = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/star.png?raw=true'
     var yingyang = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/yingyang.png?raw=true'
     var sword = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/sword.png?raw=true'
-    var water = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/water.png?raw=true'
-    var heart = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/heart.png?raw=true'
-    var melon = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/melon.png?raw=true'
-    var blank = 'https://github.com/ImKennyYip/candy-crush/blob/master/images/blank.png?raw=true'
+    var water = 'https://i.pinimg.com/564x/3b/64/1e/3b641e5c576ffb56d58782e85a9e65d3.jpg'
+    // var water = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/water.png?raw=true'
+    
+    var heart = 'https://i.pinimg.com/564x/ba/a3/2b/baa32b04173a590a0f8733d62c298be5.jpg'
+    // var heart = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/heart.png?raw=true'
+    var melon = 'https://i.pinimg.com/236x/4e/69/dc/4e69dc3dab379939ad239491e59de4c3.jpg'
+    // var melon = 'ảnh/heart_doc.png'
+    // var melon = 'ảnh/gold.png'
 
+    // var melon = 'ảnh/gold.png', heart = 'ảnh/heart.png'
+    // var melon = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/melon.png?raw=true'
+    var blank = 'https://github.com/ImKennyYip/candy-crush/blob/master/images/blank.png?raw=true'
+    
+}
+if ('biến cờ') {
+    var melonNgang = 'ảnh/gold_ngang.png', melonDoc = 'ảnh/gold_doc.png'
+    var heartNgang = 'ảnh/heart_ngang.png', heartDoc = 'ảnh/heart_doc.png'
+    // var waterNgang = 'ảnh/water_ngang.png', waterDoc = 'ảnh/water_doc.png'
+
+    // var yingyangNgang = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/yinyangNgang.png?raw=true'
+    // var yingyangDoc = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/yinyangDoc.png?raw=true'
+
+    // var swordNgang = 'ảnh/sword_ngang.png', swordDoc = 'ảnh/sword_doc.png'
+    // var starNgang = 'ảnh/soul_rock_doc_ngang.png', starDoc = 'ảnh/soul_rock_doc.png'
+
+    // var fiveBlock = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/bomb5.png?raw=true'
+    // var melon3x3 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/melon33.png?raw=true'
+    // var heart3x3 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/heart33.png?raw=true'
+    // var sword3x3 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/sword33.png?raw=true'
+    // var yingyang3x3 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/yinyang33.png?raw=true'
+    // var star3x3 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/star33.png?raw=true'
+    // var water3x3 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/water33.png?raw=true'
+
+    // var heart3x2 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/New%20folder/heart333.png?raw=true'
+    // var melon3x2 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/New%20folder/melon333.png?raw=true'
+    // var sword3x2 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/New%20folder/sword333.png?raw=true'
+    // var yingyang3x2 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/New%20folder/yinyang333.png?raw=true'
+    // var star3x2 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/New%20folder/star333.png?raw=true'
+    // var water3x2 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/New%20folder/water333.png?raw=true'
+
+
+    // // các biến cho các viên bình thường 
+    // var star = 'ảnh/soul_rock.png', sword = 'ảnh/sword.png'
+    // var yingyang = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/yingyang.png?raw=true'
+    // var water = 'ảnh/water.png', heart = 'ảnh/heart.png', melon = 'ảnh/gold.png'
+    // var blank = 'https://github.com/ImKennyYip/candy-crush/blob/master/images/blank.png?raw=true'
+    
 }
 if (5) {
     // Biến mảng. vd 6 class
@@ -121,12 +158,14 @@ if (5) {
 
 
 
-
-
-
-
-
-
+var quái_S = [['quái_1S', 'url("https://github.com/kun18911/gameBenhVienQuyDu/blob/main/nh%C3%A2n%20v%E1%BA%ADt%20%E1%BA%A3nh/boy_hinh_xam.png?raw=true")', '1.3rem 1.7rem', '2.9rem 1.7rem', '4.9rem', /*5.battle_cấp_%*/ 0, 0, /*7. chess*/'-0.5rem -0.2rem', '5rem', /*9. chess*/'-0.5rem -0.2rem', '5rem', /*11. tên_đá hồn_sao*/ 'Chu Thiên Phú', 0, 1],
+['quái_2S', 'url("https://github.com/kun18911/gameBenhVienQuyDu/blob/main/nh%C3%A2n%20v%E1%BA%ADt%20%E1%BA%A3nh/main_boy.png?raw=true")', '1.4rem 1.7rem', '2.9rem 1.7rem', '5rem', /*5.battle_cấp_%*/ 0, 0, /*7. chess*/'-0.4rem -0.1rem', '4.9rem', /*9. chess*/'-0.4rem -0.1rem', '4.9rem', /*11. tên_đá hồn_sao*/ 'Đinh Huy Dũng', 0, 5],
+['quái_3S', 'url("https://github.com/kun18911/gameBenhVienQuyDu/blob/main/nh%C3%A2n%20v%E1%BA%ADt%20%E1%BA%A3nh/girl_toc_xla_ao_cam.png?raw=true")', '1.4rem 2rem', '3.1rem 2rem', '4.3rem', /*5.battle_cấp_%*/ 0, 0, /*7. chess*/'-0.4rem 0.2rem', '4.4rem', /*9. chess*/'-0.4rem 0.2rem', '4.4rem', /*11. tên_đá hồn_sao*/ 'Huỳnh Nguyệt San', 0, 1],
+['quái_4S', 'url("https://github.com/kun18911/gameBenhVienQuyDu/blob/main/nh%C3%A2n%20v%E1%BA%ADt%20%E1%BA%A3nh/girl_toc_vang_sexy.png?raw=true")', '1.4rem 2rem', '3.1rem 2rem', '4.3rem', /*5.battle_cấp_%*/ 0, 0, /*7. chess*/'-0.4rem 0.2rem', '4.4rem', /*9. chess*/'-0.4rem 0.2rem', '4.4rem',/*11. tên_đá hồn_sao*/ 'Phan Vũ Bích Thủy', 0, 0],
+['quái_5S', 'url("https://github.com/kun18911/gameBenhVienQuyDu/blob/main/nh%C3%A2n%20v%E1%BA%ADt%20%E1%BA%A3nh/main_girl.png?raw=true")', '1.4rem 2rem', '3.1rem 2rem', '4.3rem', /*5.battle_cấp_%*/ 0, 0, /*7. chess*/'-0.4rem 0.2rem', '4.4rem',/*9. chess*/'-0.4rem 0.2rem', '4.4rem', /*11. tên_đá hồn_sao*/ 'Lý Ngọc Thiên Bình', 0, 1],
+['quái_6S', 'url("https://github.com/kun18911/gameBenhVienQuyDu/blob/main/nh%C3%A2n%20v%E1%BA%ADt%20%E1%BA%A3nh/boy_toc_xla_ao_tim.png?raw=true")', '1.4rem 1.7rem', '3rem 1.7rem', '4.9rem', /*5.battle_cấp_%*/ 0, 0, /*7. chess*/'-0.4rem -0.1rem', '4.9rem',/*9. chess*/'-0.4rem -0.1rem', '4.9rem', /*11. tên_đá hồn_sao*/ 'Đương Nhị', 20, 0]
+            ]
+            var quaiMap = []
 
 
 

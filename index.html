@@ -8,7 +8,8 @@
 </head>
 <body>
     <div class="wrap">
-        <div class="body">  <style>.body, .miniMap {overflow: hidden}</style> 
+        <div class="body">  
+            <style>.body, .miniMap {overflow: hidden}</style> 
             <!-- <div class="haha"></div> -->
             <div class="screen">
                 <div class="keyBoard">
@@ -120,6 +121,8 @@
             <div class="blackLayoutt nonee"></div>
             <div class="background nonee"></div>
 
+          
+
             <div> <!-- nút lưu game --> 
                 <div class="mã_Coppy_Game nocopy">Lưu</div>
                 <div class="mã_Coppy_Lưu_Game nonee">✅</div>
@@ -145,7 +148,8 @@
     line-height: 1rem;
     font-size: 0.5rem;
     width: 2rem;
-    background: #fff;
+    background: #ffffffc4;
+    /* background: #fff; */
     border-radius: 0.25rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     position: absolute;
@@ -159,23 +163,552 @@
                 </style>
             </div>
             <div>
-                <div class="homeDevil">Quay Lại</div>
-                <!-- <div class="ten_Nv">Tên: <span class="ten_Nv_0 io"></span> Cấp: <span class="cap_Nv_0 io">0</span>.<span class="perCent_Nv_0 io">0</span>%</div> -->
+                <div class="homeDevil">
+                    <div class="home_nameDevil">Name</div>
+                    <div class="daKyAo_Devil">✰ ✰ ✰ ✰ ✰  Đá Kỳ Ảo: 1000
+                        <div class="daKyAo_Devil_Star">+Sao</div>
+
+                    </div>
+                    <div class="dame_Devil">Lực chiến: 1000</div>
+                    <div class="chỗ_Ở_Devil">
+                        <div class="chỗ_Ở_Devil2">
+
+                            <div class="home_picDevil"></div>
+                            <div class="bed_picDevil"></div>
+
+
+
+                        
+                            <div>  <!-- Tuyệt Chiêu -->
+                               
+                                <div class="containerKĩ_Năng">
+                                    <div class="starKĩ_Năng">
+                            
+                                      
+                                    </div>
+                                    <div class="name_Biệt_Tài">Biệt Tài</div>
+                            
+                            
+                            
+                                    <div class="big-rectangle_Kĩ_Năng gócKĩNăng1">
+                                        <div class="small-rectangle_Kĩ_Năng "></div>
+                                        <div class="small-rectangle_Kĩ_Năng name_Kĩ_Năng">Chiêu 1</div>
+                                    </div>
+                                    <div class="big-rectangle_Kĩ_Năng gócKĩNăng2">
+                                        <div class="small-rectangle_Kĩ_Năng "></div>
+                                        <div class="small-rectangle_Kĩ_Năng name_Kĩ_Năng">Chiêu 2</div>
+                                    </div>
+                                    <div class="big-rectangle_Kĩ_Năng gócKĩNăng3">
+                                        <div class="small-rectangle_Kĩ_Năng"></div>
+                                        <div class="small-rectangle_Kĩ_Năng name_Kĩ_Năng">Chiêu 3</div>
+                                    </div>
+                                    <div class="big-rectangle_Kĩ_Năng gócKĩNăng4">
+                                        <div class="small-rectangle_Kĩ_Năng"></div>
+                                        <div class="small-rectangle_Kĩ_Năng name_Kĩ_Năng">Chiêu 4</div>
+                                    </div>
+                                    <div class="big-rectangle_Kĩ_Năng gócKĩNăng5">
+                                        <div class="small-rectangle_Kĩ_Năng"></div>
+                                        <div class="small-rectangle_Kĩ_Năng name_Kĩ_Năng">Chiêu 5</div>
+                                    </div>
+                            
+                                    <style>
+                                        .name_Biệt_Tài{
+    width: 4rem;
+    height: 2.5rem;
+    border: 0.1rem solid red;
+    box-sizing: border-box;
+    position: absolute;
+    top: 7.2rem;
+    left: -2rem;
+    /* transform: translateX(-50%); */
+    font-size: 0.6rem;
+    height: 1.4rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+                                        }
+                                        .containerKĩ_Năng {
+                                            /* display: flex;
+                                            flex-wrap: wrap; */
+                                            /* gap: 20px; */
+                                            position: absolute;
+                            left: 3rem;
+                            top: 6rem;
+                                        }
+                                        .gócKĩNăng1 {
+                                            left: -2rem;
+                                            top: -4.4rem;
+                                        }
+                                        .gócKĩNăng2 {
+                                            left: -2.2rem;
+                                            top: 2rem;
+                                        }
+                                        .gócKĩNăng3 {
+                                            left: 3rem;
+                                            top: 3.6rem;
+                                        }
+                                        .gócKĩNăng4 {
+                                            left: 6rem;
+                                            top: -1rem;
+                                        }
+                                        .gócKĩNăng5 {
+                                            left: 3.2rem;
+                            top: -5.5rem;
+                                        }
+                                        .name_Kĩ_Năng {
+                                            position: absolute;
+                            top: 2.9rem !important;
+                            font-size: 0.6rem;
+                            height: 1rem !important;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                                        }
+                                        .big-rectangle_Kĩ_Năng {
+                                            position: absolute;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            min-width: 3rem;
+                            /* left: 12rem; */
+                            min-height: 4.3rem;
+                            border: 2px solid black;
+                            box-sizing: border-box;
+                            padding: 0.2rem;
+                                        }
+                                        .small-rectangle_Kĩ_Năng {
+                                            width: 2.5rem;
+                            height: 2.5rem;
+                            border: 0.1rem solid red;
+                            box-sizing: border-box;
+                                        }
+                            
+                                         
+                                        .starKĩ_Năng {
+                            position: relative;
+                            display: inline-block;
+                            color: gold;
+                            width: 0;
+                            height: 0;
+                            border-right: 3.125rem solid transparent; /* 6.25rem / 2 */
+                            border-bottom: 2.1875rem solid gold; /* 4.375rem / 2 */
+                            border-left: 3.125rem solid transparent; /* 6.25rem / 2 */
+                            transform: rotate(35deg);
+                            }
+                            .starKĩ_Năng:before {
+                            border-bottom: 2.5rem solid gold; /* 5rem / 2 */
+                            border-left: 0.9375rem solid transparent; /* 1.875rem / 2 */
+                            border-right: 0.9375rem solid transparent; /* 1.875rem / 2 */
+                            position: absolute;
+                            height: 0;
+                            width: 0;
+                            top: -1.40625rem; /* -2.8125rem / 2 */
+                            left: -2.03125rem; /* -4.0625rem / 2 */
+                            display: block;
+                            content: '';
+                            transform: rotate(-35deg);
+                            }
+                            .starKĩ_Năng:after {
+                            position: absolute;
+                            display: block;
+                            color: gold;
+                            top: 0.09375rem; /* 0.1875rem / 2 */
+                            left: -3.28125rem; /* -6.5625rem / 2 */
+                            width: 0;
+                            height: 0;
+                            border-right: 3.125rem solid transparent; /* 6.25rem / 2 */
+                            border-bottom: 2.1875rem solid gold; /* 4.375rem / 2 */
+                            border-left: 3.125rem solid transparent; /* 6.25rem / 2 */
+                            transform: rotate(-70deg);
+                            content: '';
+                            }
+                                    </style>
+                                </div>
+                            </div>
+
+                            <div>  <!-- Thể lực -->
+                               
+                                <div class="container_Thể_Lực">
+                                    <div class="name_Thể_Lực">Thể lực
+                                    </div>
+
+
+
+                                    <!-- ra chí mạng, hút máu, né chiêu -->
+                                    <div class="big-rectangle_Thể_lực">
+                                        <div class="power_Thể_Lực">Sát Thương:</div>
+                                        <div class="số_Thể_Lực"></div>
+                                    </div>
+                                    <div class="big-rectangle_Thể_lực">
+                                        <div class="power_Thể_Lực">Máu:</div>
+                                        <div class="số_Thể_Lực"></div>
+                                    </div>
+                                    <div class="big-rectangle_Thể_lực">
+                                        <div class="power_Thể_Lực">Hộ giáp:</div>
+                                        <div class="số_Thể_Lực"></div>
+                                    </div>
+                                    <div class="big-rectangle_Thể_lực">
+                                        <div class="power_Thể_Lực">Né Chiêu:</div>
+                                        <div class="số_Thể_Lực"></div>
+                                    </div>
+
+                                    <style>
+                                         .container_Thể_Lực {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 8rem; /* Hoặc chiều cao mong muốn */
+    padding: 10px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    position: absolute;
+    top: 16rem
+  }
+
+  .name_Thể_Lực {
+    width: 4rem;
+    height: 2.5rem;
+    border: 0.1rem solid red;
+    box-sizing: border-box;
+    position: absolute;
+    top: -1.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
+    font-size: 0.6rem;
+    height: 1.4rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+                                        }
+
+                                        .big-rectangle_Thể_lực {
+    min-width: 10rem;
+    /* left: 12rem; */
+    min-height: 1.1rem;
+    border: 2px solid black;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    /* padding: 10px; */
+}
+
+  .số_Thể_Lực {
+    width: 6.7rem;
+    height: 1.1rem;
+    border: 0.1rem solid red;
+    box-sizing: border-box;
+    /* position: absolute; */
+    /* top: 2.9rem !important; */
+    font-size: 0.6rem;
+    height: 1rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: auto; */
+}
+.power_Thể_Lực {
+    width: 3.7rem;
+    height: 1.1rem;
+    border: 0.1rem solid red;
+    box-sizing: border-box;
+    /* position: absolute; */
+    /* top: 2.9rem !important; */
+    font-size: 0.6rem;
+    height: 1rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+                                    </style>
+                          
+                                </div>
+                            </div>
+                            <div> <!-- trang bị -->
+                                <style>
+                                    .name_Trbi {
+                                        width: 4rem;
+    height: 2.5rem;
+    border: 0.1rem solid red;
+    box-sizing: border-box;
+    position: absolute;
+    top: -1.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
+    font-size: 0.6rem;
+    height: 1.4rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+                                    }
+                                    .container_Trang_Bị {
+                                      display: flex;
+                                      flex-direction: column;
+                                      gap: 1rem; /* Khoảng cách giữa các thẻ con */
+                                      border: 2px solid black;
+                                      padding: 0.6rem;
+                                      position: absolute;
+    top: 16rem;
+    left: 24rem;
+                                    }
+                                  
+                                    .hộp_Trbi {
+                                        display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    /* border: 2px solid blue; */
+    position: relative;
+                                    }
+                                  
+                                    .hộp_Trbi.first_Trbi, .hộp_Trbi.last_Trbi {
+                                      justify-content: space-between; /* Căn 3 hình chữ nhật cách đều nhau */
+                                    }
+                                  
+                                    .hộp_Trbi.first_Trbi .ô_Trbi, .hộp_Trbi.last_Trbi .ô_Trbi {
+                                      margin: 0; /* Loại bỏ khoảng cách giữa các hình chữ nhật */
+                                    }
+                                  
+                                    .hộp_Trbi.first_Trbi .ô_Trbi:first-child,
+                                    .hộp_Trbi.last_Trbi .ô_Trbi:first-child {
+                                      margin-right: auto; /* Đẩy hình chữ nhật 2 ra giữa */
+                                    }
+                                  
+                                    .hộp_Trbi.first_Trbi .ô_Trbi:last-child,
+                                    .hộp_Trbi.last_Trbi .ô_Trbi:last-child {
+                                      margin-left: auto; /* Đẩy hình chữ nhật 2 ra giữa */
+                                    }
+                                  
+                                    .ô_Trbi {
+                                        width: 3rem;
+    height: 3rem;
+    border: 2px solid #e74c3c;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+                                    }
+                                  </style>
+                                    <div class="container_Trang_Bị">
+                                        <div class="name_Trbi">Trang Bị
+                                        </div>
+                                      <div class="hộp_Trbi first_Trbi">
+                                        <div class="ô_Trbi">Tóc</div>
+                                        <div class="ô_Trbi">Mũ</div>
+                                        <div class="ô_Trbi">Vũ Khí</div>
+                                      </div>
+                                      <div class="hộp_Trbi">
+                                        <div class="ô_Trbi">Nhẫn</div>
+                                        <div class="ô_Trbi">Dây Chuyền</div>
+                                      </div>
+                                      <div class="hộp_Trbi">
+                                        <div class="ô_Trbi">Áo</div>
+                                        <div class="ô_Trbi">Găng Tay</div>
+                                      </div>
+                                      <div class="hộp_Trbi">
+                                        
+
+                                        <div class="ô_Trbi">Quần</div>
+                                        <div class="ô_Trbi">Giày</div>
+                                        <div class="ô_Trbi">Cánh</div>
+                                      </div>
+                                      <div class="hộp_Trbi last_Trbi">
+                                        <div class="ô_Trbi">Thú Cưỡi</div>
+                                        <div class="ô_Trbi">Pet</div>
+                                      </div>
+                                    </div>
+                            </div>
+
+                            <!-- nhà -->
+                            <div>
+                                 
+                                  
+                                  <div class="homeDEVIL">
+                                    <div class="rectangle">
+                                      <div class="inner-rectangle" style="top: 20px; left: 20px;">Phòng Trị Thương</div>
+                                    </div>
+                                    <div class="rectangle">
+                                      <div class="inner-rectangle" style="top: 10px; right: 10px;">Phòng Ăn</div>
+                                    </div>
+                                    <div class="rectangle">
+                                      <div class="inner-rectangle" style="bottom: 10px; left: 10px;">Phòng Đọc Sách</div>
+                                    </div>
+                                    <div class="rectangle">
+                                      <div class="inner-rectangle" style="top: 20px; left: 20px;">Phòng Tập</div>
+                                    </div>
+                                    <div class="rectangle">
+                                      <div class="inner-rectangle" style="bottom: 10px; right: 10px;">Phòng Thay Đồ</div>
+                                    </div>
+                                    <div class="rectangle">
+                                      <div class="inner-rectangle" style="top: 10px; left: 10px;">Phòng Cho Pet</div>
+                                    </div>
+                                  </div>
+                                <style>
+                                    .homeDEVIL {
+                                        position: absolute;
+    background: blue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    width: 28rem;
+    margin: 0 auto;
+    border: 2px solid #000;
+    padding: 20px;
+    box-sizing: border-box;
+    left: 15rem;
+    top: 2rem;
+                                    }
+                                  
+                                    .rectangle {
+                                      width: 150px;
+                                      height: 100px;
+                                      border: 2px solid #3498db;
+                                      box-sizing: border-box;
+                                      display: flex;
+                                      justify-content: center;
+                                      align-items: center;
+                                      position: relative;
+                                    }
+                                  
+                                    .inner-rectangle {
+                                        min-width: 2rem;
+    height: 1rem;
+    border: 2px solid #e74c3c;
+    box-sizing: border-box;
+    /* position: absolute; */
+    display: flex;
+    margin-top: -2.5rem;
+                                    }
+                                  </style>
+                            </div>
+                        </div>
+
+                        <!-- <div class="daKyAo_picDevil"></div> -->
+                    </div>
+
+                    <div class="shop_Devil">Cửa Hàng</div>
+                </div>
                 <style>
-                    .homeDevil {
+                   .homeDevil {
     width: 12.4rem;
     height: 15rem;
     background-color: #0068ff;
     position: absolute;
     padding: 0rem 0.7rem 0rem 0.4rem;
     border: 1px solid #000;
-    top: -15.6rem;
-    left: -0.5rem;
+    top: 2.4rem;
+    left: 0.3rem;
     font-size: 0.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 5;
+    z-index: 11;
+    display: none;
+}
+.chỗ_Ở_Devil {
+    width: 11rem;
+    height: 12rem;
+    background-color: #0068ff;
+    position: absolute;
+    padding: 0rem 0.7rem 0rem 0.4rem;
+    border: 1px solid #000;
+    top: 2.4rem;
+    left: 0.6rem;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    /* display: none; */
+}
+.chỗ_Ở_Devil2 {
+    width: 18rem;
+    height: 19rem;
+    background-color: #4800ff8a;
+    position: absolute;
+    padding: 0rem 0.7rem 0rem 0.4rem;
+    border: 1px solid #000;
+    top: 2.4rem;
+    left: 0.6rem;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    position: absolute;
+    left: 0rem;
+    top: 0rem;
+    /* display: none; */
+}
+.home_nameDevil {
+    min-width: 4.4rem;
+    height: 1.4rem;
+    background-color: #0068ff;
+    position: absolute;
+    padding: 0rem 0.7rem 0rem 0.4rem;
+    border: 1px solid #000;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    /* display: none; */
+}
+
+.daKyAo_Devil {
+    min-width: 9.2rem;
+    height: 1rem;
+    background-color: #0068ff;
+    position: absolute;
+    padding: 0rem 0.7rem 0rem 0.4rem;
+    border: 1px solid #000;
+    top: 0.7rem;
+    left: 0.6rem;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+    /* display: inline-block; */
+}
+.daKyAo_Devil_Star {
+    width: 0.3rem;
+    height: 1rem;
+    background-color: #0068ff;
+    position: absolute;
+    padding: 0rem 0.7rem 0rem 0.4rem;
+    border: 1px solid #000;
+    top: -0.05rem;
+    left: 10.6rem;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    /* display: none; */
+}
+.dame_Devil {
+    min-width: 3.4rem;
+    height: 1rem;
+    background-color: #0068ff;
+    position: absolute;
+    padding: 0rem 0.7rem 0rem 0.4rem;
+    border: 1px solid #000;
+    top: 15.4rem;
+    right: 0rem;
+    /* transform: translateX(-50%); */
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    /* display: none; */
 }
                 </style>
             </div>
@@ -263,7 +796,7 @@
                 
                             copyButton.addEventListener('click', function () { //nút coppy mã
                                 textbox.value = pElement.innerText;
-                                // console.log(pElement.innerText)
+                                // console.log(textbox.value)
                                 textbox.select(); // Chọn toàn bộ text trong textbox
                                 document.execCommand('copy'); // Copy vào clipboard
                                 document.querySelector(".mã_Coppy_Lưu").classList.remove("nonee")
@@ -325,7 +858,7 @@
                                 left: 50%;
                                 transform: translateX(-50%);
                                 top: -1rem;
-                                z-index: 9;
+                                z-index: 12;
                                 border: 0.2rem solid rebeccapurple;
                             }
                             .mã_Coppy_re {
@@ -484,7 +1017,10 @@
                         justify-content: center;
                         font-size: 1.5rem;
                         cursor: pointer;
-                        z-index: 10;
+                        z-index: 12;
+                    }
+                    .touch_Start {
+                        display: none;
                     }
             
                     .countdown-box {
@@ -498,7 +1034,7 @@
                         border-radius: 10px;
                         text-align: center;
                         display: none;
-                        z-index: 10;
+                        z-index: 12;
                         cursor: pointer;
             
                         top: 20.8rem;
@@ -517,7 +1053,7 @@
                         border-radius: 10px;
                         text-align: center;
                         display: none;
-                        z-index: 10;
+                        z-index: 12;
                         font-size: 0.65rem;
                         white-space: pre-line;
                     }
@@ -815,8 +1351,8 @@
                 
                 <div class="option timeMe nonee"><span class="timeMe1"></span>s</div>
                 <div class="option timeEnemy nonee"><span class="timeEnemy1"></span>s</div>
-                <div class="option petMe ">PetMe</div>
-                <div class="option petEnemy  ">PetDemon</div>
+                <div class="option petMe nonee">PetMe</div>
+                <div class="option petEnemy nonee">PetDemon</div>
                
                 <div class="boardPoint nonee">
                     <div class="informMe mana">Mana + <div class="manaBoard1 io">0</div></div>
@@ -875,6 +1411,60 @@
         
             </div>
             <!-- <div class="mũi_tên"></div> -->
+             <div class="mũi_tên_out">
+                <style>
+                    .mũi_tên_out2 {
+                        top: 8.2rem;
+    position: absolute;
+    left: 1.7rem;
+    width: 3rem;
+    z-index: 9;
+    height: 1.5rem;
+                    }
+                  
+                    .arrow-container {
+                        animation: moveUpDown 0.9s infinite;
+                        position: absolute;
+    z-index: 10;
+    top: 6rem;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+                    }
+            
+                    .rectangle_arrow {
+                        z-index: 10;
+    margin-top: 0rem;
+    top: 2rem;
+    width: 1.2rem;
+    height: 1.4rem;
+    background-color: blue;
+                    }
+            
+                    .triangle_arow {
+                        width: 0;
+    /* position: absolute; */
+    height: 0;
+    margin-top: 0rem;
+    border-left: 1.2rem solid transparent;
+    border-right: 1.2rem solid transparent;
+    border-top: 1rem solid blue;
+                    }
+                    .mũi_tên_out1 {
+                        top: -7.5rem;
+    position: absolute;
+    left: -2rem;
+                    }
+                </style>
+                <!-- <div class="mũi_tên_out1">
+                    <div class="arrow-container">
+                        <div class="rectangle_arrow"></div>
+                        <div class="triangle_arow"></div>
+                    </div>
+                    <div class="mũi_tên_out2 bóng"></div>
+                </div> -->
+            </div>
         </div>
        
     </div>

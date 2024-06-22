@@ -4,8 +4,8 @@
     var me_InIn = 0, me_InInGame
     // thêm sao sai nhỉ?
     const windowWidth = window.innerWidth; const windowHeight = window.innerHeight;  //gốc fontsie là slice 0, -2
-    // document.querySelector(".wrap").style.width = '320px'; document.querySelector(".wrap").style.height = '620px'
-    document.querySelector(".wrap").style.width = windowWidth+'px'; document.querySelector(".wrap").style.height = windowHeight+'px'
+    document.querySelector(".wrap").style.width = '320px'; document.querySelector(".wrap").style.height = '620px'
+    // document.querySelector(".wrap").style.width = windowWidth+'px'; document.querySelector(".wrap").style.height = windowHeight+'px'
   
     // document.querySelector(".wrap").style.width = window.innerWidth + 'px'
     // document.querySelector(".wrap").style.height = window.innerHeight + 'px'
@@ -135,8 +135,8 @@ var  aString = StringToArray(giải_Ẩn_Ý(parts[6]))
                         // Gán các phần tử vào mảng quái_S tương ứng (với index i)
                         quái_S[i][5] = name;
                         quái_S[i][6] = url;
-                        quái_S[i][12] = size1;
-                        quái_S[i][13] = size2;
+                        quái_S[i][12] = +size1;
+                        quái_S[i][13] = +size2;
                     }
                 }
                 // -------------------- map        
@@ -177,8 +177,8 @@ var  aString = StringToArray(giải_Ẩn_Ý(parts[6]))
             } else {
                 document.querySelector('.fail-Re').classList.add("nonee")
                 document.querySelector('.success-Re').classList.remove("nonee")
-
                 document.getElementById("textToCopy").innerText += `${chuyển_Đổi_Số_Sang_Chữ(document.querySelector(".password").value)}_`
+                document.getElementById("textToCopy").innerText = removeAfterFourthDash(document.getElementById("textToCopy").innerText)
                 setTimeout(()=> {
                     document.querySelector('.success-Re').classList.add("nonee")
                 },4000)
@@ -188,6 +188,7 @@ var  aString = StringToArray(giải_Ẩn_Ý(parts[6]))
     })
     // ấn lưu
     document.querySelector(".mã_Coppy_Game").addEventListener("click", function() {
+        value_Mã = removeAfterFourthDash(value_Mã)
         value_Mã += "[" + [document.querySelector(".ten_Nv").innerText, document.querySelector(".cap_Nv_0").innerText, document.querySelector(".perCent_Nv_0").innerText, document.querySelector(".xu_Nv_0").innerText, document.querySelector(".kCuong_Nv_0").innerText] +']_'
         var index = quái_S.findIndex(element => element[0] === quái_Me[0]);
 
@@ -251,6 +252,8 @@ document.querySelector(".inFor_Tùy_Chọn").addEventListener("click", function(
     document.querySelector(".inFor_Tùy_Chọn2").classList.remove("nonee")
     document.querySelector(".keyBoard").classList.add("nonee")
     document.querySelector(".inFor_Nhanvat").classList.remove("nonee")
+
+    document.querySelector(".mã_Coppy_Game").classList.add("nonee")
     
     tùyChọnNè = "board"
 })
@@ -260,6 +263,9 @@ document.querySelector(".inFor_Tùy_Chọn2").addEventListener("click", function
         document.querySelector(".inFor_Tùy_Chọn2").classList.add("nonee")
         document.querySelector(".keyBoard").classList.remove("nonee")
         document.querySelector(".inFor_Nhanvat").classList.add("nonee")
+
+        document.querySelector(".mã_Coppy_Game").classList.remove("nonee")
+        
         tùyChọnNè = true
     } else if (tùyChọnNè == "board_Devil") {
         document.querySelector(".board_Infor_ZzDevil").classList.add("nonee")
@@ -301,7 +307,7 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
 
 {
 // --------------------------
-    function createMap(width, height, type, top, left, color) {
+    function createMap(width, height, type, top, left, color, lốii) {
 
         if (type == '') {  // map lớn
             var map = document.createElement('div')
@@ -348,6 +354,26 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
             miniMap.style.width = '0.8rem'; miniMap.style.height = '0.8rem'
             miniMap.style.top = top / fiveN + 'rem'; miniMap.style.left = left / fiveN + 'rem'
             document.querySelector(".miniM").append(miniMap);
+
+            {
+
+                // var khungArrow = document.createElement('div'); map.classList.add('mũi_tên_out1'); map.append(khungArrow)
+                
+                // var mũiTênLớn = document.createElement('div'); map.classList.add('arrow-container'); khungArrow.append(mũiTênLớn)
+                // var thân = document.createElement('div'); map.classList.add('rectangle_arrow'); mũiTênLớn.append(thân)
+                // var đầu = document.createElement('div'); map.classList.add('triangle_arow'); mũiTênLớn.append(đầu)
+    
+                // var bóng = document.createElement('div'); map.classList.add("mũi_tên_out2","bóng"); khungArrow.append(bóng)
+            }
+            if (lốii == "e") {
+                var khungArrow = document.createElement('div'); khungArrow.classList.add('mũi_tên_out1'); map.append(khungArrow)
+                
+                var mũiTênLớn = document.createElement('div'); mũiTênLớn.classList.add('arrow-container'); khungArrow.append(mũiTênLớn)
+                var thân = document.createElement('div'); thân.classList.add('rectangle_arrow'); mũiTênLớn.append(thân)
+                var đầu = document.createElement('div'); đầu.classList.add('triangle_arow'); mũiTênLớn.append(đầu)
+    
+                var bóng = document.createElement('div'); bóng.classList.add("mũi_tên_out2","bóng"); khungArrow.append(bóng)
+            }
         }
       
         // map (map lớn và map nhỏ) ---------------------------
@@ -377,13 +403,18 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
             else if (xx == 2) {map.style[gốc] = (zz - yy) + 'rem'; return làm_Tròn(zz - yy, 2)}
             else if (xx == 3) {return zz}
         }
+        // ---------------------------------------------
+        this.HìnhMap = function (url, size) {
+            map.style.backgroundImage = `url("${url}")`
+            map.style.backgroundSize = size + "rem"
+        }
     } 
 // --------------------------
     function nhanvat(widthDe, heightDe, topDe, leftDe,
         widthKhung, heightKhung, bottomKhung,      widthAnh, heightAnh, topAnh, leftAnh,
         name, numberName) {
         // xây nền
-        var đế = document.createElement('div')
+        var đế = document.createElement('div'); đế.classList.add("bóng")
         đế.style.position = "absolute"; //đế.style.border = "1px solid #000"
         var khung = document.createElement('div'); khung.style.position = "absolute";//khung.style.border = "1px solid #000"
         var ảnh = document.createElement('div'); ảnh.style.position = "absolute"; //ảnh.style.border = "1px solid #000"
@@ -504,9 +535,9 @@ var nameCity = 0, capVaGiap = 0
                 shouldRun[mapI] = true;
                 capVaGiap = function() {
                     switch (numDa) {
-                        case 1: case 2: case 3: case 4: case 5:  { quaiMap = [0/*cấp*/, 10 /*giáp*/];break;}
+                        case 1: case 2: case 3: case 4: case 5:  { quaiMap = [0/*cấp*/, 10 /*giáp*/, quái_S[0][0]];break;}
                         case 6: case 7: case 8:
-                        case 9: case 10: { quaiMap = [3/*cấp*/, 25 /*giáp*/];break;}
+                        case 9: case 10: { quaiMap = [3/*cấp*/, 25 /*giáp*/, quái_S[0][0]];break;}
                         // case 11: 
                         // case 12: 
                         // case 13: 
@@ -519,8 +550,9 @@ var nameCity = 0, capVaGiap = 0
                 exitLeft = [[14, 1], [26, 8], [26, 20], [14, 27], [1, 13]]
                 exitRight = [[14, 21], [15, 8]]
                 map_HêHê = new createMap(40, 30, "", 0, 0, '#197d63')// meo
+                map_HêHê.HìnhMap("https://i.pinimg.com/564x/3a/d2/92/3ad292fa9639db24336121af8881e656.jpg", 14)
                 for (let i = 0; i < 5; i++) {
-                    let person = new createMap(2.4, 2.4, `Lối ${i + 1}`, exitLeft[i][0], exitLeft[i][1], 'black'); 
+                    let person = new createMap(2.4, 2.4, `Lối ${i + 1}`, exitLeft[i][0], exitLeft[i][1], 'none', "e") 
                     exitArrayyy.push(person);
                 }
                 for (let i = 0; i < 2; i++) {
@@ -570,8 +602,9 @@ var nameCity = 0, capVaGiap = 0
                 // tạo map
                 exitLeft = [[14, 27], [26, 13], [1, 13]]
                 map_HêHê = new createMap(30, 30, "", 0, 0, 'yellow')// meo
+                map_HêHê.HìnhMap("https://i.pinimg.com/564x/6d/7f/a9/6d7fa9b3844ebb1431a3471f2db9474f.jpg", 14)
                 for (let i = 0; i < 3; i++) {
-                    let person = new createMap(2.4, 2.4, `Lối ${i + 1}`, exitLeft[i][0], exitLeft[i][1], 'black'); 
+                    let person = new createMap(2.4, 2.4, `Lối ${i + 1}`, exitLeft[i][0], exitLeft[i][1], 'none', "e") 
                     exitArrayyy.push(person);
                 }
     
@@ -617,8 +650,9 @@ var nameCity = 0, capVaGiap = 0
                 // tạo map
                 exitLeft = [[14, 1], [26, 13], [1, 13]]
                 map_HêHê = new createMap(30, 30, "", 0, 0, '#c84a8e')// meo
+                map_HêHê.HìnhMap("https://i.pinimg.com/564x/79/66/ec/7966ec38d96b33014e952d7e692bea26.jpg", 14)
                 for (let i = 0; i < 3; i++) {
-                    let person = new createMap(2.4, 2.4, `Lối ${i + 1}`, exitLeft[i][0], exitLeft[i][1], 'black'); 
+                    let person = new createMap(2.4, 2.4, `Lối ${i + 1}`, exitLeft[i][0], exitLeft[i][1], 'none', "e") 
                     exitArrayyy.push(person);
                 }
     
@@ -665,8 +699,9 @@ var nameCity = 0, capVaGiap = 0
                 // tạo map
                 exitLeft = [[26, 1], [26, 13], [26, 26]]
                 map_HêHê = new createMap(30, 30, "", 0, 0, 'rgb(36 154 56)')// meo
+                map_HêHê.HìnhMap("https://i.pinimg.com/564x/86/9a/29/869a29f98eab98bd084daaa1eb4fc154.jpg", 10)
                 for (let i = 0; i < 3; i++) {
-                    let person = new createMap(2.4, 2.4, `Lối ${i + 1}`, exitLeft[i][0], exitLeft[i][1], 'black'); 
+                    let person = new createMap(2.4, 2.4, `Lối ${i + 1}`, exitLeft[i][0], exitLeft[i][1], 'none', "e") 
                     exitArrayyy.push(person);
                 }
     
@@ -713,8 +748,9 @@ var nameCity = 0, capVaGiap = 0
                 // tạo map
                 exitLeft = [[1, 6], [1,21], [14, 26]]
                 map_HêHê = new createMap(30, 30, "", 0, 0, 'rgb(219 61 47)')// meo
+                map_HêHê.HìnhMap("https://i.pinimg.com/564x/a7/93/26/a79326bd5e6f057111d6cca3d95a3353.jpg", 14)
                 for (let i = 0; i < 3; i++) {
-                    let person = new createMap(2.4, 2.4, `Lối ${i + 1}`, exitLeft[i][0], exitLeft[i][1], 'black');
+                    let person = new createMap(2.4, 2.4, `Lối ${i + 1}`, exitLeft[i][0], exitLeft[i][1], 'none', "e") 
                     exitArrayyy.push(person);
                 }
                 // tạo nhân vật
@@ -758,8 +794,9 @@ var nameCity = 0, capVaGiap = 0
                 // tạo map
                 exitLeft = [[1, 22], [1,9], [14, 1]]
                 map_HêHê = new createMap(30, 30, "", 0, 0, 'rgb(80 195 142)')// meo
+                map_HêHê.HìnhMap("https://i.pinimg.com/564x/7d/05/10/7d05108a75dc542fccac48a2c62f7f93.jpg", 14)
                 for (let i = 0; i < 3; i++) {
-                    let person = new createMap(2.4, 2.4, `Lối ${i + 1}`, exitLeft[i][0], exitLeft[i][1], 'black'); 
+                    let person = new createMap(2.4, 2.4, `Lối ${i + 1}`, exitLeft[i][0], exitLeft[i][1], 'none', "e") 
                     exitArrayyy.push(person);
                 }
     
@@ -793,7 +830,6 @@ var nameCity = 0, capVaGiap = 0
             if (me_InIn ==0) { me_InIn++; me_Ingame = new inforMee(me_InInGame[0], Number(me_InInGame[1]), Number(me_InInGame[2]), Number(me_InInGame[3]), Number(me_InInGame[4]), 0);}
             else if (me_InIn == 5) { me_InIn++;me_Ingame = new inforMee(document.querySelector(".username").value, 0/**cấp */, 0, 0 /**xu */, 0/*kim_cương*/, 0/*hồng_ngọc*/)}
             document.querySelector(".ten_Nv").innerHTML = me_Ingame.namee(1)
-            console.log(me_Ingame);
             setTimeout(()=>{document.querySelector(".infor_Map").classList.add("nonee")}, 5000)
         }, 230)
     }
@@ -1069,7 +1105,8 @@ function battleGame() {
 
     startGame(); Điểm_Trật_Tự_Start(); tạo_Cột_Slide()
     //cccc()
-    yyyCòn = 1; setTimeout(() => {readycrush()}, 2000)
+    yyyCòn = 1; 
+    // setTimeout(() => {readycrush()}, 2000)
 }
 
 document.querySelector(".outGame").addEventListener("click", function() {
@@ -1117,8 +1154,7 @@ function tạo_Bảng_Quỷ() {
         bảng_Quỷ.append(ô_Quỷ);
 
         var name = quái[11].split(' ').slice(-2).join(' ');
-        ô_Quỷ.innerHTML = name;
-
+        ô_Quỷ.innerHTML = `${name} || ${quái[12]}`
         if (quái[13] === 0) {
             ô_Quỷ.style.background = "#6c34a0";
             var thanh = document.createElement('div');
@@ -1134,8 +1170,20 @@ function tạo_Bảng_Quỷ() {
             text.classList.add('hồn-text');
             text.innerText = quái[12] + "/20";
             thanh.append(text);
+            ô_Quỷ.addEventListener("click", function () {
+                if (quái[12] >= 20) {
+
+                    xóa_Bảng_Quỷ(); 
+                    var indec = tìmIndexMảngCha(quái_S, quái[12])
+                    quái_S[indec][12] = quái_S[indec][12] - 20
+                    quái_S[indec][13] = quái_S[indec][13] + 1
+                    tạo_Bảng_Quỷ()
+
+                }
+            })
         } else {
             ô_Quỷ.style.background = "#108c08";
+            ô_Quỷ.innerHTML = `lv ${quái[5]}|| ` + ô_Quỷ.innerHTML
             var sao = document.createElement('div'); sao.classList.add('board_Name_11');
             sao.innerHTML = '⭐'.repeat(quái[13]) + ' ✰'.repeat(5 - quái[13]); ô_Quỷ.append(sao);
 
@@ -1192,3 +1240,37 @@ document.querySelector(".board_ZzDevil").addEventListener("click", function () {
 
 
 // ???? sửa số 0, để 1 trận nhìu quái
+
+function tìmIndexMảngCha(i, a) { 
+var index = -1; // Giá trị mặc định nếu không tìm thấy
+
+for (var j = 0; j < i.length; j++) {
+    if (i[j].indexOf(a) !== -1) {
+        index = j;
+        break;
+    }
+}
+
+return index
+
+}
+
+function tìmIndexMảngCon(arr) {
+    return arr.indexOf(5);
+}
+
+function removeAfterFourthDash(inputStr) {
+    // Tìm vị trí của dấu gạch ngang thứ 4
+    let firstDash = inputStr.indexOf('_');
+    let secondDash = inputStr.indexOf('_', firstDash + 1);
+    let thirdDash = inputStr.indexOf('_', secondDash + 1);
+    let fourthDash = inputStr.indexOf('_', thirdDash + 1);
+    
+    // Nếu không tìm thấy dấu gạch ngang thứ 4, trả về chuỗi ban đầu
+    if (fourthDash === -1) {
+        return inputStr;
+    }
+    
+    // Trả về phần chuỗi trước và bao gồm cả dấu gạch ngang thứ 4
+    return inputStr.substring(0, fourthDash + 1);
+}
