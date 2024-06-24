@@ -67,8 +67,23 @@
     })
     // ấn đăng nhập
     var value_Mã
-    document.querySelector(".login_Button").addEventListener("click", function() {  // ấn đăng kí
+    document.querySelector(".login_Button").addEventListener("click", function() {  // ấn đăng nhập
         value_Mã = document.querySelector(".mã_Lưu").value
+        { // nhạc
+            var audio = document.getElementById('myAudio');
+            var tracks = [
+               "https://raw.githubusercontent.com/kun18911/final_game/main/%E1%BA%A3nh/nh%E1%BA%A1c_n%E1%BB%81n_1.mp3"
+               // Bạn có thể thêm các URL khác vào đây nếu muốn
+           ];
+   
+           function playRandomTrack() {
+               const randomIndex = Math.floor(Math.random() * tracks.length);
+               audio.src = tracks[randomIndex];
+               audio.play();
+               audio.addEventListener('ended', playRandomTrack);
+           }
+           playRandomTrack()
+        }
 
         function kiemTraChuoi(chuoi) {
             const parts = chuoi.split('_');
