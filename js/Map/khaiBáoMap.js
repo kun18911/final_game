@@ -72,7 +72,7 @@
         { // nhạc
             var audio = document.getElementById('myAudio');
             var tracks = [
-               "https://raw.githubusercontent.com/kun18911/final_game/main/%E1%BA%A3nh/nh%E1%BA%A1c_n%E1%BB%81n_1.mp3"
+               "https://raw.githubusercontent.com/kun18911/final_game/main/%E1%BA%A3nh/nhac_nen_1.mp3"
                // Bạn có thể thêm các URL khác vào đây nếu muốn
            ];
    
@@ -766,7 +766,7 @@ var nameCity = 0, capVaGiap = 0
                 // tạo map
                 exitLeft = [[1, 6], [1,21], [14, 26]]
                 map_HêHê = new createMap(30, 30, "", 0, 0, 'rgb(219 61 47)')// meo
-                map_HêHê.HìnhMap("https://i.pinimg.com/564x/a7/93/26/a79326bd5e6f057111d6cca3d95a3353.jpg", 14)
+                map_HêHê.HìnhMap("https://i.pinimg.com/564x/85/cb/4d/85cb4ddb3f343c832c739c001575870e.jpg", 14)
                 for (let i = 0; i < 3; i++) {
                     let person = new createMap(2.4, 2.4, `Lối ${i + 1}`, exitLeft[i][0], exitLeft[i][1], 'none', "e") 
                     exitArrayyy.push(person);
@@ -812,7 +812,7 @@ var nameCity = 0, capVaGiap = 0
                 // tạo map
                 exitLeft = [[1, 22], [1,9], [14, 1]]
                 map_HêHê = new createMap(30, 30, "", 0, 0, 'rgb(80 195 142)')// meo
-                map_HêHê.HìnhMap("https://i.pinimg.com/564x/7d/05/10/7d05108a75dc542fccac48a2c62f7f93.jpg", 14)
+                map_HêHê.HìnhMap("https://i.pinimg.com/564x/af/99/26/af9926bbef14684613b26a80ea5e816e.jpg", 14)
                 for (let i = 0; i < 3; i++) {
                     let person = new createMap(2.4, 2.4, `Lối ${i + 1}`, exitLeft[i][0], exitLeft[i][1], 'none', "e") 
                     exitArrayyy.push(person);
