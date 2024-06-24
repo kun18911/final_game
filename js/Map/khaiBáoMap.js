@@ -438,7 +438,7 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
         var đế = document.createElement('div'); đế.classList.add("bóng")
         đế.style.position = "absolute"; //đế.style.border = "1px solid #000"
         var khung = document.createElement('div'); khung.style.position = "absolute";
-        khung.style.animation = "moveUpDown_Re 1.5s infinite"
+        // khung.style.animation = "moveUpDown_Re 1.5s infinite"
         
         //khung.style.border = "1px solid #000"
         var ảnh = document.createElement('div'); ảnh.style.position = "absolute"; //ảnh.style.border = "1px solid #000"
@@ -455,6 +455,7 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
 
         // xây tên -----------------------------------
         if (name == 'me') { đế.classList.add(name); đế.style.zIndex = 2 
+            khung.style.animation = "moveUpDown_Re 1.5s infinite"
             var nameMee = document.createElement('div'); nameMee.classList.add("ten_Nv"); đế.append(nameMee); 
             // nameMee.innerHTML = me_Ingame.namee(1)
         } 
