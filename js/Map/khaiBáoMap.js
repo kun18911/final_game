@@ -203,6 +203,9 @@ var  aString = StringToArray(giải_Ẩn_Ý(parts[6]))
     })
     // ấn lưu
     document.querySelector(".mã_Coppy_Game").addEventListener("click", function() {
+        document.querySelector(".cap_Nv").style.background = "blue"
+    })
+    document.querySelector(".miniMap2").addEventListener("click", function() {
         value_Mã = removeAfterFourthDash(value_Mã)
         value_Mã += "[" + [document.querySelector(".ten_Nv").innerText, document.querySelector(".cap_Nv_0").innerText, document.querySelector(".perCent_Nv_0").innerText, document.querySelector(".xu_Nv_0").innerText, document.querySelector(".kCuong_Nv_0").innerText] +']_'
         var index = quái_S.findIndex(element => element[0] === quái_Me[0]);
@@ -250,7 +253,7 @@ var  aString = StringToArray(giải_Ẩn_Ý(parts[6]))
         textbox.select(); document.execCommand('copy'); // Copy vào clipboard
         document.querySelector(".mã_Coppy_Lưu_Game").classList.remove("nonee")
         setTimeout(()=>{document.querySelector(".mã_Coppy_Lưu_Game").classList.add("nonee")},1000)
-    }) 
+    })
 }
 
 
