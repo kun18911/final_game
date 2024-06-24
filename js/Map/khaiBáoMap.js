@@ -589,7 +589,7 @@ var nameCity = 0, capVaGiap = 0
                     person.backgroundImage(quái_S[0][1], quái_S[0][2], quái_S[0][4])
                     quáiArray.push(person);
                 }
-                // quáiArray.forEach(i => quáiDiChuyển(i, 0.2))
+                quáiArray.forEach(i => quáiDiChuyển(i, 0.2))
                 findMotOrNhieu(3.5)
 
                 changeXXMap = function () {
@@ -640,7 +640,7 @@ var nameCity = 0, capVaGiap = 0
                     person.backgroundImage(quái_S[1][1], quái_S[1][2], quái_S[1][4])
                     quáiArray.push(person);
                 }
-                // quáiArray.forEach(i => quáiDiChuyển(i, 0.2))
+                quáiArray.forEach(i => quáiDiChuyển(i, 0.2))
                 findMotOrNhieu(3.5)
                 changeXXMap = function () {
                     shouldRun[mapI] = false
@@ -688,7 +688,7 @@ var nameCity = 0, capVaGiap = 0
                     person.backgroundImage(quái_S[2][1], quái_S[2][2], quái_S[2][4])
                     quáiArray.push(person);
                 }
-                // quáiArray.forEach(i => quáiDiChuyển(i, 0.2))
+                quáiArray.forEach(i => quáiDiChuyển(i, 0.2))
                 findMotOrNhieu(3.5)
 
                 changeXXMap = function () {
@@ -737,7 +737,7 @@ var nameCity = 0, capVaGiap = 0
                     person.backgroundImage(quái_S[3][1], quái_S[3][2], quái_S[3][4])
                     quáiArray.push(person);
                 }
-                // quáiArray.forEach(i => quáiDiChuyển(i, 0.2))
+                quáiArray.forEach(i => quáiDiChuyển(i, 0.2))
                 findMotOrNhieu(3.5)
 
                 changeXXMap = function () {
@@ -783,7 +783,7 @@ var nameCity = 0, capVaGiap = 0
                     person.backgroundImage(quái_S[4][1], quái_S[4][2], quái_S[4][4])
                     quáiArray.push(person);
                 }
-                // quáiArray.forEach(i => quáiDiChuyển(i, 0.2))
+                quáiArray.forEach(i => quáiDiChuyển(i, 0.2))
                 findMotOrNhieu(3.5)
 
                 changeXXMap = function () {
@@ -832,7 +832,7 @@ var nameCity = 0, capVaGiap = 0
                     person.backgroundImage(quái_S[5][1], quái_S[5][2], quái_S[5][4])
                     quáiArray.push(person);
                 }
-                // quáiArray.forEach(i => quáiDiChuyển(i, 0.2))
+                quáiArray.forEach(i => quáiDiChuyển(i, 0.2))
                 findMotOrNhieu(3.5)
 
                 changeXXMap = function () {
