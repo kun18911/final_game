@@ -790,12 +790,12 @@
                                 return `${randomString}_cgvm_${randomNumber1}${randomNumber2}_`;
                             }
                 
-                            const generatedCode = generateCode();
+                            var generatedCode = generateCode();
                             document.getElementById('textToCopy').textContent = generatedCode;
                 
-                            const copyButton = document.getElementById('copy');
-                            const pElement = document.getElementById('textToCopy');
-                            const textbox = document.getElementById('myTextbox');
+                            var copyButton = document.getElementById('copy');
+                            var pElement = document.getElementById('textToCopy');
+                            var textbox = document.getElementById('myTextbox');
                 
                             copyButton.addEventListener('click', function () { //nút coppy mã
                                 textbox.value = pElement.innerText;

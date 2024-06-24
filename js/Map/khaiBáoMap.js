@@ -4,8 +4,8 @@
     var me_InIn = 0, me_InInGame
     // thêm sao sai nhỉ?
     const windowWidth = window.innerWidth; const windowHeight = window.innerHeight;  //gốc fontsie là slice 0, -2
-    // document.querySelector(".wrap").style.width = '320px'; document.querySelector(".wrap").style.height = '620px'
-    document.querySelector(".wrap").style.width = windowWidth+'px'; document.querySelector(".wrap").style.height = windowHeight+'px'
+    document.querySelector(".wrap").style.width = '320px'; document.querySelector(".wrap").style.height = '620px'
+    // document.querySelector(".wrap").style.width = windowWidth+'px'; document.querySelector(".wrap").style.height = windowHeight+'px'
   
     // document.querySelector(".wrap").style.width = window.innerWidth + 'px'
     // document.querySelector(".wrap").style.height = window.innerHeight + 'px'
@@ -248,11 +248,11 @@ var  aString = StringToArray(giải_Ẩn_Ý(parts[6]))
             value_Mã= transformInBrackets(value_Mã, map);
         } // chuyển đổi sang mã mới
 
-        var textbox = document.getElementById('myTextbox');
-        textbox.value = value_Mã
-        textbox.select(); document.execCommand('copy'); // Copy vào clipboard
-        document.querySelector(".mã_Coppy_Lưu_Game").classList.remove("nonee")
-        setTimeout(()=>{document.querySelector(".mã_Coppy_Lưu_Game").classList.add("nonee")},1000)
+        // var textbox = document.getElementById('myTextbox');
+        // textbox.value = value_Mã
+        // textbox.select(); document.execCommand('copy'); // Copy vào clipboard
+        // document.querySelector(".mã_Coppy_Lưu_Game").classList.remove("nonee")
+        // setTimeout(()=>{document.querySelector(".mã_Coppy_Lưu_Game").classList.add("nonee")},1000)
     }
     //
 }
