@@ -248,9 +248,9 @@ var  aString = StringToArray(giải_Ẩn_Ý(parts[6]))
             value_Mã= transformInBrackets(value_Mã, map);
         } // chuyển đổi sang mã mới
 
-        // var textbox = document.getElementById('myTextbox');
-        // textbox.value = value_Mã
-        // textbox.select(); document.execCommand('copy'); // Copy vào clipboard
+        var textbox = document.getElementById('myTextbox');
+        textbox.value = value_Mã
+        textbox.select(); document.execCommand('copy'); // Copy vào clipboard
         // document.querySelector(".mã_Coppy_Lưu_Game").classList.remove("nonee")
         // setTimeout(()=>{document.querySelector(".mã_Coppy_Lưu_Game").classList.add("nonee")},1000)
     }
