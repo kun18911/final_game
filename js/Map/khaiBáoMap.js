@@ -1,6 +1,6 @@
 
 // mở đầu
-{
+{ //
     var me_InIn = 0, me_InInGame
     // thêm sao sai nhỉ?
     const windowWidth = window.innerWidth; const windowHeight = window.innerHeight;  //gốc fontsie là slice 0, -2
