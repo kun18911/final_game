@@ -4,8 +4,8 @@
     var me_InIn = 0, me_InInGame
     // thêm sao sai nhỉ?
     const windowWidth = window.innerWidth; const windowHeight = window.innerHeight;  //gốc fontsie là slice 0, -2
-    document.querySelector(".wrap").style.width = '320px'; document.querySelector(".wrap").style.height = '620px'
-    // document.querySelector(".wrap").style.width = windowWidth+'px'; document.querySelector(".wrap").style.height = windowHeight+'px'
+    // document.querySelector(".wrap").style.width = '320px'; document.querySelector(".wrap").style.height = '620px'
+    document.querySelector(".wrap").style.width = windowWidth+'px'; document.querySelector(".wrap").style.height = windowHeight+'px'
   
     // document.querySelector(".wrap").style.width = window.innerWidth + 'px'
     // document.querySelector(".wrap").style.height = window.innerHeight + 'px'
@@ -256,8 +256,8 @@ var  aString = StringToArray(giải_Ẩn_Ý(parts[6]))
         // setTimeout(()=>{document.querySelector(".mã_Coppy_Lưu_Game").classList.add("nonee")},1000)
 
 navigator.clipboard.writeText(value_Mã).then(function() {
-    // document.querySelector(".mã_Coppy_Lưu_Game").classList.remove("nonee")
-        // setTimeout(()=>{document.querySelector(".mã_Coppy_Lưu_Game").classList.add("nonee")},1000)
+    document.querySelector(".mã_Coppy_Lưu_Game").classList.remove("nonee")
+    setTimeout(()=>{document.querySelector(".mã_Coppy_Lưu_Game").classList.add("nonee")},1000)
 }).catch(function(err) {
 });
     }
