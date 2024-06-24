@@ -416,7 +416,10 @@ document.querySelector(".board_Nguồn").addEventListener("click", function(){
         // xây nền
         var đế = document.createElement('div'); đế.classList.add("bóng")
         đế.style.position = "absolute"; //đế.style.border = "1px solid #000"
-        var khung = document.createElement('div'); khung.style.position = "absolute";//khung.style.border = "1px solid #000"
+        var khung = document.createElement('div'); khung.style.position = "absolute";
+        khung.style.animation = "moveUpDown_Re 1.5s infinite"
+        
+        //khung.style.border = "1px solid #000"
         var ảnh = document.createElement('div'); ảnh.style.position = "absolute"; //ảnh.style.border = "1px solid #000"
         document.querySelector(".map").append(đế); đế.append(khung); khung.append(ảnh);
         ảnh.classList.add("lật_Phải")
@@ -1086,6 +1089,22 @@ function battleGame() {
     document.querySelector(".Skull").classList.add("nonee")
     document.querySelector(".boxOut").classList.add("nonee")
 
+    { //mana
+        document.querySelector(".manaMe3_1").classList.add("nonee")
+        document.querySelector(".manaMe3_2").classList.add("nonee")
+        document.querySelector(".manaMe3_3").classList.add("nonee")
+        document.querySelector(".manaMe3_4").classList.add("nonee")
+
+        document.querySelector(".Skill11").classList.add("redMana")
+        document.querySelector(".Skill22").classList.add("redMana")
+        document.querySelector(".Skill33").classList.add("redMana")
+
+        document.querySelector(".manaEnemy3_1").classList.add("nonee")
+        document.querySelector(".manaEnemy3_2").classList.add("nonee")
+        document.querySelector(".manaEnemy3_3").classList.add("nonee")
+        document.querySelector(".manaEnemy3_4").classList.add("nonee")
+    }
+
 
     otherTile = undefined; otherTile = undefined 
     // tạo ảnh
@@ -1183,7 +1202,7 @@ function tạo_Bảng_Quỷ() {
             })
         } else {
             ô_Quỷ.style.background = "#108c08";
-            ô_Quỷ.innerHTML = `lv ${quái[5]}|| ` + ô_Quỷ.innerHTML
+            ô_Quỷ.innerHTML = `lv ${quái[5]}.${quái[6]}%|| ` + ô_Quỷ.innerHTML
             var sao = document.createElement('div'); sao.classList.add('board_Name_11');
             sao.innerHTML = '⭐'.repeat(quái[13]) + ' ✰'.repeat(5 - quái[13]); ô_Quỷ.append(sao);
 
@@ -1274,3 +1293,143 @@ function removeAfterFourthDash(inputStr) {
     // Trả về phần chuỗi trước và bao gồm cả dấu gạch ngang thứ 4
     return inputStr.substring(0, fourthDash + 1);
 }
+{ // skill
+
+    document.querySelector(".Skill1").addEventListener("click", function() {
+    // mee.manaInfor()
+    // numbGo=100
+    // board[5][6].src = yingyangDoc
+    // checkClass()
+    // mee.mana(2,75)
+        if (mee.manaInfor() >= 75 && meTurn== true) {
+            quai.hp(1,15)
+            document.querySelector(".Skull").classList.add("nonee"); clearInterval(timeTogether)
+            setTimeout(() =>{hộp_TimeMe.classList.add("doiMauTime")},300)
+            mee.mana(1,75) 
+            setTimeout(()=> {
+                var x = Math.floor(Math.random() * 9)
+                var y = Math.floor(Math.random() * 9)
+                var k = board[x][y].id.split("-"); a = +k[0]; b = +k[1]; 
+                
+                function mi(xx, y, z) { if (xx) {add_blur_3x22(board[a + y][b + z]); mảng_Nổ.push(board[a + y][b + z])}}
+                mi(a - 1 >= 0, -1, 0); mi(a + 1 < hàng, +1, 0); mi(b + 1 < cột, 0, 1); mi(b - 1 >= 0, 0, -1);
+        
+                click1 = false
+                setTimeout(() =>{hộp_TimeMe.classList.add("doiMauTime"); 
+                                 var mảng_0_Trùng = [... new Set(mảng_Nổ)]; abcm = mảng_0_Trùng.length;
+            if (abcm > 0) { mảng_0_Trùng.forEach(i => xóa_Viên_Nổ(i, 0, 700) ) } 
+                                },700)
+            },1500)
+        }
+    })
+    document.querySelector(".Skill2").addEventListener("click", function() {
+        if (mee.manaInfor() >= 150 && meTurn== true) {
+            document.querySelector(".Skull").classList.add("nonee"); clearInterval(timeTogether)
+            setTimeout(() =>{hộp_TimeMe.classList.add("doiMauTime"); mee.giáp2(2,40)
+                document.querySelector(".boardPointGiap").classList.remove("nonee")
+                document.querySelector(".boardPointGiap").innerHTML = `Giáp B.Thân + ${40}`
+            },300)
+            setTimeout(()=> {click1 = false; turnFight()},1500)
+            setTimeout(()=> { document.querySelector(".boardPointGiap").classList.add("nonee")},2000)    
+            mee.mana(1,150) 
+    
+            
+        }
+    })
+    
+    document.querySelector(".Skill3").addEventListener("click", function() {
+        if (mee.manaInfor() >= 225 && meTurn== true) {
+            quai.hp(1,40)
+            document.querySelector(".Skull").classList.add("nonee"); clearInterval(timeTogether)
+            setTimeout(() =>{hộp_TimeMe.classList.add("doiMauTime")},300)
+            mee.mana(1,225) 
+            setTimeout(()=> {
+                var x = Math.floor(Math.random() * 9)
+                var y = Math.floor(Math.random() * 9)
+                var k = board[x][y].id.split("-"); a = +k[0]; b = +k[1]; 
+                
+                function mi(xx, y, z) { if (xx) {add_blur_3x22(board[a + y][b + z]); mảng_Nổ.push(board[a + y][b + z])}}
+                mi(a - 1 >= 0, -1, 0); mi(a + 1 < hàng, +1, 0); mi(b + 1 < cột, 0, 1); mi(b - 1 >= 0, 0, -1);
+                mi(a + 2 < hàng && b + 1 < cột, 2, 1); mi(a + 2 < hàng && b - 1 >= 0, 2, -1); mi(b + 2 < cột, 0, 2); mi(b - 2 >= 0, 0, -2);
+        
+                click1 = false
+                setTimeout(() =>{hộp_TimeMe.classList.add("doiMauTime"); 
+                                 var mảng_0_Trùng = [... new Set(mảng_Nổ)]; abcm = mảng_0_Trùng.length;
+            if (abcm > 0) { mảng_0_Trùng.forEach(i => xóa_Viên_Nổ(i, 0, 2000) ) } 
+                                },700)
+            },1500)
+            
+        }
+    })
+}
+
+{ // skill quái
+
+    function skilQuai1() {
+        if (quai.manaInfor() >= 75 && theyTurn== true) {
+            mee.hp(1,15); clearInterval(timeTogether); quai.mana(1,75) 
+            setTimeout(() =>{hộp_TimeEn.classList.add("doiMauTime")},300)
+            setTimeout(()=> {
+                var x = Math.floor(Math.random() * 9)
+                var y = Math.floor(Math.random() * 9)
+                var k = board[x][y].id.split("-"); a = +k[0]; b = +k[1]; 
+                
+                function mi(xx, y, z) { if (xx) {add_blur_3x22(board[a + y][b + z]); mảng_Nổ.push(board[a + y][b + z])}}
+                mi(a - 1 >= 0, -1, 0); mi(a + 1 < hàng, +1, 0); mi(b + 1 < cột, 0, 1); mi(b - 1 >= 0, 0, -1);
+                setTimeout(() =>{hộp_TimeEn.classList.add("doiMauTime"); 
+                                 var mảng_0_Trùng = [... new Set(mảng_Nổ)]; abcm = mảng_0_Trùng.length;
+            if (abcm > 0) { mảng_0_Trùng.forEach(i => xóa_Viên_Nổ(i, 0, 700) ) } 
+                                },700)
+            },1500)
+        }
+    }
+    function skilQuai2() {
+        if (quai.manaInfor() >= 150 && theyTurn== true) {
+            clearInterval(timeTogether); quai.mana(1,150) 
+            setTimeout(() =>{hộp_TimeEn.classList.add("doiMauTime"); quai.giáp2(1,40);
+                document.querySelector(".boardPointGiap").classList.remove("nonee")
+                document.querySelector(".boardPointGiap").innerHTML = `Giáp Địch + ${40}`
+            },300)
+            setTimeout(()=> {turnFight()},1500)     
+            setTimeout(()=> { document.querySelector(".boardPointGiap").classList.add("nonee")},2000)    
+        }
+    }
+    
+    function skilQuai3() {
+        if (quai.manaInfor() >= 225 && theyTurn== true) {
+            mee.hp(1,40); clearInterval(timeTogether); quai.mana(1,225) 
+            setTimeout(() =>{hộp_TimeEn.classList.add("doiMauTime")},300)
+            setTimeout(()=> {
+                var x = Math.floor(Math.random() * 9)
+                var y = Math.floor(Math.random() * 9)
+                var k = board[x][y].id.split("-"); a = +k[0]; b = +k[1]; 
+                
+                function mi(xx, y, z) { if (xx) {add_blur_3x22(board[a + y][b + z]); mảng_Nổ.push(board[a + y][b + z])}}
+                mi(a - 1 >= 0, -1, 0); mi(a + 1 < hàng, +1, 0); mi(b + 1 < cột, 0, 1); mi(b - 1 >= 0, 0, -1);
+                mi(a + 2 < hàng && b + 1 < cột, 2, 1); mi(a + 2 < hàng && b - 1 >= 0, 2, -1); mi(b + 2 < cột, 0, 2); mi(b - 2 >= 0, 0, -2);
+        
+                click1 = false
+                setTimeout(() =>{hộp_TimeEn.classList.add("doiMauTime"); 
+                                 var mảng_0_Trùng = [... new Set(mảng_Nổ)]; abcm = mảng_0_Trùng.length;
+            if (abcm > 0) { mảng_0_Trùng.forEach(i => xóa_Viên_Nổ(i, 0, 2000) ) } 
+                                },700)
+            },1500)
+            
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+// có nhân vật chiêu 2 ko bảo vệ mà tấn công
+
+document.querySelector(".Skill4").addEventListener("click", function() {
+    
+})

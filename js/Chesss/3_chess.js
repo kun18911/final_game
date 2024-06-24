@@ -129,7 +129,7 @@ function readycrush() {
 
 function crushCandy() { // ✨
     for (var i = 0; i < listOfArrays.length; i++) { // test_Có_Tạo_4x_Và_5x_ko ------------------
-        listOfArrays[i].length == 4 ? mảng_4_Ô.push(listOfArrays[i]) : 1
+        listOfArrays[i].length >= 4 ? mảng_4_Ô.push(listOfArrays[i]) : 1
         // listOfArrays[i].length >= 5 ? mảng_5_Ô.push(listOfArrays[i]) : 1
     }
     //test_Có_Viên_Đặc_Biệt_Ko, nếu ăn đc 5x thì sẽ khác; 
@@ -279,7 +279,7 @@ function boomNgang(ô_Nổ) { // ✨
         return [n, classS, b.length]//(0)tạo đc 3/4/5 viên ko,(1)số N3D trong nhánh,(2)mấy nhánh
     }
     //7. Quái lựa cấp độ khó để đánh 
-    function auto_Fight() { //var mảng_Auto = [auto_4x, auto_3x]
+    function auto_Fight1() { //var mảng_Auto = [auto_4x, auto_3x]
         var mảng_Đi_5_Hướng = [auto_4x(), auto_3x()], mảng_True = [] //6.1 Xem bàn cờ có những bước đi nào 
         mảng_Đi_5_Hướng.forEach((i,inn) => {if (i[0]) {mảng_True.push(inn)}})
         // coi nào true, lấy id của nó vô mảng_True ||  vd: true 0, true 1, false 2  ==>  0, 1
@@ -307,6 +307,33 @@ function boomNgang(ô_Nổ) { // ✨
             }, 1100)
         }
         if (nn == 0) { mimi(mảng_Đi_5_Hướng[0][1])/**4 */ } else if (nn == 1) { mimi(mảng_Đi_5_Hướng[1][1]) }
+    }
+    function auto_Fight() {
+        var x = Math.floor(Math.random() * 2) + 1
+        // console.log(x)
+        // x==1?skilQuai1():1
+        // x==1?skilQuai2():1
+        // x==3?skilQuai3():1
+        if (quai.manaInfor() >= 75 && theyTurn == true && x == 1) {
+            var x = Math.floor(Math.random() * 2) + 1
+            if (x == 1) { //ko mana
+                auto_Fight1()
+            } else {
+                // if (quai.manaInfor() >= 300) {} else 
+                if (quai.manaInfor() >= 225) {
+                    var x = Math.floor(Math.random() * 3) + 1
+                    x==1?skilQuai1():1
+                    x==2?skilQuai2():1
+                    x==3?skilQuai3():1
+                } else if (quai.manaInfor() >= 150) {
+                    var x = Math.floor(Math.random() * 2) + 1
+                    x==1?skilQuai1():1
+                    x==2?skilQuai2():1
+                } else if (quai.manaInfor() >= 75) {
+                    skilQuai1()
+                } 
+            }
+        } else {auto_Fight1()}
     }
 } // bot play 
 { // 💛
@@ -385,6 +412,9 @@ function turnFight() {
             end_Light_Fight(time_Enemy), yyyCòn = 1, end_Game_Or_Continue_Turn())
     }; function mở_Và_Tắt_Bảng_Lượt() { thẻ_Cha_Lượt.classList.remove("nonee"); setTimeout(function () { thẻ_Cha_Lượt.classList.add("nonee") }, 1700) }
     function end_Light_Fight(xx) { xx.classList.remove("doiMauTime") }; function điểm___Tắt_Mở_Bảng___Số_Lượt() { cộngĐiểmSauCrush(1); mở_Và_Tắt_Bảng_Lượt(); so_Luot.innerHTML = numbGo; numbGo--; }
+    hiện_Mana()
+    document.querySelector(".hpEnemy1").style.width = làm_Tròn( quai.hpInfor()*4/quai.hpMaxInfor(), 2) +'rem'
+    document.querySelector(".hpMe1").style.width = làm_Tròn( mee.hpInfor()*4/mee.hpMaxInfor(), 2) +'rem'
 }; 
 
 function xóa_Bảng() {
@@ -522,3 +552,86 @@ function cộngĐiểmSauCrush(aa) {
 //         setTimeout(()=>{document.querySelector(".boardPoint").classList.add("nonee");},1700)
 //     }
 // }
+
+function hiện_Mana() {
+    {//mee
+        if (mee.manaInfor() >= 300) {
+            document.querySelector(".manaMe3_1").classList.remove("nonee")
+            document.querySelector(".manaMe3_2").classList.remove("nonee")
+            document.querySelector(".manaMe3_3").classList.remove("nonee")
+            document.querySelector(".manaMe3_4").classList.remove("nonee")
+
+            document.querySelector(".Skill11").classList.remove("redMana")
+            document.querySelector(".Skill22").classList.remove("redMana")
+            document.querySelector(".Skill33").classList.remove("redMana")
+        } else if (mee.manaInfor() >= 225) {
+            document.querySelector(".manaMe3_1").classList.remove("nonee")
+            document.querySelector(".manaMe3_2").classList.remove("nonee")
+            document.querySelector(".manaMe3_3").classList.remove("nonee")
+            document.querySelector(".manaMe3_4").classList.add("nonee")
+
+            document.querySelector(".Skill11").classList.remove("redMana")
+            document.querySelector(".Skill22").classList.remove("redMana")
+            document.querySelector(".Skill33").classList.remove("redMana")
+        } else if (mee.manaInfor() >= 150) {
+            document.querySelector(".manaMe3_1").classList.remove("nonee")
+            document.querySelector(".manaMe3_2").classList.remove("nonee")
+            document.querySelector(".manaMe3_3").classList.add("nonee")
+            document.querySelector(".manaMe3_4").classList.add("nonee")
+
+            document.querySelector(".Skill11").classList.remove("redMana")
+            document.querySelector(".Skill22").classList.remove("redMana")
+            document.querySelector(".Skill33").classList.add("redMana")
+        } else if (mee.manaInfor() >= 75) {
+            document.querySelector(".manaMe3_1").classList.remove("nonee")
+            document.querySelector(".manaMe3_2").classList.add("nonee")
+            document.querySelector(".manaMe3_3").classList.add("nonee")
+            document.querySelector(".manaMe3_4").classList.add("nonee")
+
+            document.querySelector(".Skill11").classList.remove("redMana")
+            document.querySelector(".Skill22").classList.add("redMana")
+            document.querySelector(".Skill33").classList.add("redMana")
+        } else {
+            document.querySelector(".manaMe3_1").classList.add("nonee")
+            document.querySelector(".manaMe3_2").classList.add("nonee")
+            document.querySelector(".manaMe3_3").classList.add("nonee")
+            document.querySelector(".manaMe3_4").classList.add("nonee")
+
+            document.querySelector(".Skill11").classList.add("redMana")
+            document.querySelector(".Skill22").classList.add("redMana")
+            document.querySelector(".Skill33").classList.add("redMana")
+        }
+    }
+// -----------------
+    { //quái
+        if (quai.manaInfor() >= 300) {
+            document.querySelector(".manaEnemy3_1").classList.remove("nonee")
+            document.querySelector(".manaEnemy3_2").classList.remove("nonee")
+            document.querySelector(".manaEnemy3_3").classList.remove("nonee")
+            document.querySelector(".manaEnemy3_4").classList.remove("nonee")
+        } else if (quai.manaInfor() >= 225) {
+            document.querySelector(".manaEnemy3_1").classList.remove("nonee")
+            document.querySelector(".manaEnemy3_2").classList.remove("nonee")
+            document.querySelector(".manaEnemy3_3").classList.remove("nonee")
+            document.querySelector(".manaEnemy3_4").classList.add("nonee")
+        } else if (quai.manaInfor() >= 150) {
+            document.querySelector(".manaEnemy3_1").classList.remove("nonee")
+            document.querySelector(".manaEnemy3_2").classList.remove("nonee")
+            document.querySelector(".manaEnemy3_3").classList.add("nonee")
+            document.querySelector(".manaEnemy3_4").classList.add("nonee")
+        } else if (quai.manaInfor() >= 75) {
+            document.querySelector(".manaEnemy3_1").classList.remove("nonee")
+            document.querySelector(".manaEnemy3_2").classList.add("nonee")
+            document.querySelector(".manaEnemy3_3").classList.add("nonee")
+            document.querySelector(".manaEnemy3_4").classList.add("nonee")
+        } else {
+            document.querySelector(".manaEnemy3_1").classList.add("nonee")
+            document.querySelector(".manaEnemy3_2").classList.add("nonee")
+            document.querySelector(".manaEnemy3_3").classList.add("nonee")
+            document.querySelector(".manaEnemy3_4").classList.add("nonee")
+        }
+    }
+// -----------------
+
+
+}

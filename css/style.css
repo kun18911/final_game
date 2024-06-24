@@ -44,7 +44,14 @@
     z-index: 4 ;
 }
 .doiMauTime {
-    background-color: #009bff !important;
+    /* background-color: #009bff !important; */
+    height: 1.4rem !important;
+    min-width: 1.4rem !important;
+    right: 32% !important;
+    /* color: black !important; */
+    border: 0.1rem solid #ffffff !important;
+    background: #0068ff !important;
+    animation: none !important;
 }
 .absolute {
     position: absolute;
@@ -102,7 +109,8 @@
     line-height: 1.9rem;
     text-align: center;
     box-sizing: border-box;
-    background-color: #00d49b4f;
+    /* background-color: #00d49b4f; */
+    background: linear-gradient(to right, #0c9d44ad, #941414ab);
     /* background-color: #00d49b; */
     border-radius: 0.4rem;
     border: 2px solid #000000b5;
@@ -155,9 +163,10 @@
     transform: translateY(-50%);
     top: 51%;
     right: -66%;
-    margin-right: 125px;
+    margin-right: 5.85rem;
     /* background: #ed030d; */
-    background: #ed030da6;
+    /* background: #ed030da6; */
+    background: linear-gradient(to right, #2546c9, #170a1f);
     cursor: pointer;
 }
 
@@ -201,14 +210,16 @@ border-radius: 20px;
 border-radius: 0.6rem; */ 
 
 transform: translateY(-50%);
-top: 51%;
+top: 1.4rem;
 z-index: 2;
 right: -66%;
-margin-right: 125px;
+margin-right: 5.85rem;
 /* background: #000cff; */
-background: #000cff63;
+/* background: #000cffd1; */
+background: linear-gradient(to right, #040852, #6b1d89);
 cursor: pointer;
-color:white
+color:white;
+animation: moveUpDown_Re 0.9s infinite
 }
 .tancongDaDich {
     /* white-space: nowrap; 
@@ -231,7 +242,8 @@ color: white;
 padding: 0rem 0.5rem 0rem 0.5rem;
 white-space: nowrap; 
 left: 50%;
-background: #01008b;
+/* background: #01008b; */
+background: linear-gradient(to right, #04084d, #1244ab);
 top: -2rem;
 font-size: 0.7rem;
 min-width: 6rem;
@@ -247,7 +259,8 @@ border-radius: 0.6rem;
 box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
 }
 .vaoMap {
-background: #4a008b !important;
+/* background: #4a008b !important; */
+background: linear-gradient(to right, #c92525, #4a008b);
 left: 50%;
 top: -2.4rem;
 font-size: 0.7rem;
@@ -262,14 +275,24 @@ border: 0.1rem solid #000000b5;
 border-radius: 0.5rem;
 color: white;
 }
-
+input {
+    background-color: #221f1f;
+    color: white;
+}
+input:focus {
+    border: 0.1rem solid ;
+    border-color: #0099ff !important;
+    outline: none; /* Bỏ viền mặc định của trình duyệt */
+    box-shadow: 0 0 5px rgba(255, 69, 0, 0.5); /* Hiệu ứng đổ bóng khi được chọn */
+}
 
 .tancong1Dich {
     color: white;
     padding: 0rem 0.5rem 0rem 0.5rem;
     white-space: nowrap; 
 left: 50%;
-background: #4a008b;
+/* background: #4a008b; */
+background: linear-gradient(to right, #0d507c, #490b61);
 top: -2rem;
 font-size: 0.7rem;
 min-width: 6rem;
@@ -293,13 +316,7 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     position: absolute;
 }
 
-.timeEnemy {
-    right: 18%;
-}
 
-.timeMe {
-    left: 18%;
-}
 
 .timee {
     min-width: 139px;
@@ -314,20 +331,21 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
 }
 
 .boardPoint {
-    min-width: 6rem;
+    min-width: 4.5rem;
     position: absolute;
-    background: #000000ab;
-    min-height: 5.5rem;
-    font-size: 0.8rem;
-    line-height: 0.8rem;
-    top: 4rem;
+    background: #000000b5;
+    min-height: 5.1rem;
+    font-size: 0.65rem;
+    line-height: 0.75rem;
+    top: 11rem;
     z-index: 2;
     transform: translateX(-50%);
     left: 7rem;
-    padding: 0.5rem 0.5rem 0 1.2rem;
+    padding: 0.5rem 0.5rem 0 0.7rem;
     z-index: 3;
     color: white;
     pointer-events: none;
+    border-radius: 0.2rem;
 }
 
 .turn {
@@ -346,10 +364,12 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
 .option {
     min-width: 150px;
     height: 150px;
-    background: red;
+    /* background: red; */
+    background-image: linear-gradient(to right, #c00505, #000000);
     position: absolute;
     bottom: 60px;
     font-size: 49px;
+    color: white;
     text-align: center;
     line-height: 140px;
     border-radius: 0.2rem;
@@ -379,6 +399,7 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     top: -4.7rem;
     /* display: none; */
     font-size: 0.8rem;
+    animation: moveUpDown_Re 0.9s infinite;
 }
 
 .timeEnemy {
@@ -391,6 +412,7 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     top: -4.7rem;
     /* display: none; */
     font-size: 0.8rem;
+    animation: moveUpDown_Re 0.9s infinite;
 }
 
 .outGame {
@@ -462,8 +484,8 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
 #board {
     width: 13.5rem;
     height: 13.5rem;
-    background-color: red;
-    border: 2px solid slategray;
+    background-color: #4682b4;
+    border: 0.2rem solid slategray;
     /* left: 50%;
     top: 4rem; */
     left: 7.1rem;
@@ -471,6 +493,7 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     transform: translateX(-50%);
     position: absolute;
     overflow: hidden;
+    border-radius: 0.2rem;
 }
 
 
@@ -596,8 +619,12 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     z-index: 2;
     transform: translateX(-50%);
     left: 11.8rem;
+}
+.meMe_Enemy2{
+    left: 10.1rem;
     /* padding: 0 30px 0 30px; */
     z-index: 4;
+    animation: moveUpDown_Re 1.5s infinite;
 
 }
 
@@ -691,7 +718,8 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     line-height: 1.3rem;
     min-width: 2.6rem;
     min-height: 1.3rem;
-    left: 6.2rem;
+    left: 4.55rem;
+    animation: moveUpDown_Re 0.9s infinite;
     text-align: center;
     transform: translateX(-50%);
     background: yellow;
@@ -782,6 +810,7 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     height: 5rem;
     /* border: 1px solid #000; */
     background-repeat: no-repeat;
+    animation: moveUpDown_Re 1.5s infinite;
 }
 .meMe_Enemy {
     z-index: 6;
@@ -793,6 +822,7 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     transform: scaleX(-1);
     background-repeat: no-repeat;
 }
+
  
 .miniMap {
     z-index: 6;
@@ -816,6 +846,13 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
 .miniM {
     position: absolute;
     z-index: 2;
+
+    border: 0.4rem solid rgb(31, 74, 137) !important;
+    width: 12rem;
+    height: 12rem;
+    top: -3.94rem;
+    left: -2.25rem;
+    background:linear-gradient(to right, rgba(12, 157, 68, 0.68), rgb(124 29 201 / 69%)) !important
 }
 .miniExit {
     position: absolute;
@@ -849,7 +886,8 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     /* width: 320px;
     height: 650px; */
     position: relative;
-    background-color: red;
+    /* background-color: red; */
+    background-image: linear-gradient(to right, #f92626, #300351, #000000);
 }
 
 .body {
@@ -1001,6 +1039,9 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     top: 17.7rem;
     left: 5.5rem;
     z-index: 11;
+    border: 0.2rem solid #90273a;
+    background-image: linear-gradient(to right, #380909, #5f0606);
+    border-radius: 0.2rem;
 }
 
 .inFor_Nhanvat_label {
@@ -1042,13 +1083,15 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     width: 1.8rem;
     height: 2rem;
     /* background: yellow; */
-    background-color: #0068ff;
+    /* background-color: #0068ff; */
+    background-image: linear-gradient(to right, #c00505, #000000);
     position: absolute;
     padding: 0rem 0rem 0rem 0.2rem;
     border: 1px solid #000;
     bottom: 2.4rem;
     left: 0.8rem;
     font-size: 0.8rem;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1060,7 +1103,7 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
 .board_Infor_Tùy_Chọn {
     width: 8.1rem;
     height: 13.5rem;
-    background-color: #0068ff;
+    background-color: #7e2a2a;
     position: absolute;
     padding: 0rem 0.7rem 0rem 0.4rem;
     border: 1px solid #000;
@@ -1070,13 +1113,15 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
     overflow-y: scroll;
 }
 .board_ZzDevil {
     width: 7.4rem;
     height: 2.5rem;
     /* background: yellow; */
-    background-color: #0068ff;
+    /* background-color: #0068ff; */
+    background-image: linear-gradient(to right, #c00505, #000000);
     position: absolute;
     padding: 0rem 0rem 0rem 0.4rem;
     border: 1px solid #000;
@@ -1087,12 +1132,14 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     justify-content: center;
     align-items: center;
     z-index: 2;
+    border-radius: 0.2rem;
 }
 .board_Nhiệm_Vụ {
     width: 7.4rem;
     height: 2.5rem;
     /* background: yellow; */
-    background-color: #0068ff;
+    /* background-color: #0068ff; */
+    background-image: linear-gradient(to right, #c00505, #000000);
     position: absolute;
     padding: 0rem 0rem 0rem 0.4rem;
     border: 1px solid #000;
@@ -1103,12 +1150,14 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     justify-content: center;
     align-items: center;
     z-index: 2;
+    border-radius: 0.2rem;
 }
 .board_Hành_Trang {
     width: 7.4rem;
     height: 2.5rem;
     /* background: yellow; */
-    background-color: #0068ff;
+    /* background-color: #0068ff; */
+    background-image: linear-gradient(to right, #c00505, #000000);
     position: absolute;
     padding: 0rem 0rem 0rem 0.4rem;
     border: 1px solid #000;
@@ -1119,12 +1168,14 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     justify-content: center;
     align-items: center;
     z-index: 2;
+    border-radius: 0.2rem;
 }
 .board_Cài_Đặt {
     width: 7.4rem;
     height: 2.5rem;
     /* background: yellow; */
-    background-color: #0068ff;
+    /* background-color: #0068ff; */
+    background-image: linear-gradient(to right, #c00505, #000000);
     position: absolute;
     padding: 0rem 0rem 0rem 0.4rem;
     border: 1px solid #000;
@@ -1135,6 +1186,7 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     justify-content: center;
     align-items: center;
     z-index: 2;
+    border-radius: 0.2rem;
 }
 .board_Nguồn2 {
     width: 7.4rem;
@@ -1149,13 +1201,15 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-image: linear-gradient(to right, #c00505, #000000); */
     z-index: 1;
 }
 .board_Nguồn {
     width: 7.4rem;
     height: 2.5rem;
     /* background: yellow; */
-    background-color: #0068ff;
+    /* background-color: #0068ff; */
+    background-image: linear-gradient(to right, #c00505, #000000);
     position: absolute;
     padding: 0rem 0rem 0rem 0.4rem;
     border: 1px solid #000;
@@ -1166,6 +1220,7 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     justify-content: center;
     align-items: center;
     z-index: 2;
+    border-radius: 0.2rem;
 }
 /* ----------------- */
 .board_Infor_ZzDevil {
@@ -1209,7 +1264,7 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     border: 1px solid #000;
     /* top: 2.3rem; */
     /* left: 0.3rem; */
-    font-size: 0.7rem;
+    font-size: 0.55rem;
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -1649,3 +1704,14 @@ box-shadow: 0.3rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
     color: white;
     font-size: 1rem;
   }
+  .timeEnemy {
+    right: 18%;
+    background-image: linear-gradient(to right, #18188f, #10a733);
+}
+
+.timeMe {
+    background-image: linear-gradient(to right, #18188f, #10a733);
+}
+.redMana {
+    color: red !important
+}

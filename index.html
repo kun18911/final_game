@@ -65,6 +65,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        border: 0.2rem solid #5f0606;
+    background-image: linear-gradient(to right, #ae5555, #501d1d);
+    border-radius: 0.2rem;
     }
                 </style>
                 <div class="inFor_Nhanvat nonee">
@@ -860,6 +863,7 @@
                                 top: -1rem;
                                 z-index: 12;
                                 border: 0.2rem solid rebeccapurple;
+                                background: #121010;
                             }
                             .mã_Coppy_re {
                                 text-align: center;
@@ -1169,10 +1173,20 @@
                 </div>
                 <div class="option Skull boxOut ">
                     <div class="askSkill askOut">Tuyệt Chiêu</div>
-                    <div class="Skill1 yesOut"></div>
-                    <div class="Skill2 yesOut"></div>
-                    <div class="Skill3 yesOut"></div>
-                    <div class="Skill4 yesOut"></div>
+                    <div class="Skill1 yesOut">
+                        <div class="Skill11 điểm_mana redMana">75</div>
+                    </div>
+
+                    <div class="Skill2 yesOut">
+                        <div class="Skill22 điểm_mana redMana">150</div>
+                    </div>
+
+
+                    <div class="Skill3 yesOut">
+                        <div class="Skill33 điểm_mana redMana">225</div>
+                    </div>
+
+                    <div class="Skill4 yesOut nonee"></div>
                     <div class="SkillClose">X</div>
                     <style>
                         .Skull {
@@ -1234,6 +1248,22 @@
                             background-size: 5rem;
                             background-position: 4.1rem -0.8rem;
                         }
+                        .điểm_mana {
+                            position: absolute;
+    top: 3.6rem;
+    font-size: 0.6rem;
+    line-height: 0.9rem;
+    min-width: 1.4rem;
+    min-height: 0.9rem;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    padding: 0 0.4rem 0 0.4rem;
+    color: #4fc3be;
+    background: #1a2588;
+                        }
+                        .Skill11 {
+                        }
                     
                         .Skill2 {
                             position: absolute;
@@ -1243,7 +1273,8 @@
                             line-height: 1.3rem;
                             min-width: 1.4rem;
                             min-height: 3.4rem;
-                            left: 4.3rem;
+                            left: 5.7rem;
+                            /* left: 4.3rem; */
                             text-align: center;
                             transform: translateX(-50%);
                             background: #1a2588;
@@ -1262,7 +1293,8 @@
                             line-height: 1.3rem;
                             min-width: 1.4rem;
                             min-height: 3.4rem;
-                            left: 7.1rem;
+                            left: 9.9rem;
+                            /* left: 7.1rem; */
                             text-align: center;
                             transform: translateX(-50%);
                             background: #1a2588;
@@ -1363,6 +1395,29 @@
                 
                     <div class="informMe dame">Dame - <div class="dameBoard1 io">0</div> Máu</div>
                 </div> 
+                <div class="boardPointGiap nonee"></div>
+                <style>
+                    .boardPointGiap {
+                        white-space: nowrap; 
+    min-width: 4.5rem;
+    position: absolute;
+    background: #2d43a1;
+    min-height: 1.1rem;
+    font-size: 0.65rem;
+    line-height: 0.6rem;
+    top: 11rem;
+    z-index: 2;
+    transform: translateX(-50%);
+    left: 4.15rem;
+    padding: 0.5rem 0.5rem 0 0.7rem;
+    z-index: 3;
+    color: white;
+    pointer-events: none;
+    border-radius: 0.2rem;
+    animation: moveUpDown_Re 0.9s infinite;
+    border: 0.2rem solid #267252;
+}
+                </style>
                 
                 <div class="timee turn nonee">Còn <span class="turnNumber">0</span> lượt</div>
                 
@@ -1379,8 +1434,51 @@
                     <div class="option GiapMe">🛡️: <div class="io giapEnemy1">0</div></div>
                 </div>
         
-                <div class="thanh_mana_máu manaMe "><div class="io manaMe1"></div></div>
-                <div class="thanh_mana_máu manaEnemy "><div class="io manaEnemy1"></div></div>
+                <div class="thanh_mana_máu manaMe "><div class="io manaMe1"></div>
+                <div class="manaMe3 manaMe3_1 nonee"></div>
+                <div class="manaMe3 manaMe3_2 nonee"></div>
+                <div class="manaMe3 manaMe3_3 nonee"></div>
+                <div class="manaMe3 manaMe3_4 nonee"></div>
+                <style>
+                    .manaMe3 {
+                        /* background: #ffa500; */
+                        background: #3594f3;
+    /* background: #002366; */
+    width: 0.1rem;
+    position: absolute;
+    height: 2rem;
+    /* left: 3.95rem; */
+    border-left: 0.2rem;
+                    }
+                    .manaMe3_1 {left: 0.95rem}
+                    .manaMe3_2 {left: 1.95rem;}
+                    .manaMe3_3 {left: 2.95rem;}
+
+                    .manaMe3_4 {left: 3.9rem;}
+                </style>
+            </div>
+                <div class="thanh_mana_máu manaEnemy "><div class="io manaEnemy1"></div>
+                <div class="manaEnemy3 manaEnemy3_1 nonee"></div>
+                <div class="manaEnemy3 manaEnemy3_2 nonee"></div>
+                <div class="manaEnemy3 manaEnemy3_3 nonee"></div>
+                <div class="manaEnemy3 manaEnemy3_4 nonee"></div>
+                <style>
+                    .manaEnemy3 {
+                        /* background: #ffa500; */
+                        background: #3594f3;
+    /* background: #002366; */
+    width: 0.1rem;
+    position: absolute;
+    height: 2rem;
+    /* left: 3.95rem; */
+    border-left: 0.2rem;
+                    }
+                    .manaEnemy3_1 {left: 0.95rem}
+                    .manaEnemy3_2 {left: 1.95rem;}
+                    .manaEnemy3_3 {left: 2.95rem;}
+
+                    .manaEnemy3_4 {left: 3.9rem;}
+                </style></div>
                 <div class="option starMe HongNgoc nonee">🍬: <div class="io HNMe1">0</div></div>
                 <div class="option starEnemy HongNgoc nonee">🍬: <div class="io HNEnemy1">0</div></div>
 
@@ -1401,11 +1499,23 @@
                 <div class="board " id="board"></div>
               
                 <div class="mePosition">
+                    <div class="bóng bóng_In_Battle"></div>
                     <div class="meMe_Anh meMe_Me"></div>
                 </div>
                 <div class="enemyPosition">
-                    <div class="meMe_Anh meMe_Enemy"></div>
+                    <div class="bóng bóng_In_Battle"></div>
+                    <div class="meMe_Enemy2">
+                        <div class="meMe_Anh meMe_Enemy"></div>
+                    </div>
                 </div>
+                <style>
+                    .bóng_In_Battle {
+    position: absolute;
+    top: 2.5rem;
+    left: 0.4rem;
+    width: 2.2rem;
+    height: 1.6rem;}
+                </style>
         
         
         

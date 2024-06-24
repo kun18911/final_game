@@ -295,6 +295,11 @@ function inforBattlee(hp, hpMax, mana, manaMax, xu, lv, lvPercent, giáp, hồng
             if (x == 1) { quai.hp(1, y) } else { mee.hp(1, y) }
             return giáp = làm_Tròn(giáp + y, 2)
         }
+        this.giáp2 = function (x, y) {
+            giáp = làm_Tròn(giáp + y, 2)
+            if (x == 1) {document.querySelector(".giapEnemy1").innerHTML = giáp} else {document.querySelector(".giapMe1").innerHTML = giáp}
+            return giáp 
+        }
         this.xu = function (x, y) {
             if (x == 1) { if (y <= xu) {return xu = làm_Tròn(xu - y, 2) } else { return false }} // trừ tiền 
             else { return xu = làm_Tròn(xu + y, 2) } // cộng tiền

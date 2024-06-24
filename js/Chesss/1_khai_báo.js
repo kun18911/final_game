@@ -53,13 +53,12 @@ if ('biến cờ') {
     var starDoc = 'https://raw.githubusercontent.com/kun18911/final_game/340a8f56c112a57376bd3d6a388aad8f0d8180ca/%E1%BA%A3nh/soul_rock_doc.png'
 
     var fiveBlock = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/bomb5.png?raw=true'
-    var melon3x3 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/melon33.png?raw=true'
-    var heart3x3 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/heart33.png?raw=true'
-    var sword3x3 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/sword33.png?raw=true'
+    var melon3x3 = 'https://github.com/kun18911/final_game/blob/main/%E1%BA%A3nh/gold_3x3.png?raw=true'
+    var heart3x3 = 'https://github.com/kun18911/final_game/blob/main/%E1%BA%A3nh/heart_3x3.png?raw=true'
+    var sword3x3 = 'https://github.com/kun18911/final_game/blob/main/%E1%BA%A3nh/sword_3x3.png?raw=true'
     var yingyang3x3 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/yinyang33.png?raw=true'
-    var star3x3 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/star33.png?raw=true'
-    var water3x3 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/water33.png?raw=true'
-
+    var star3x3 = 'https://github.com/kun18911/final_game/blob/main/%E1%BA%A3nh/soul_rock_3x3.png?raw=true'
+    var water3x3 = 'https://github.com/kun18911/final_game/blob/main/%E1%BA%A3nh/water_3x3.png?raw=true'
     var heart3x2 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/New%20folder/heart333.png?raw=true'
     var melon3x2 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/New%20folder/melon333.png?raw=true'
     var sword3x2 = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/New%20folder/sword333.png?raw=true'
