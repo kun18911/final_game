@@ -1,0 +1,67 @@
+ /* Reset margin và padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#phoneContainer {
+    /* width: 100vw; height: 100vh;  */
+    width: 320px; height: 600px; 
+    background-color: #f0f0f0;
+}
+/* Khung điện thoại */
+#phoneFrame {
+    width: calc(100% - 30px); height: calc(100% - 30px);
+    position: relative;
+    border: 2px solid black;
+    background-color: #f0f0f0;
+    overflow: 
+    hidden;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#blackOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1; /* Phía dưới bảng */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+#sBlackOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 50; /* Phía dưới bảng */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    
+}
+
+
+
+
+.miniMapp{
+    right: -2px;
+    width: 38%;    overflow: hidden;
+    position: absolute;
+    height: 16%;
+    border: 2px solid #000;
+    top: -2px;
+                    }
+
+.clickDevil_ItemBoard {
+    background-color: #90acee !important;
+}
